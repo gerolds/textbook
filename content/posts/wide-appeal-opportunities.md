@@ -1,6 +1,6 @@
 +++
 title = 'Making the Elements of Appeal Operational'
-date = 2025-12-22T09:00:00-05:00
+date = 2025-12-22T00:00:00-05:00
 description = 'An operational addendum to `wide-appeal.md`: practical inoculations, opportunity generators, and capture mechanisms designers can apply to the axes described in the main essay.'
 tags = ['game design', 'wide-appeal', 'appendix']
 categories = ["Essays"]

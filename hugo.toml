@@ -1,0 +1,41 @@
+baseURL = 'https://geroldschneider.com/'
+languageCode = 'en'
+title = 'Textbook'
+theme = 'monochrome'
+copyright = '© Gerold Schneider'
+disablePathToLower = true
+enableRobotsTXT = true
+enableGitInfo = false
+
+[markup]
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.tableOfContents]
+  startLevel = 2
+
+[markup.highlight]
+  style = 'monokai'
+
+[params]
+  BookTheme = 'auto'
+  BookSection = 'posts'
+  BookSearch = true
+  BookComments = false
+  BookDateFormat = 'Jan 2, 2006'
+  BookPortableLinks = 'warning'
+
+[[menu.after]]
+  name = 'Essays'
+  pageRef = '/posts/'
+  weight = 1
+
+[[menu.after]]
+  name = 'About'
+  pageRef = '/about/'
+  weight = 2
+
+[[menu.after]]
+  name = 'Tags'
+  pageRef = '/tags/'
+  weight = 3

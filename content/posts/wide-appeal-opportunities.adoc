@@ -15,207 +15,284 @@ cover = { image = '', alt = '', caption = '' }
 :toc:
 :toclevels: 2
 
-This addendum is a concise, actionable reference to use alongside the main essay (`wide-appeal.md`). It translates the conceptual axes into observable checks and short design moves you can run in reviews or prototypes. Treat each item as a quick triage: What to look for, what you'll observe, and what to do.
+This addendum is meant to be used alongside the main essay (`wide-appeal.md`) during design reviews and prototyping. The original essay explains *what* tends to make games travel culturally; this document is a *field guide* for *what to do next*.
 
-== Inoculations
+If you only read one part, read the Quick start and the first table. Everything else is a set of moves you can reach for when you see a given symptom.
 
-Lightweight audits and guardrails that keep the design coherent and honest. Each inoculation has three parts: "What", "Tell", and "Do" (concrete next steps).
+== Quick start (timeboxed)
 
-=== Contract audit inoculation
+*15 minutes (triage)*
 
-What:: Every hour of play establishes a contract; the first hour sets the promise.
+* Write the game's *first-hour contract* in one sentence.
+* List the top 5 repeated actions per session.
+* Circle any part that feels like tax (low information, low expression).
 
-Tell:: Players say "it gets good after…" or leave before they encounter the mature loop.
+*60 minutes (review)*
 
-Do::
-* Draft a one-sentence first-hour promise.
-* Prototype a tiny, complete loop that demonstrates that promise.
-* Remove or postpone chores that delay the mature loop.
+* Run the symptom table below and mark the top 3 likely failures.
+* For each, pick one inoculation and one opportunity generator.
+* Decide one cut, one deepening move, and one clarity move.
 
-=== Subtraction inoculation
+*3 hours (prototype sprint)*
 
-What:: Coherence erodes by accumulation; features can contradict intent.
+* Build a "mature loop demo" slice (10–15 minutes of play).
+* Add one hinge seed + one landmark ritual.
+* Test with a fresh player for: expectation match, choice density, and returnability.
 
-Tell:: Player discussion reduces to a feature list rather than an experience description.
+== Common symptoms → likely axis → what to do (fast table)
 
-Do::
-* For every new system, run a removal test: if the game's identity survives, drop it.
-* Audit overlapping progression systems and merge or remove redundancy.
+[cols="1,1,2", options="header"]
+|===
+| When players / discourse say… | Likely axis collapsing | Do this next
 
-=== Autopilot inoculation
+| “It gets good after…”
+| Legible promise (and early cadence)
+| Show the mature loop in the first hour; cut pre-loop chores.
 
-What:: Long autopilot runs indicate the signature primitive is underused or stakes are muddy.
+| “Great, but I stopped halfway.”
+| Cadence / midgame rot
+| Define what changes at hours 3/6/12; recombine mechanics instead of adding new ones.
 
-Tell:: Players call it a "podcast game" or report grinding/turning their brain off.
+| “I can’t explain why I like it.”
+| Signature primitive / symbols
+| Compress the primitive into a mimable verb; add 1–2 named handles tied to consequence.
 
-Do::
-* Identify the smallest meaningful choice and increase its informational weight.
-* Replace purely numeric goals with choice-weighted outcomes.
+| “Grindy / podcast game.”
+| Unintended friction / mushy stakes
+| Increase choice density in the smallest meaningful decision; remove low-information repetition.
 
-=== Friction cost accounting inoculation
+| “Too many systems/currencies.”
+| Stakes clarity
+| Collapse currencies; make a single hierarchy of value explicit; remove contradictory incentives.
 
-What:: Repeated pains must purchase meaning; otherwise they are tax.
+| “Pretty world but it feels like a menu.”
+| Mood / habitat
+| Add rituals and landmarks; reduce checklist UI noise; reward presence.
 
-Tell:: QoL complaints flood feedback channels; players circumvent systems with guides or exploits.
+| “The twist was cool but it changed nothing.”
+| Recontextualization
+| Build hinges that change behavior (routes, priorities, tools), not just knowledge.
 
-Do::
-* List the top 5 repeated actions per session and classify each as teach/test/express or tax.
-* Compress, automate, or remove actions classified as tax.
+| “I only log in because of dailies/season.”
+| Extraction disguised as conversion
+| Replace penalties with hospitality: quick re-entry, meaningful short sessions, no behindness traps.
+|===
 
-=== Midgame rot inoculation
+== Toolkit 1: Inoculations (guardrails)
 
-What:: Many titles fail in the middle—novelty stalls and padding appears.
+Use these to prevent self-deception and drift. Think of them as *anti-failure tests* you can run repeatedly.
 
-Tell:: Consistent quit windows at similar hour ranges.
+[cols="1,2,2", options="header"]
+|===
+| Inoculation | Tell (what you’ll observe) | Move (what to do)
 
-Do::
-* Map player retention by hour and identify plateaus.
-* Inject recombinations of existing mechanics to create novelty without new systems.
+| Contract audit
+| “It gets good after…”; early bounces
+| Write the first-hour promise; demonstrate mature loop early; delete pre-loop chores.
 
-=== Handle economy inoculation
+| Subtraction
+| Discourse becomes a feature inventory
+| Removal test new systems; cut parallel progression and competing micro-loops.
 
-What:: Too many names and places dilute cultural handles.
+| Autopilot
+| “Podcast game”; grind talk
+| Deepen the smallest meaningful choice; add informational stakes.
 
-Tell:: Players recall the game vaguely or use generic terms a year later.
+| Friction cost accounting
+| QoL dominates; players route around play
+| List repeated actions; compress/automate/cut low-information repetition.
 
-Do::
-* Enforce salience: pick fewer named entities and repeat them with variation and consequence.
-* Tie symbols to decisions and rituals rather than decorative lore.
+| Midgame rot
+| Consistent quit window
+| Plan novelty via recombination at hours 3/6/12/20; shorten plateaus.
 
-=== Extraction inoculation
+| Handle economy
+| Vague recall; no quotable handles
+| Fewer entities; repeat with consequence; tie symbols to rituals and decisions.
 
-What:: Retention tactics can masquerade as conversion.
+| Extraction check
+| Obligation language (dailies, streak anxiety)
+| Separate returnability from coercion; remove punishment-for-absence.
+|===
 
-Tell:: Players return out of obligation (dailies, timers) or anxiety about falling behind.
+== Toolkit 2: Opportunity generators (patterns you can prototype)
 
-Do::
-* Separate hospitality (easy reattachment) from punishment-for-absence mechanics.
-* Remove or refactor timers that punish absence into meaningful re-entry benefits.
+Each generator is a “recipe”. Use them when you want *constructive moves*, not just audits.
 
-== Opportunity generators
+=== Mature-loop demo
 
-Repeatable design patterns that create fitness for loops and habitats. Each generator is phrased as a small, testable prototype idea.
+When to run it:: When players bounce early, or the promise feels abstract.
 
-=== Show-the-mature-loop generator
+Recipe::
+* Identify the core verb + feedback + stakes.
+* Build a 10–15 minute slice that contains the loop in miniature.
+* Remove any preconditions that prevent reaching the loop.
 
-Goal:: Surface the mature loop in the first hour.
+Watch for:: Can a new player describe the game truthfully after 10 minutes?
 
-How:: Build a compact version of the late-game loop with real feedback and stakes; test new players' comprehension and desire to continue.
+=== Competence ladder
 
-=== Competence ladder generator
+When to run it:: When mastery is present but feels like grind or luck.
 
-Goal:: Make progress feel like skill acquisition rather than numeric inflation.
+Recipe::
+* Isolate one skill.
+* Provide sharp feedback and stable rules.
+* Recombine skills into layered challenges.
 
-How:: Provide isolated challenges with clear feedback and then recombine skills in layered encounters.
+Watch for:: Players say “I can feel myself getting better.”
 
-=== Signature compression generator
+=== Signature compression
 
-Goal:: Make the primitive explainable and demonstrate-able.
+When to run it:: When the game is competent but culturally indistinct.
 
-How:: Design for mimability — if a move can't be mimed or clipped, iterate it until it can.
+Recipe::
+* Express the primitive as a single action + constraint.
+* Test “mimability”: can someone mime it and be understood?
+* Cut systems that compete with the primitive.
 
-=== Meaningful constraint generator
+Watch for:: One-sentence description survives purchase and play.
 
-Goal:: Use visible limits to make intent felt.
+=== Meaningful constraints
 
-How:: Restrict tools and force tradeoffs that reveal the theme in choices.
+When to run it:: When coherence is weak or the game feels like a pile of options.
 
-=== Hinge planting generator
+Recipe::
+* Remove redundant tools.
+* Force tradeoffs that express the intended mood.
+* Make “no” visible (limits that shape play).
 
-Goal:: Build recontextualization into the structure, not as an appendage.
+Watch for:: Players can infer intent from what the game disallows.
 
-How:: Plant seeds early, let a stable mental model form, then introduce a hinge that changes how earlier play is interpreted.
+=== Hinge planting
 
-=== Ritual and landmark generator
+When to run it:: When the story or structure wants a pivot but twists feel inert.
 
-Goal:: Turn handles into lived rituals.
+Recipe::
+* Plant a repeating pattern early.
+* Let players build a stable model.
+* Introduce a hinge that changes priorities/routes/tools.
 
-How:: Create repeatable rituals (prepare, depart, recover, return) and embed landmarks inside them to become cultural anchors.
+Watch for:: Behavior changes after the hinge (not just lore understanding).
 
-=== Anecdote engine generator
+=== Rituals + landmarks
 
-Goal:: Encourage "I went to do X and then..." stories.
+When to run it:: When habitat strength is weak; when the world is forgettable.
 
-How:: Design for emergent collisions and aftermaths that change player plans and produce short narratives.
+Recipe::
+* Define a loop ritual (prepare → depart → recover → return).
+* Place a landmark inside each ritual.
+* Repeat with variation and consequence.
 
-=== Returnability generator
+Watch for:: Players reference places/things as handles (“meet me at ___”).
 
-Goal:: Lower the cost of reattachment after absence.
+=== Anecdote engine
 
-How:: Provide quick, meaningful re-entry actions, clear orientation steps, and low re-learning costs; keep hospitality distinct from coercion.
+When to run it:: When wandering feels like transit, not story.
 
-== Capture mechanisms
+Recipe::
+* Add roaming threats/opportunities.
+* Create system collisions with aftermath.
+* Allow plans to be interrupted and rerouted.
 
-Name what each mechanism buys and what it costs. Treat capture as engineering tradeoffs rather than moral labels.
+Watch for:: “I went to do X and then…” stories appear unprompted.
 
-=== Cultural capture mechanisms
+=== Returnability (hospitality)
 
-==== Handle capture
+When to run it:: When the game is deep but hard to re-enter.
 
-What:: Names, objects, motifs that let people point and remember.
+Recipe::
+* One meaningful action in < 90 seconds.
+* Clear reorientation (“what matters right now”).
+* Low re-learning cost.
 
-Do:: Tie handles to consequence and ritual; repeat them in decisions.
+Watch for:: Returning after a week feels welcoming, not punishing.
 
-==== Clip capture
+== Toolkit 3: Capture mechanisms (tradeoffs)
 
-What:: Moments readable at a glance that travel as clips.
+Capture is not automatically evil; it’s a set of levers with costs. Name what you’re buying.
 
-Do:: Create moments with clear stakes and visible skill expression.
+=== Cultural capture (transmission)
 
-==== Sentence capture
+[cols="1,1,2,2", options="header"]
+|===
+| Mechanism | Buys | Costs | Safer implementation hint
 
-What:: A single-sentence description that survives compression.
+| Handle capture
+| Retellability
+| None (unless overstuffed)
+| Tie handles to consequence and ritual; keep the cast small.
 
-Do:: Distill the legible promise + primitive into one clear line.
+| Clip capture
+| Visibility
+| Design pressure toward legibility
+| Design readable stakes; don’t confuse clip-worthiness with depth.
 
-==== Hinge capture
+| Sentence capture
+| Adoption
+| Simplification pressure
+| Ensure the sentence remains true at hour 10.
 
-What:: Recontextualization moments that reorganize memory.
+| Hinge capture
+| Canon fuel
+| Requires structural commitment
+| Make hinges change behavior, not trivia.
 
-Do:: Ensure hinges change behavior, not just trivia.
+| Scaffold capture
+| Literacy expansion
+| Community dependency
+| Support challenge runs/mods without letting optimization erase mood.
+|===
 
-==== Scaffold capture
+=== Behavioral capture (retention)
 
-What:: Community scaffolds that lower literacy barriers.
+[cols="1,1,2,2", options="header"]
+|===
+| Mechanism | Buys | Costs | Safer alternative
 
-Do:: Encourage tutorials, challenge runs, and modular mods that expand funnel reach.
+| Loss / behindness
+| Compliance
+| Trust; resentment
+| Hospitality returnability; meaningful short sessions.
 
-=== Behavioral capture mechanisms
+| Variable rewards
+| Excitement spikes
+| Stakes fog; gambling feel
+| Transparent progression + skill-linked rewards.
 
-==== Loss / behindness capture
+| Progress treadmill
+| Perceived motion
+| Meaning collapse
+| Competence ladder (skill growth) + fewer currencies.
 
-What:: Dailies, seasons, and expiring rewards that produce compliance.
+| Social obligation
+| Deep community
+| Coercion risk
+| Community without punishment for absence.
 
-Cost:: Trust and long-term recommendation potential.
+| Friction hostage
+| Monetization
+| Reputation; respect-time breach
+| Remove the friction; monetize aesthetics/expansions instead.
+|===
 
-==== Variable reward capture
+== One-page review worksheet (copy/paste)
 
-What:: Loot volatility that may feel like excitement but obscures stakes.
+Use this in a meeting. Fill it fast.
 
-Cost:: Replaces clear value hierarchies with gambling-like uncertainty.
+*First-hour contract (one sentence):*
 
-==== Progress treadmill capture
+*Signature primitive (one verb):*
 
-What:: Numeric progression that substitutes motion for mastery.
+*Top 5 repeated actions:* (mark Tax / Teach / Test / Express)
 
-Cost:: Motion without meaning.
+*Top 3 symptoms from the table:* 
 
-==== Social obligation capture
+*One cut (subtraction):*
 
-What:: Calendared commitments and social pressure.
+*One deepening move (choice density / stakes):*
 
-Do:: Design for community but avoid punishing absence.
+*One clarity move (value hierarchy / currencies):*
 
-==== Friction hostage capture
+*One generator to prototype this week:* 
 
-What:: Monetizing or gating resolved friction.
-
-Cost:: Short-term revenue for long-term reputational harm.
-
-== The operational rule
-
-For every capture mechanism you consider, explicitly note: What it buys, what it costs, and what downstream effects are likely (trust, recommendation language, and the kind of "favorite" produced). Use this as a short table in design reviews.
-
-----
-TIP: If Hugo doesn't render AsciiDoc locally, ensure Asciidoctor is installed or build with a Hugo binary that includes AsciiDoc processing.
-----
+*One capture mechanism we’re using (and its cost):*

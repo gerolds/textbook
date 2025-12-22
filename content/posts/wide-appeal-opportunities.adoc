@@ -1,4 +1,4 @@
-++
++++
 title = "Making the Elements of Appeal Operational"
 date = 2025-12-22T00:00:00-05:00
 description = "An operational addendum to `wide-appeal.md`: practical inoculations, opportunity generators, and capture mechanisms designers can apply to the axes described in the main essay."
@@ -9,7 +9,7 @@ draft = false
 slug = 'wide-appeal-opportunities'
 aliases = ['/posts/wide-appeal-opprtunities/', '/posts/wide-appeal-opportunities/']
 cover = { image = '', alt = '', caption = '' }
-++
++++
 
 = Making the Elements of Appeal Operational
 :toc:

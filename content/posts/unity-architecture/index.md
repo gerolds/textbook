@@ -355,7 +355,7 @@ If two modules both need to write the same field, your boundaries are wrong, or 
 
 ## Premature abstraction
 
-![Abstractions, fight!](abstraction.png)
+![Abstractions, fight!](images/abstraction.png)
 
 Abstractions have a cost. Every interface, every indirection, every "what if we need to swap this later" adds cognitive load. Contracts and interfaces should be *earned*, not pre-emptive.
 
@@ -535,7 +535,7 @@ When is a module the right size? Boundaries come from **domain coherence** and *
 
 ## DI containers
 
-Zenject, VContainer? You can. They automate creation and resolution, manage scopes. With discipline, they reduce boilerplate.
+Use Zenject or VContainer? You can. They automate creation and resolution, manage scopes. With discipline, they reduce boilerplate.
 
 The danger: easy resolution means developers stop thinking about dependency direction. A container resolving anything from anywhere is a service locator with extra steps. Configure for scoped lifetimes, init-only resolution, contracts over implementations.
 

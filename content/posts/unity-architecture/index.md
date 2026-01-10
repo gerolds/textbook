@@ -2,7 +2,7 @@
 title = "Unity Architecture for Growing Projects"
 date = 2026-01-09T00:00:00-01:00
 description = "A modular architecture that works with Unity's grain: modules, hosts, contracts, and orchestration for scaling from prototype to production."
-summary = "Unity makes spaghetti easy to start and painful to unwind. This article describes an architecture that keeps editor-friendly workflows while adding explicit structure for ownership, lifecycle, and dependencies; scaling by changing rigor, not model."
+summary = "This article describes an architecture that works *with* Unity's grain (keeping editor-friendly workflows and fast iteration) while adding structure that makes ownership, boundaries, and dependencies explicit. The architecture scales from prototype to production by changing *rigor*, not *model*."
 tags = ["architecture", "unity", "game-development", "software-design"]
 categories = ["Essays"]
 showToc = true
@@ -13,7 +13,7 @@ cover = { image = '', alt = '', caption = '' }
 
 # Unity Architecture for Growing Projects
 
-![alt text](images/title.png)
+![Architecture party](images/title.png)
 
 ## Premise
 
@@ -469,7 +469,7 @@ The payoff is testability. Record a replay by swapping input for playback. Fast-
 
 ## Third-party code and static APIs
 
-![Checkpoint](checkpoint.png)
+![Checkpoint](images/checkpoint.png)
 
 Unity's own APIs are static: `Time.deltaTime`, `Input.GetKey`, `Physics.Raycast`. Third-party assets often use singletons. This isn't a problem to fight; it's reality.
 

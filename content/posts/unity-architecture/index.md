@@ -13,13 +13,13 @@ cover = { image = '', alt = '', caption = '' }
 
 ## Premise
 
-Successful games often have the worst codebases. Not because the teams were bad, but because success came fast; fast enough that the prototype became production before anyone could make it sustainable.
+Successful games often have the worst codebases. Not because the teams were bad, but because success came fast—fast enough that the prototype became production before anyone could make it sustainable.
 
 You know the symptoms. Iteration slows to a crawl. More time goes to bugs than features. New hires take months to become productive. Certain systems are owned by "the only person who understands it." Some code has an unspoken rule: *don't touch it.* Everything depends on everything; logically, structurally, and through assumptions nobody wrote down. What should be a module is actually a tangle of implicit behaviors wired through the editor, and untangling it would cost more than the feature is worth.
 
-None of this happens because Unity is bad. It happens because Unity optimizes for starting fast. Scenes, prefabs, serialized references, `GetComponent`, lifecycle callbacks; these make the first month effortless. But they create invisible coupling. Any object can find any other object. State scatters across the hierarchy. Dependencies live in serialized fields that only the editor knows about. By month six, you've built a machine that works but that nobody fully understands.
+None of this happens because Unity is bad. It happens because Unity optimizes for starting fast. Scenes, prefabs, serialized references, `GetComponent`, lifecycle callbacks: these make the first month effortless. But they create invisible coupling. Any object can find any other object. State scatters across the hierarchy. Dependencies live in serialized fields that only the editor knows about. By month six, you've built a machine that works—but that nobody fully understands.
 
-This article describes an architecture that works *with* Unity's grain (keeping editor-friendly workflows and fast iteration) while adding structure that makes ownership, boundaries, and dependencies explicit. The architecture scales from prototype to production by changing *rigor*, not *model*. The same principles apply at every stage; what changes is how strictly you enforce them.
+This article describes an architecture that works *with* Unity's grain (keeping editor-friendly workflows and fast iteration) while adding structure that makes ownership, boundaries, and dependencies explicit. The architecture scales from prototype to production by changing *rigor*, not *model*. The same principles apply at every stage—what changes is how strictly you enforce them.
 
 ### The core idea: hosts as membranes
 
@@ -29,7 +29,7 @@ This article describes an architecture that works *with* Unity's grain (keeping 
 >
 > The cell is a module, a living unit that the membrane defines and protects. When molecules pass through the membrane, they enter the cell's domain. The cell receives them, integrates them into its machinery, and puts them to work. The cell knows what's inside, maintains its own state, and is the authority for its own function. Other cells don't reach in and manipulate its internals, they send signals through the membrane.
 
-In this architecture, the **host is the module's membrane**. It's the boundary you pass through to belong, the thing that equips you when you enter, and the surface through which the module communicates with the outside world. The host answers "who owns this?", "how do I join?", and "how do I talk to this module?" If you can point to the host, you can understand the module's shape.
+In this architecture, the **host is the module's membrane**. It's the boundary you pass through to belong, the thing that equips you when you enter, and the surface through which the module communicates with the outside world. The host answers "who owns this?", "how do I join?", and "how do I talk to this module?" If you can point to the host, you can understand the module's shape—and you can usually predict where its bugs will live.
 
 - **Everything participates by belonging to a host.** Scene objects, spawned prefabs, loaded content--they don't just exist--they belong to a module by registering with its host. "Registration" is conceptual: for a component, it might be a formal call; for a pooled object, it might just be "this pool belongs to Combat."
 - **Registration is the handshake.** When something joins a module, the host gives it context (dependencies, configuration). The object doesn't fish for these later.

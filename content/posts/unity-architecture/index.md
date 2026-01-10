@@ -128,7 +128,9 @@ Modules communicate through contracts. The orchestration layer is the only code 
 
 ### Why legibility matters: the city metaphor
 
-![City](images/city.png)
+> ![City](images/city.png)
+>
+> *Looks impressive but just because roads are there, doesn't mean they make sense.*
 
 Picture a large Unity project as a city. The problem in most Unity cities is that any building can build a private road to any other building. At first it feels efficient. Later you discover you cannot reason about traffic, you cannot reroute, and you cannot tell which roads are essential and which are accidental.
 
@@ -222,7 +224,9 @@ Cross-mode communication must be explicit. You can't call "the inventory" from t
 
 ## Unity's instantiation reality
 
-![Registration](images/immigration.png)
+> ![Registration](images/immigration.png)
+>
+> *New citizens arrive constantly, how are they, what do they want, do we want them, do they bring diseases?*
 
 Unity instantiates from content: scenes, prefabs, additive loading, Addressables. Insisting that a central orchestrator explicitly construct every gameplay object means writing spawners for everything and fighting iteration.
 
@@ -377,6 +381,8 @@ Contracts are the membrane. Inside, do what works.
 
 ## The singleton trap
 
+![Trophy room](trophyroom.png)
+
 One of the most expensive early assumptions: there's one player, one UI, one camera, one inventory. It simplifies everything, until it doesn't.
 
 Single-player games routinely break singleton assumptions:
@@ -462,6 +468,8 @@ These live in a shared assembly. Cross-cutting concerns become explicit dependen
 The payoff is testability. Record a replay by swapping input for playback. Fast-forward time in a test by swapping the time contract. Ship to a platform without analytics by swapping for a no-op. None of this touches the modules consuming the contracts.
 
 ## Third-party code and static APIs
+
+![Checkpoint](checkpoint.png)
 
 Unity's own APIs are static: `Time.deltaTime`, `Input.GetKey`, `Physics.Raycast`. Third-party assets often use singletons. This isn't a problem to fight; it's reality.
 

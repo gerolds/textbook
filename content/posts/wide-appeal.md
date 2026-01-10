@@ -12,7 +12,8 @@ cover = { image = '', alt = '', caption = '' }
 
 # The Elements of a Good and Widely Appealing Game
 
-**TL;DR**
+## TL;DR
+
 - Wide appeal isn’t “sales” or “scores”—it’s cultural transmissibility: a game that can recruit love across different player types and survive retelling across cohorts.
 - You can diagnose that transmissibility with ten mostly-orthogonal design axes (not a scorecard): **coherence**, **legible promise**, **signature primitive**, **mood**, **conversion mechanism**, **low unintended friction**, **sustained cadence**, **stakes clarity**, **recontextualization moments**, and **handles/symbols**.
 - The key split is “people played it a lot” vs “it reorganized them”—enduring favorites tend to produce conversion (skills, feelings, meanings that stick) *and* easy recommendation.
@@ -49,16 +50,17 @@ A highly polished game can be empty of meaning, indistinct in play, and cultural
 The second trap is treating “good” as a single number. Games are multi-object systems. Players are multi-object evaluators. Culture is a selection engine with biases. When we collapse all of that into a single adjective, we lose the ability to diagnose why something is widely loved, narrowly beloved, respected but rarely finished, or intensely played but rarely nominated.
 
 We will use ten axes:
-1.	Coherence
-2.	Legible promise
-3.	Signature primitive
-4.	Mood that invites lingering
-5.	Conversion mechanism
-6.	Low unintended friction
-7.	Sustained cadence
-8.	Stakes clarity
-9.	Recontextualization moments
-10.	Handles: named entities and symbols
+
+1. Coherence
+2. Legible promise
+3. Signature primitive
+4. Mood that invites lingering
+5. Conversion mechanism
+6. Low unintended friction
+7. Sustained cadence
+8. Stakes clarity
+9. Recontextualization moments
+10. Handles: named entities and symbols
 
 These dimensions are partly independent in practice. A game can excel on one while failing another, and the failure often caps its reach. The point is diagnosis: what makes a game legible, lovable, and retellable, and what breaks those pathways.
 
@@ -92,8 +94,9 @@ How we weaken coherence (counterfactual)
 - Build a narrative tone that contradicts the primary activity.  
 - Ship multiple onboarding paths that teach different contracts.
 
-A useful test: remove a system—if nothing meaningful changes in how the game feels, that system was likely incoherent ornament.
+A useful test: remove a system—if nothing meaningful changes in how the game feels, that system was likely incoherent ornament
 =======
+
 Coherence is created by constraint. A useful method is to write a governing sentence that survives hostile paraphrase: “This is a game about ____.” Not a marketing pitch—an intent you can test against every system. When you add or change something, you ask whether it strengthens that sentence or dilutes it. Then you practice subtraction, because coherence is usually lost through accumulation.
 
 When coherence is weak, players remember “cool parts” rather than a whole. They describe the game as a pile of modules: “It has crafting, and a skill tree, and a base, and some story.” That description is not neutral. It predicts fragility. It predicts that love will be narrower and transmission harder, because the game has no single shape to carry.
@@ -224,28 +227,33 @@ Many games are enjoyable. Fewer convert the player—produce a durable change in
 Conversion comes in recognizable forms.
 
 <<<<<<< HEAD
+
 ### 5.1 Mastery conversion: “I became capable”
 
 - Examples: Dark Souls, Sekiro, Celeste, Monster Hunter, Doom (2016/Eternal), Spelunky.  
 - Requires fairness, feedback, and a teaching ladder. Failure must feel like information.
 =======
 One is mastery conversion: “I became capable.” Celeste and Sekiro are clean examples. They demand precision, but they also teach. Failure feels like information, not humiliation. The player changes, and that change is the point.
+
 >>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
 
 Another is rupture conversion: “I didn’t know a game could do that.” Outer Wilds turns knowledge into progression so completely that the player’s mind becomes the save file. BioShock’s famous reframe lands because it forces reconsideration of agency in a medium built on doing what you’re told.
 
 <<<<<<< HEAD
+
 ### 5.2 Rupture conversion: “I didn’t know a game could do that”
 
 - Examples: Final Fantasy VII, The Last of Us, BioShock, Nier: Automata, Spec Ops: The Line, Outer Wilds, Undertale.  
 - Rupture is a reclassification: grief, moral shock, revelation that lands because the player’s actions mattered.
 =======
 A third is mythic conversion: “I lived an archetype.” Ocarina of Time and Shadow of the Colossus operate here. They rely on restraint and symbolic weight. They are remembered as myths more than plots.
+
 >>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
 
 A fourth is identity conversion: “This named my taste.” World of Warcraft, Counter-Strike, League of Legends, Final Fantasy XIV—these become social languages. Fans use them to signal belonging, competence, and values. The game becomes part of the self-description.
 
 <<<<<<< HEAD
+
 ### 5.3 Mythic conversion: “I lived an archetype”
 
 - Examples: A Link to the Past, Ocarina of Time, Shadow of the Colossus, Elden Ring, God of War (2018), Hollow Knight.  
@@ -269,6 +277,7 @@ Weakness mode: home becomes a job—maintenance replaces meaning.
 
 Conversion mechanisms explain why favorites cluster around certain titles; they produce the residue that makes a game “favorite.”
 =======
+
 A fifth is habitat conversion: “This became home.” Minecraft, Stardew Valley, Terraria, RimWorld—these are not finished so much as lived in. The conversion is not a climax; it is a settling-in.
 
 Conversion mechanisms explain why favorites cluster around certain titles. They also explain divisiveness. A game that converts through mastery may repel players who interpret its demands as disrespect. A game that converts through habitat may look mechanically thin to players who want a tight loop. Divisiveness is often a sign that the game is delivering one kind of conversion strongly while failing others.
@@ -481,6 +490,7 @@ This is the design-facing layer. It explains why some games, once reached, are e
 Now we turn to the layer that decides what gets reached.
 
 <<<<<<< HEAD
+
 ### 12.1 Adoption under attention scarcity
 
 Sampling punishes weak legible promise and poor early cadence. Deep games can fail culturally if players never reach the depth.
@@ -499,8 +509,9 @@ Streaming selects for stakes clarity, readable feedback, and visible skill expre
 
 ### 12.5 Games as identity artifacts
 
-“Favorite game” becomes a declaration of temperament and belonging. Mastery favorites signal discipline; rupture favorites signal sensitivity; habitat favorites signal comfort.
+“Favorite game” becomes a declaration of temperament and belonging. Mastery favorites signal discipline; rupture favorites signal sensitivity; habitat favorites signal comfort
 =======
+
 ## 12. Culture as editor: how games travel, and how travel changes the object
 
 A shipped game is not the whole cultural artifact. The cultural artifact includes launch conditions, patch history, ownership changes, platform shifts, community scaffolding, and the public story about what the game “really is.” The same underlying design can become different cultural objects depending on these factors.
@@ -600,6 +611,7 @@ Personal preference does not make the question irrelevant either, because prefer
 Canon will exist whether we acknowledge it or not. The choice is whether we treat it as superstition and tribal badge, or as a map of forces that decide what the medium becomes. A mature discourse can hold both truths at once: these are the structural reasons a game traveled, and these are the externalities that amplified it.
 
 <<<<<<< HEAD
+
 ## 2. Legible promise: making the contract visible early and keeping it
 
 Players do not approach games like museum patrons. They approach games like people with jobs, friends, backlogs, and a phone in reach. They sample. They decide quickly whether the experience is for them, whether it respects their time, and whether the path to competence is visible.
@@ -1000,6 +1012,7 @@ A highly polished game can be empty of meaning, indistinct in play, and cultural
 The second trap is treating “good” as a scalar. Games are multi-object systems. Players are multi-object evaluators. Culture is a selection engine with biases. If we collapse all that into a single adjective, we lose the ability to diagnose why a game is widely appealing, narrowly beloved, respected but rarely finished, or intensely played but rarely nominated.
 
 We will use ten axes:
+
  1. Coherence
  2. Legible promise
  3. Signature primitive
@@ -1419,6 +1432,7 @@ These patterns are how we diagnose without moralizing. They separate “I dislik
 1. A diagnostic baseline we can share, including the counterfactual
 
 When we evaluate a game, we ask not only “how strong is the axis,” but “what are we doing that weakens it.” This prevents the common failure of praising a game while reproducing its design mistakes elsewhere.
+
  1. Coherence
 What is the governing intent, and what systems contradict it? What features exist only because we could build them?
  2. Legible promise
@@ -1456,7 +1470,8 @@ Games that are strong on enough of these pressures become stable nominees. They 
 
 This does not mean the canon is morally correct or complete. It means it is predictable. The same pressures will keep producing the same kinds of winners: mastery crucibles, rupture narratives, mythic adventures, habitats, identity games, and a small subset of pure-design objects whose primitives are so clean they become universal.
 
-The practical value of this is not to bow to the canon. It is to stop being surprised by it—and to become capable of designing, critiquing, and teaching games with a shared baseline that respects both craft and cultural reality.
+The practical value of this is not to bow to the canon. It is to stop being surprised by it—and to become capable of designing, critiquing, and teaching games with a shared baseline that respects both craft and cultural reality
 =======
+
 If the essay did its job, the axes are now less like doctrine and more like instruments. They are ways to see what a game is asking of a player, what it rewards, what it wastes, what it teaches, what it makes memorable, and why some messy, divisive worlds still become homes that millions cannot stop returning to.
 >>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)

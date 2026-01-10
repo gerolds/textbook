@@ -1,3 +1,15 @@
++++
+title = 'Unity Architecture for Growing Projects'
+date = 2026-01-10T18:00:00-01:00
+description = ''
+summary = ''
+tags = ['architecture']
+categories = ['Essays']
+showToc = true
+draft = false
+cover = { image = '', alt = '', caption = '' }
++++
+
 # Unity Architecture for Growing Projects
 
 <!--
@@ -140,6 +152,81 @@ The model stays the same; what changes is how explicit and enforced it is:
 | Vertical slice | Named responsibilities | Own state as plain data | Deliberate interfaces      | Code review |
 | Production     | Assembly-separated     | Formal lifecycle        | Shared assembly            | Compiler    |
 
+### Host-scenes: game modes as isolated worlds
+
+In a production project, the top-level organization is **host-scenes**: Unity scenes that represent completely independent game modes. Each host-scene is a self-contained world with its own lifecycle, hosts, and orchestration. Examples:
+
+- **App-startup**: splash screens, platform initialization, profile selection.
+- **Main menu**: title screen, settings, save-slot selection.
+- **Single-player**: the core gameplay loop for a solo campaign.
+- **Multiplayer**: networked gameplay with its own connection lifecycle.
+- **Free-roam / sandbox**: exploration mode with different rules.
+- **Credits / cinematics**: linear sequences with minimal interactivity.
+
+These modes are **conceptually decoupled**. They share no runtime lifecycle. When you transition from menu to single-player, you unload one world and load another. State that must survive (player profile, selected save slot, network session) travels via a small persistent layer or is passed as initialization parameters—not through shared singletons that span modes.
+
+**What lives in a host-scene:**
+
+1. **All host instances for that mode.** Inventory, combat, dialogue, UI—whatever modules the mode needs. Hosts are loaded with the scene and destroyed with the scene.
+
+2. **A bootstrapper.** A single MonoBehaviour that initializes the mode. It receives minimal signalling: perhaps a save-slot ID to load, or a flag for "new game." From there, it:
+   - Clears and populates the service locator for this scope.
+   - Initializes hosts in dependency order.
+   - Triggers the initial state transition.
+
+3. **A play-mode state machine.** An authoritative FSM that orchestrates mode-wide concerns: input routing, cursor state, UI layers, time scale, pause behavior, network readiness. This is the single place that knows "what phase of gameplay are we in?" Hosts query or subscribe to it; they do not independently manage global state.
+
+4. **Persistence and scenario initialization.** The mode knows how to hydrate itself from a save file or initialize a fresh run. This is not an afterthought; it is part of the bootstrapper's responsibility.
+
+**What does NOT live in a host-scene:**
+
+The host-scene contains only **infrastructure**—the hosts and orchestration that will manage gameplay. It does not contain gameplay content itself.
+
+Levels, enemies, items, NPCs, interactables—all of this is **loaded additively** into the host-scene's scope. A level scene loads on top of the host-scene. Prefabs spawn at runtime. Addressables stream in as needed. None of this content exists in the host-scene asset.
+
+This is where **self-registration** does the heavy lifting. When a content scene loads or a prefab spawns, its components discover the active hosts (via the service locator) and register themselves. The host-scene does not need to know what content will arrive; it only needs to be ready to receive it.
+
+This separation has major workflow benefits:
+
+- **Content teams work independently.** Level designers build levels in their own scenes. Character artists set up prefabs. Environment artists place props. None of them edit the host-scene.
+- **Content modules integrate cleanly.** A new enemy type, a new weapon, a new interactable—each is a prefab or scene that self-registers with the appropriate hosts. If it implements the right components, it just works.
+- **Iteration is fast.** You can test a single level by loading the host-scene and then additively loading just that level. You do not need to boot through menus or load the entire game world.
+- **Memory is predictable.** Content loads and unloads while hosts persist. You can stream levels without tearing down the mode's infrastructure.
+
+```text
+┌─────────────────────────────────────────────────────────────────┐
+│                      Host-Scene (e.g., Single-Player)           │
+├─────────────────────────────────────────────────────────────────┤
+│  Bootstrapper                                                   │
+│    • receives init params (save ID, mode flags)                 │
+│    • populates service locator                                  │
+│    • initializes hosts in order                                 │
+│    • triggers PlayModeFSM.Start()                               │
+├─────────────────────────────────────────────────────────────────┤
+│  PlayModeFSM (authoritative mode orchestrator)                  │
+│    • states: Loading → Playing → Paused → Cutscene → ...        │
+│    • owns: input routing, cursor, time scale, UI layer stack    │
+├─────────────────────────────────────────────────────────────────┤
+│  Hosts                                                          │
+│    ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐          │
+│    │Inventory │ │ Combat   │ │ Dialogue │ │ UI Shell │ ...      │
+│    └──────────┘ └──────────┘ └──────────┘ └──────────┘          │
+├─────────────────────────────────────────────────────────────────┤
+│  Content (loaded additively, self-registers with hosts)         │
+│    • level scenes, spawned prefabs, streamed assets             │
+│    • not part of the host-scene asset itself                    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Why this matters:**
+
+- **Clean unload.** When the mode ends, you destroy the scene. All hosts, all registered components, all scoped state—gone. No lingering singletons, no manual cleanup lists.
+- **Parallel development.** Teams can work on different modes without stepping on each other. The menu team and the gameplay team load different host-scenes.
+- **Testability.** You can load a host-scene in isolation, pass it test parameters, and verify behavior without booting the entire game.
+- **Mode-specific optimization.** Each mode loads only the hosts it needs. A credits sequence does not initialize combat.
+
+The cost is that cross-mode communication must be explicit. You cannot call into "the inventory" from the menu unless you design a deliberate handoff. That constraint is the point: it forces you to decide what state survives transitions and how.
+
 ---
 
 ## Unity's instantiation reality (and the compromise that works)
@@ -196,39 +283,58 @@ Keep these separated:
 
 Let modules accept commands/queries through their contracts. If modules expose events, expose them deliberately and typed (as part of the contract), not as a global publish-anything mechanism.
 
-## The physical world as communication
+## The physical world as a shared channel
 
-There is another communication channel that does not flow through hosts or contracts: the physical world itself.
+Beyond host contracts, there is another communication channel: the physical world itself. Think of it as a **shared telephone line** that any module can use, but with a specific protocol.
 
-When a projectile hits an enemy, when a player enters a trigger volume, when a raycast finds a target; these are spatial queries that Unity handles efficiently and that designers can set up without code. The physics engine is a built-in spatial index with tool support, collision layers, and predictable performance. Most games should use it.
+Unity's physics engine (triggers, raycasts, overlap queries, collision callbacks) is a built-in spatial index. It answers questions like "what is near this point?" or "what entered this volume?" efficiently and with designer-friendly tooling. Most games should use it. The question is: how does spatial discovery fit into modular architecture?
 
-This creates a hybrid communication pattern:
+### The protocol: modules encode their own discovery
 
-- **Discovery happens through physics.** A trigger detects that something entered. A raycast finds what the player is looking at. An overlap query finds all enemies in range.
-- **Communication happens through components.** The discovered object exposes a component (via `GetComponent` or an interface) that the discoverer can talk to. The projectile finds an `IDamageable` on the hit object and calls `TakeDamage`.
+Each module that wants to be discoverable through physics **defines its own marker components**. These components live inside the module; the queries that look for them also live inside the module. The module owns both sides of the conversation.
 
-This pattern is powerful because it decouples *what* can interact from *where* interactions are defined. A door trigger doesn't need to know about the player module. It detects colliders on the "Interactor" layer and calls `IInteractor.Interact()` on whatever it finds. The player, an AI companion, or a vehicle can all trigger the door, as long as they implement the interface.
+Example: the **Combat module** wants projectiles to find damageable targets.
 
-### How this fits the architecture
+1. Combat defines `DamageReceiver`: a MonoBehaviour that marks "I can take damage" and holds a reference to the entity's health data.
+2. Combat's projectile logic performs a raycast or overlap query.
+3. The query looks for `DamageReceiver` components (via `GetComponent` or layer filtering).
+4. When found, the projectile calls methods on `DamageReceiver`—a component the Combat module owns.
+5. `DamageReceiver` updates the entity's health through Combat's internal systems.
 
-The physical world is not a replacement for host-to-host communication through contracts. It is a *supplement* for spatial relationships:
+The key insight: **the querying code and the discovered component belong to the same module**. Combat queries for Combat's own marker. It does not query for some global `IDamageable` interface that other modules might implement. The module encodes its discovery protocol and operates entirely within its own boundaries.
 
-- **Host contracts** handle module-to-module communication: "inventory, do I have ammo?" "combat, apply this damage." These are direct, typed, and independent of position.
-- **Physics queries** handle spatial questions: "what is near this point?" "what did this raycast hit?" "what entered this volume?" The answer is a GameObject, and from there you query for components.
+### Multiple modules, same physics world
 
-The components you find through physics can be bridges to hosts. An `IDamageable` component on an enemy might delegate to the combat host: `combatHost.ApplyDamage(this.entity, damage)`. The component is the spatial markup; the host owns the logic.
+Different modules can attach different marker components to the same GameObject. A character might have:
+
+- `DamageReceiver` (Combat module) — for taking damage.
+- `InteractionTarget` (Interaction module) — for player interaction prompts.
+- `AIPerceptionTarget` (AI module) — for enemy detection.
+
+Each module queries for its own markers. Combat raycasts look for `DamageReceiver`. Interaction raycasts look for `InteractionTarget`. AI perception queries look for `AIPerceptionTarget`. The modules share the physics world but not each other's components.
+
+This is the "shared telephone line" model: everyone uses the same wire (Unity's physics), but each module speaks its own language (its own component types). There is no cross-talk because each module only listens for messages it defined.
+
+### When modules need to coordinate spatially
+
+Sometimes spatial events need to cross module boundaries. A projectile (Combat) hits something that triggers a dialogue (Dialogue module). In this case:
+
+1. The spatial discovery still happens within one module. Combat finds its `DamageReceiver`.
+2. The cross-module communication happens through contracts. `DamageReceiver` processes the hit, and if the target dies, Combat raises an event or the dialogue system observes health state through Combat's contract.
+
+The physics query does not directly invoke another module's code. It invokes the querying module's own component, and that component may then communicate through proper contract channels.
 
 ### MonoBehaviours as spatial markup
 
-Even if you move most logic out of MonoBehaviours and into hosts, MonoBehaviours remain essential for spatial games. They are Unity's way of attaching data and behavior to GameObjects in the scene. For physics-based communication, you need:
+Even if you move most logic out of MonoBehaviours and into hosts, MonoBehaviours remain essential for spatial games. They are Unity's way of attaching data to positions in the scene. For physics-based discovery, you need:
 
 - **Trigger volumes** with MonoBehaviours that respond to `OnTriggerEnter/Exit`.
 - **Collider components** that can be queried via raycast or overlap.
-- **Interface implementations** (`IDamageable`, `IInteractor`, `IPickupable`) that physics queries can discover.
+- **Marker components** that identify what a GameObject means to a particular module.
 
-These MonoBehaviours are often thin, they hold a reference to their owning entity or host, implement a discovery interface, and delegate actual work elsewhere. But they must exist because Unity's physics system operates on GameObjects and components.
+These MonoBehaviours are thin: they hold data, implement callbacks, and delegate to their module's host or systems. They are "spatial markup"—the module's way of saying "this point in space participates in my domain."
 
-Think of these as "spatial contracts": lightweight components that let the physics world discover and communicate with your architecture. The component says "I am damageable"; the host decides what damage means.
+The physical world is not a back door around the architecture. It is a *discovery mechanism* that each module uses independently, with coordination happening through contracts when needed.
 
 ## Data ownership
 
@@ -502,260 +608,30 @@ For readers who have been here before:
 
 ---
 
-## Getting started: what to build first
+## Implementation: the starter kit
 
-To bootstrap this architecture, you need a small amount of infrastructure. None of it is complex; most of it fits in a few files. Here is a minimal starter kit (treat this as pseudo-code, even a minimal set will need to be more complex):
+> **📋 DRAFT NOTICE:** This section will be expanded into a separate companion article: *"Unity Architecture Starter Kit: From Principles to Code."* That article will provide production-ready implementations of host-scenes, bootstrappers, the play-mode state machine, service locators, and the full host/component registration pattern described above.
 
-### 1. A service locator
+To bootstrap this architecture, you need a small amount of infrastructure: a service locator, host base classes, a bootstrapper pattern, contract interfaces, and a folder structure that maps to eventual assembly separation.
 
-A simple static class that holds references to hosts during a scope's lifetime (typically a scene or game session). This is the lightest possible "container."
+The companion article will cover:
 
-```csharp
-public static class Services
-{
-    private static readonly Dictionary<Type, object> _services = new();
+1. **Service locator** — a scoped container that holds host references for a scene's lifetime.
+2. **Host base classes** — optional infrastructure for consistent initialization, registration, and shutdown.
+3. **Bootstrapper pattern** — how the entry point of a host-scene initializes hosts, populates the locator, and triggers the play-mode FSM.
+4. **Play-mode state machine** — the authoritative orchestrator for input routing, time scale, UI layers, and mode-wide concerns.
+5. **Contract interfaces** — the narrow public surface that modules expose.
+6. **Symbol pattern** — ScriptableObjects as designer-friendly identity tokens.
+7. **Folder and assembly structure** — organizing code for eventual compiler-enforced boundaries.
 
-    public static void Register<T>(T service) where T : class
-    {
-        _services[typeof(T)] = service;
-    }
+For now, the principles in this article give you the mental model. The implementation details will follow, with working code you can adapt to your project.
 
-    public static T Get<T>() where T : class
-    {
-        return _services.TryGetValue(typeof(T), out var service)
-            ? (T)service
-            : throw new InvalidOperationException($"Service {typeof(T).Name} not registered.");
-    }
+**What you can do today:**
 
-    public static bool TryGet<T>(out T service) where T : class
-    {
-        if (_services.TryGetValue(typeof(T), out var obj))
-        {
-            service = (T)obj;
-            return true;
-        }
-        service = null;
-        return false;
-    }
+- Organize your project into module folders, even without assembly definitions.
+- Create a single bootstrapper MonoBehaviour that initializes your hosts in order.
+- Store dependencies during `Awake`/`Start` and never resolve them again at runtime.
+- Define contracts as interfaces in a shared folder; have hosts implement them.
+- Use ScriptableObjects as identity tokens instead of strings or enums.
 
-    public static void Clear()
-    {
-        _services.Clear();
-    }
-}
-```
-
-Call `Services.Clear()` when unloading a scene or ending a session. Register by contract type, not concrete type: `Services.Register<IInventory>(inventoryHost)`.
-
-### 2. A host base class (optional)
-
-If you want hosts to follow a consistent pattern, define a base class or interface. This is optional; some teams prefer explicit conventions over inheritance.
-
-```csharp
-public interface IHost<THost, TComponent> : IHost
-{
-    void Register(TComponent component);
-    void UnRegister(TComponent component);
-}
-
-public interface IHost {
-  void Initialize();
-  void Shutdown();
-}
-
-public abstract class HostBase : MonoBehaviour {
-  public abstract void Initialize();
-  public abstract void Shutdown();
-}
-
-public abstract class ComponentHostBase<THost, TComponent> : HostBase, IHost<THost, TComponent>
-{
-    private HashSet<TComponent> _components = new();
-
-    public IReadOnlySet<TComponent> Components => _components;
-
-    public void Register(TComponent component) {
-      _components.Add(component);
-      OnRegistered();
-    }
-    public void UnRegister(TComponent component) {
-      _components.Remove(component);
-      OnUnRegistered();
-    }
-
-    protected virtual void Update() {
-      foreach(var component in _components) {
-        component.Tick(deltaTime);
-      }
-    }
-
-    protected abstract void OnRegistered(TComponent component);
-    protected abstract void OnUnregistered(TComponent component);
-}
-
-public abstract class ComponentBase<THost, TComponent> : MonoBehaviour {
-    IHost<THost, TComponent> _system;
-
-    protected void Start() {
-      _system = Services.Get<IHost<THost, TComponent>>();
-      _system.Register(this);
-    }
-    protected void Destroy() {
-      if (_system) {
-        _system.UNRegister(this);
-      }
-   }
-
-   public abstract void Tick(float deltaTime);
-}
-```
-
-Hosts that need MonoBehaviour (for coroutines, scene presence, inspector configuration) inherit from `HostBehaviour`. Hosts that are pure C# implement `IHost` directly or skip the interface entirely.
-
-### 3. A bootstrapper
-
-A single MonoBehaviour that runs at scene start, creates or finds hosts, initializes them in order, and registers their contracts with the service locator.
-
-```csharp
-public class SceneBootstrapper : MonoBehaviour
-{
-    [SerializeField] private HostBase[] _hosts;
-
-    private void Awake()
-    {
-        // Clear previous scope
-        Services.Clear();
-
-        // Initialize hosts in order
-        foreach (var host in _hosts)
-        {
-            host.Initialize();
-        }
-
-        // Register contracts (example)
-        //
-        // Services.Register<IInventory>(FindHost<InventoryHost>());
-        // Services.Register<ICombat>(FindHost<CombatHost>());
-        //
-        // [SerializeField] InventoryHost inventory;
-        // [SerializeField] CombatHost combat;
-        // Services.Register<IInventory>(inventory);
-        // Services.Register<ICombat>(combat);
-
-    }
-
-    private void OnDestroy()
-    {
-        // Shutdown in reverse order
-        for (int i = _hosts.Length - 1; i >= 0; i--)
-        {
-            _hosts[i].Shutdown();
-        }
-        Services.Clear();
-    }
-
-    private T FindHost<T>() where T : HostBehaviour
-    {
-        foreach (var host in _hosts)
-        {
-            if (host is T typed) return typed;
-        }
-        return null;
-    }
-}
-```
-
-Drag hosts into the array in the inspector, ordered by initialization dependency. The bootstrapper becomes your composition root.
-
-### 4. Contract interfaces
-
-Define contracts for each module. Start minimal; expand as needed.
-
-```csharp
-// In Contracts assembly or folder
-public interface IInventory
-{
-    bool HasItem(ItemSymbol item);
-    int GetCount(ItemSymbol item);
-    bool TryAdd(ItemSymbol item, int count);
-    bool TryRemove(ItemSymbol item, int count);
-    event Action<ItemSymbol, int> OnItemChanged;
-}
-
-public interface ICombat
-{
-    void ApplyDamage(IDamageable target, DamageInfo damage);
-}
-
-public interface IDamageable
-{
-    void TakeDamage(DamageInfo damage);
-}
-```
-
-Contracts are the public surface. Hosts implement them; consumers depend on them.
-
-### 5. A symbol base class
-
-For ScriptableObject-based identity tokens:
-
-```csharp
-public abstract class Symbol : ScriptableObject
-{
-    // Symbols are compared by reference, not value.
-    // Add display name, icon, or metadata as needed.
-}
-
-// Concrete symbol types
-[CreateAssetMenu(menuName = "Symbols/Item")]
-public class ItemSymbol : Symbol { }
-
-[CreateAssetMenu(menuName = "Symbols/DamageType")]
-public class DamageTypeSymbol : Symbol { }
-```
-
-Create assets in the project. Reference them in hosts and data. Compare with `==`.
-
-### 6. Folder structure
-
-A starting point:
-
-```text
-Assets/
-  _Bootstrap/
-    SceneBootstrapper.cs
-    Services.cs
-  Contracts/
-    IInventory.cs
-    ICombat.cs
-    IDamageable.cs
-  Modules/
-    Inventory/
-      InventoryHost.cs
-      InventoryData.cs
-    Combat/
-      CombatHost.cs
-      DamageInfo.cs
-  Symbols/
-    Symbol.cs
-    ItemSymbol.cs
-    DamageTypeSymbol.cs
-  Content/
-    Symbols/
-      Items/
-      DamageTypes/
-```
-
-When you are ready for compiler enforcement, convert `Contracts/` and each module folder into assembly definitions.
-
-### What this gives you
-
-With these pieces in place:
-
-- Hosts initialize in a controlled order.
-- Contracts are resolved once during initialization and stored.
-- The service locator is scoped to the scene and cleared on unload.
-- Symbols provide shared vocabulary without coupling modules.
-- The folder structure maps to eventual assembly separation.
-
-This is enough to start. Add rigor (assembly definitions, formal lifecycle phases, DI container) when the project demands it.
+These steps cost almost nothing and position you to adopt the full pattern when the companion article ships.

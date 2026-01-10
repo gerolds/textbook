@@ -35,6 +35,12 @@ jobs:
           hugo-version: latest
           extended: true
 
+      - name: Install Asciidoctor
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ruby-full
+          sudo gem install asciidoctor
+
       - name: Build
         env:
           HUGO_ENVIRONMENT: production

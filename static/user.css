@@ -6,78 +6,121 @@
 
 /* Asciidoctor tables: Hugo/Asciidoctor emits `.tableblock` (and sometimes `mc-table`). */
 
+/*
+  Key gotcha:
+  Asciidoctor output currently contains duplicate `class` attributes on <table>.
+  HTML parsers keep the *first* `class`, so `mc-table` gets dropped.
+  That means we must style Asciidoctor's native `.tableblock` reliably.
+*/
+
 /* Improve table container behavior and overall rhythm */
-table.tableblock,
-table.mc-table {
+article table.tableblock {
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
-  /* The theme sets display:block + overflow-x:auto on table.mc-table.
-     Some browsers shrink the header/cols oddly when the table is block.
-     Keep the theme behavior but make it feel less "random". */
+  margin: 1rem 0;
+  background: var(--color-background);
+}
+
+/* Match Monochrome's scroll behavior, but for AsciiDoc tables */
+article table.tableblock {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure the internal table layout is preserved when the table is `display:block` */
+article table.tableblock > thead,
+article table.tableblock > tbody,
+article table.tableblock > tfoot {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 }
 
 /* Make header rows visually distinct without heavy styling */
-table.tableblock thead th,
-table.mc-table thead th {
+article table.tableblock thead th,
+article table.mc-table thead th {
   font-weight: 600;
   background: var(--color-background-hover);
   /* Avoid the "boxed text all over" look */
 }
 
 /* Cell typography and spacing */
-table.tableblock td,
-table.tableblock th,
-table.mc-table td,
-table.mc-table th {
+article table.tableblock td,
+article table.tableblock th,
+article table.mc-table td,
+article table.mc-table th {
   vertical-align: top;
   line-height: 1.35;
 }
 
+/* Borders + padding (Monochrome-like) */
+article table.tableblock td,
+article table.tableblock th {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+}
+
+/* Thead bottom edge reads as a "header bar" */
+article table.tableblock thead th {
+  border-bottom-width: 2px;
+}
+
 /* Reduce paragraph spacing inside cells (AsciiDoc wraps in <p class="tableblock">) */
-table.tableblock p.tableblock {
+article table.tableblock p.tableblock {
   margin: 0;
 }
 
-table.tableblock p.tableblock + p.tableblock {
+article table.tableblock p.tableblock + p.tableblock {
   margin-top: 0.5rem;
 }
 
 /* Lists inside table cells should align and not explode spacing */
-table.tableblock td ul,
-table.tableblock td ol {
+article table.tableblock td ul,
+article table.tableblock td ol {
   margin: 0.25rem 0 0.25rem 1.1rem;
 }
 
-table.tableblock td li {
+article table.tableblock td li {
   margin: 0.15rem 0;
 }
 
 /* Zebra striping for scan-ability (subtle, theme-consistent) */
-table.tableblock tbody tr:nth-child(even),
-table.mc-table tbody tr:nth-child(even) {
+article table.tableblock tbody tr:nth-child(even),
+article table.mc-table tbody tr:nth-child(even) {
   background: color-mix(in srgb, var(--color-background) 92%, var(--color-background-hover));
 }
 
-/* Prevent ultra-wide columns from feeling chaotic on desktop */
-table.tableblock {
-  table-layout: fixed;
-}
-
 /* Allow long phrases to wrap instead of forcing overflow */
-table.tableblock td,
-table.tableblock th {
+article table.tableblock td,
+article table.tableblock th {
   overflow-wrap: anywhere;
   word-break: normal;
 }
 
 /* Optional: slightly rounded corners for the table as a single object */
-table.tableblock {
+article table.tableblock {
   border-radius: 0.375rem;
   overflow: hidden;
 }
 
 /* If the theme keeps display:block on mc-table, make sure border radius still works */
-table.mc-table {
+article table.mc-table {
   border-radius: 0.375rem;
+}
+
+/* Table captions (AsciiDoc emits <caption class="title">) */
+article table.tableblock > caption.title {
+  caption-side: top;
+  text-align: left;
+  padding: 0.25rem 0.1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Make code and inline code inside cells less shouty */
+article table.tableblock code {
+  font-size: 0.95em;
 }

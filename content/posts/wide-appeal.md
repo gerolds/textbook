@@ -10,49 +10,71 @@ draft = false
 cover = { image = '', alt = '', caption = '' }
 +++
 
-A strange thing happens when we ask someone for their “favorite game of all time.” The answer is rarely the game they played the most, or even the game from their favorite genre. It is usually the game that reorganized them: a first encounter with competence they did not know they could earn, with grief they did not expect to feel, with wonder that refused to fade, with a world that became a place to live rather than a product to finish.
+# The Elements of a Good and Widely Appealing Game
 
-That pattern is not mystical. It is structural. The games that become widely loved—and then repeatedly nominated, remade, cited, and inherited—tend to score well on a small set of orthogonal axes. These axes are not “genres,” not “themes,” and not “polish.” They are the underlying properties that make games legible to players, stable in memory, and transmissible through culture.
+**TL;DR**
+- Wide appeal isn’t “sales” or “scores”—it’s cultural transmissibility: a game that can recruit love across different player types and survive retelling across cohorts.
+- You can diagnose that transmissibility with ten mostly-orthogonal design axes (not a scorecard): **coherence**, **legible promise**, **signature primitive**, **mood**, **conversion mechanism**, **low unintended friction**, **sustained cadence**, **stakes clarity**, **recontextualization moments**, and **handles/symbols**.
+- The key split is “people played it a lot” vs “it reorganized them”—enduring favorites tend to produce conversion (skills, feelings, meanings that stick) *and* easy recommendation.
+- Divisive giants (e.g., technically messy but beloved games) aren’t exceptions—they’re stress tests that reveal which axes matter more than polish.
 
-Many readers, including experienced designers and critics, are partially blind to some of these dimensions. We tend to overindex the axis we personally value: story people see narrative everywhere; systems people see mechanics; artists see mood; competitive players see mastery. The goal here is to rebuild a shared baseline. We will name each axis, show it concretely (with wide-ranging examples), explain how it is created, and—importantly—map its negative space: what it looks like when it is missing, and what we do (often accidentally) to weaken it.
+## Premise
 
-By the end, a quiet conclusion should feel almost inevitable: the “canonical greats” are not arbitrary. They are selected by these axes, again and again, because these axes are how games become life objects rather than mere entertainment.
+A strange thing happens when we ask someone for their favorite game of all time. The answer is rarely the game they played the most, or the one from their favorite genre. It is usually the game that reorganized them: a first encounter with competence they did not know they could earn, with grief they did not expect to feel, with wonder that refused to fade, with a world that became a place to live rather than a product to finish.
 
-## 0. Why “polish” is not an axis, and why “good” is not a number
+That pattern is not mystical. It is structural.
 
-Before we define anything, we have to remove a trap word: polish. People reach for it because it is socially safe. “Polished” can mean bug-free, responsive, consistent, cleanly presented, professional. Those things matter. But “polish” is not an axis of greatness; it is table stakes plus taste, and it is often a proxy for production conditions rather than design insight.
+Some games become widely loved and then repeatedly nominated, remade, cited, and inherited. Others are respected but rarely finished. Others are intensely played but seldom called “favorite.” Others are privately adored yet never become shared reference points. Those outcomes are not random. They are shaped by a small set of design-facing properties that make games legible to players, stable in memory, and transmissible through culture.
 
-A highly polished game can be empty of meaning, indistinct in play, and culturally disposable. A rough game can become permanent if it nails the deeper structures and the roughness does not sabotage them. “Polish” is therefore not a category alongside the others; it is distributed across them as execution quality—especially in friction, legibility, cadence, and feedback.
+This essay names ten such properties. Call them axes: not genres, not themes, not “polish,” but dimensions of fit. They are not a scorecard, and they do not fully explain canon by themselves. Distribution, cohort timing, platform defaultness, streaming, and network effects matter. But once a game is seen, these axes explain why it travels, why it converts, and why it stays.
 
-The second trap is treating “good” as a scalar. Games are multi-object systems. Players are multi-object evaluators. Culture is a selection engine with biases. If we collapse all that into a single adjective, we lose the ability to diagnose why a game is widely appealing, narrowly beloved, respected but rarely finished, or intensely played but rarely nominated.
+A second purpose runs underneath the first. Some of the most culturally dominant games are divisive and hard to explain. People argue about them because the felt object is larger than what a neat framework can capture. Skyrim and Fallout are the obvious cases: technically messy, mechanically uneven, yet beloved with a gravity that can outlast “better-designed” peers. These are not embarrassments for a model. They are the boundary tests that make a model honest. We will use them that way.
+
+## 0. Definitions, and why “polish” is not an axis
+
+Before we define the axes, we need a few terms to stop sliding around.
+
+Widely appealing does not mean “highest sales” or “highest review score.” It means a game that can recruit love across multiple kinds of players—different skill levels, tolerances, and life circumstances—without requiring unusually niche literacy.
+
+Canonical does not mean “morally best” or “committee-approved.” It means a game that survives retelling across time and cohorts: the shortlist people reach for when they explain games to non-players, teach design, justify budgets, or argue about what the medium can do.
+
+Axis in this essay means a property of the shipped experience that a designer can reasonably influence. Culture changes how many people reach the experience and what story gets attached to it, but the axes describe what the experience offers once encountered.
+
+Now the trap word: polish.
+
+People reach for “polish” because it is socially safe. It can mean bug-free, responsive, consistent, professional. Those things matter. But they are not an axis of greatness. They are table stakes plus taste, and they often reflect production conditions as much as design insight.
+
+A highly polished game can be empty of meaning, indistinct in play, and culturally disposable. A rough game can become permanent if it nails deeper structures and the roughness does not sabotage them. “Polish” is better treated as execution quality distributed across the axes: friction, legibility, feedback, cadence, and so on.
+
+The second trap is treating “good” as a single number. Games are multi-object systems. Players are multi-object evaluators. Culture is a selection engine with biases. When we collapse all of that into a single adjective, we lose the ability to diagnose why something is widely loved, narrowly beloved, respected but rarely finished, or intensely played but rarely nominated.
 
 We will use ten axes:
+1.	Coherence
+2.	Legible promise
+3.	Signature primitive
+4.	Mood that invites lingering
+5.	Conversion mechanism
+6.	Low unintended friction
+7.	Sustained cadence
+8.	Stakes clarity
+9.	Recontextualization moments
+10.	Handles: named entities and symbols
 
-1. Coherence  
-2. Legible promise  
-3. Signature primitive  
-4. Mood that invites lingering  
-5. Conversion mechanism  
-6. Low unintended friction  
-7. Sustained cadence  
-8. Stakes clarity  
-9. Recontextualization moments  
-10. Named entities and symbols (the handles for attribution)
+These dimensions are partly independent in practice. A game can excel on one while failing another, and the failure often caps its reach. The point is diagnosis: what makes a game legible, lovable, and retellable, and what breaks those pathways.
 
-Each axis is necessary in the weak sense: if it fails hard enough, the game’s appeal becomes fragile. Each is orthogonal in the strong sense: excellence on one cannot reliably compensate for collapse on another.
+## 1. Coherence: the governing intent that makes choices feel forced
 
-## 1. Coherence: the single governing intent that makes the game feel inevitable
+Coherence is the sense that someone is steering. Not steering toward “more content,” but toward a central intent. In a coherent game, mechanics, rewards, aesthetics, and pacing all seem to point the same way, like tools laid out for a specific job. The player may not be able to name the intent, but they feel it. The game feels inevitable.
 
-Coherence is easiest to recognize by smell. When we enter a coherent game, we feel that someone is steering. Every mechanic, reward, aesthetic choice, and pacing decision seems to serve a central intent. Coherence is what makes the player think, often unconsciously: this is what this game is.
+Papers, Please is coherent because every surface is in service of bureaucratic moral compromise. The UI is oppressive, repetition wears down the conscience, and the “fun” is inseparable from the ethical deformation the player participates in.
 
-Consider three very different coherent experiences:
+Into the Breach is coherent because it is a readable tactical puzzle about perfect information and consequence management. There is almost no fluff. Everything is built to make the next choice clearer and more consequential.
 
-- Papers, Please: everything serves the feeling of bureaucratic moral compromise—UI as oppression, repetition as ethical erosion, the “game” as the gradual deformation of a conscience.  
-- Into the Breach: the entire design is a readable tactical puzzle about perfect information, consequence management, and small optimizations under pressure—no fluff, no detours.  
-- Shadow of the Colossus: enormous negative space, minimal dialogue, slow traversal, and singular fights—everything insists on the theme of grandeur, loneliness, and ambiguous purpose.
+Shadow of the Colossus is coherent because it commits to negative space. Long traversal, sparse dialogue, singular fights: the design insists on grandeur, loneliness, and ambiguity. It refuses the comfort of chatter and side systems that would dissolve that mood.
 
-What coherence is not: “consistency” in the trivial sense. A game can be consistent in art style and still incoherent in incentives. Coherence is alignment of meaning-making machinery.
+Coherence is not mere consistency of art style. A game can have a unified aesthetic and still be incoherent in incentives. Coherence is alignment of meaning-making machinery: what you do, why you do it, what the game praises, and what it makes you feel doing it.
 
+<<<<<<< HEAD
 How coherence is created
 
 - Start with a governing sentence that survives hostile paraphrase: “This is a game about ____.” Not marketing—an intent that can be tested against every system.  
@@ -71,19 +93,25 @@ How we weaken coherence (counterfactual)
 - Ship multiple onboarding paths that teach different contracts.
 
 A useful test: remove a system—if nothing meaningful changes in how the game feels, that system was likely incoherent ornament.
+=======
+Coherence is created by constraint. A useful method is to write a governing sentence that survives hostile paraphrase: “This is a game about ____.” Not a marketing pitch—an intent you can test against every system. When you add or change something, you ask whether it strengthens that sentence or dilutes it. Then you practice subtraction, because coherence is usually lost through accumulation.
+
+When coherence is weak, players remember “cool parts” rather than a whole. They describe the game as a pile of modules: “It has crafting, and a skill tree, and a base, and some story.” That description is not neutral. It predicts fragility. It predicts that love will be narrower and transmission harder, because the game has no single shape to carry.
+
+A blunt test is removal. Imagine deleting a system. If nothing meaningful changes in how the game feels, that system was likely ornament. Ornament can be fine, but ornament is also how contradictions breed.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
 
 ## 2. Legible promise: making the contract visible early and keeping it
 
-Players do not approach games like museum patrons. They approach games like people with jobs, friends, backlogs, and a phone in reach. They sample. They decide quickly whether the experience is for them, whether it respects their time, and whether the path to competence is visible.
+Players do not approach games like museum patrons. They approach them like people with limited time and many alternatives. They sample. They decide quickly whether the path to competence is visible, whether the experience respects their time, and whether the game knows what it is asking of them.
 
-Legible promise is the game’s ability to teach its contract early and honestly: what it will demand, what it will reward, and what kind of satisfaction it offers.
+Legible promise is the ability to teach the contract early and honestly: what the game will demand, what it will reward, and what kind of satisfaction it offers.
 
-Think of:
+Portal is legible because within minutes you understand the verb, the humor, and the escalation pattern. You can see the ladder. You feel the game inviting you to become clever.
 
-- Portal: within minutes, we understand the verb, the humor, the escalation pattern, and the nature of progress.  
-- Hades: we learn quickly that repetition is not failure but structure, that story and growth are woven into runs, and that death is a pacing mechanism rather than a punishment.  
-- Animal Crossing: we understand the game is not a “beat it” object but a daily-life habitat; the interface and cadence reinforce that without apology.
+Hades is legible because it quickly reframes repetition. Dying is not failure; it is structure. Progress is woven into the loop, and the game signals that the run is not a wasted attempt but a unit of narrative and growth.
 
+<<<<<<< HEAD
 How legible promise is created
 
 - Design the first hours to demonstrate the mature loop, not a tutorial parody.  
@@ -100,23 +128,29 @@ How we weaken legible promise (counterfactual)
 - Frontload chores, exposition, or menu work before the core loop appears.  
 - Make failure expensive in time.  
 - Hide the real genre for too long.
+=======
+Animal Crossing is legible because it refuses the “beat it” contract. The cadence, interface, and daily rituals tell you what it is: a habitat and a routine. It does not pretend to be something else and then reveal the truth later.
 
-Legible promise is cultural leverage: games that are easy to explain and honest early are easy to recommend.
+Legible promise is built by designing the first hour to demonstrate the mature loop, not a tutorial parody. The early game should show what “good play” looks like and what improvement buys. Difficulty should be framed through clear feedback. Above all, the game should not hide its real genre contract behind chores, menus, or delayed permission.
+
+When legible promise is weak, you get the “masterpiece behind a door.” Communities develop initiation rituals: “Push past the first ten hours.” That can create mystique, but it narrows appeal. It also changes who the game is for, because the door selects for stubbornness, spare time, or prior literacy.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
+
+Promise violations are even worse. If the early contract implies one kind of satisfaction and the midgame delivers another, players don’t merely bounce; they leave with mistrust. In a medium already haunted by backlogs and free-to-play suspicion, trust is a scarce resource.
+
+Legible promise is also recommendation leverage. Games that are honest early are easy to recommend because you can tell a friend what it is without apologizing.
 
 ## 3. Signature primitive: the identity molecule of play
 
-If players can only answer with plot beats or vibes, the game may still be good—but less likely to become canonical. Canonical games tend to have a signature primitive: an irreducible loop or verb that is unmistakably itself and deep under repetition.
+Some games are easy to remember, but hard to describe. Others are easy to describe because they have a single interaction that anchors everything else. Canonical games tend to have a signature primitive: an irreducible loop or verb that is unmistakably itself and deep under repetition.
 
-Examples:
+Tetris has rotate, place, clear: pure spatial optimization with endless depth.
 
-- Tetris: rotate, place, clear—pure spatial optimization with endless depth.  
-- Street Fighter: spacing, reads, execution, mind games.  
-- Rocket League: physics-based car control to strike a ball.  
-- Dark Souls / Bloodborne / Sekiro: timing, commitment, and risk management.  
-- Slay the Spire: draft, evaluate, and exploit synergies under uncertainty.
+Rocket League has physics-based car control to strike a ball: a single primitive with a high ceiling that is readable in a second and difficult for years.
 
-A signature primitive is what people mime when describing the game. It’s the handle for skill, memory, and discourse.
+Dark Souls, Bloodborne, and Sekiro have commitment-based timing and risk management: you choose moments, you commit, you pay. The primitive is not “difficulty.” It is consequence.
 
+<<<<<<< HEAD
 How signature primitives are created
 
 - Find the smallest unit of meaningful choice and ensure it has layers: execution, tactical adaptation, strategic expression.  
@@ -133,22 +167,29 @@ How we weaken the primitive (counterfactual)
 - Make the core loop too safe or low-information.  
 - Replace depth with numeric progression.  
 - Allow dominant strategies that collapse expression.
+=======
+Slay the Spire has draft, evaluate, and exploit synergies under uncertainty: a primitive that turns every small choice into a strategic statement.
 
-If players can play on autopilot for long stretches, the primitive is not doing enough work.
+A signature primitive is the thing people mime when describing the game. It is the handle for skill discourse: what you practice, what you compare, what you get better at.
+
+Primitives are created by finding the smallest unit of meaningful choice and ensuring it has layers: execution, tactical adaptation, strategic expression. Then you provide fast, truthful feedback so players learn by doing. Finally, you protect the primitive from competition. If the game spreads identity across too many micro-loops, nothing becomes a handle.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
+
+When the primitive is weak, a game can be competent yet indistinct. Everything works, nothing anchors. Players struggle to describe why it is special. Discourse slides toward generalities—“solid,” “pretty good”—which is a polite way of predicting cultural decay.
+
+A warning sign is autopilot. If players can play for long stretches without making meaningful decisions, the primitive is not doing enough work. Numeric progression may keep the skin of progress moving, but it cannot replace the feeling of choice.
 
 ## 4. Mood that invites lingering: when presence is itself a reward
 
-Mood is not “pretty graphics.” It is the aesthetic-cognitive climate that makes the game a place in memory. Mood invites lingering when being in the world is valuable even without progress.
+Mood is not “pretty graphics.” Mood is the aesthetic-cognitive climate that makes a game a place in memory. Mood invites lingering when being in the world is valuable even without progress.
 
-Consider:
+Journey is mostly mood: movement, music, and encounter design create reverence and companionship. You remember how it felt to move through it.
 
-- Journey: minimal mechanics, maximal affect; movement, music, and encounter design create reverence and companionship.  
-- Disco Elysium: language, portraiture, and sound design make thinking feel like weather.  
-- Breath of the Wild: a world built to be wandered; quiet, soundscape, and physics support curiosity.  
-- Silent Hill 2: oppressive mood as a narrative engine.
+Disco Elysium turns thinking into weather. Language, portraiture, and sound design produce a mental climate where even reading feels embodied.
 
-Mood is a transmission medium. Screenshots, music, short clips, and “vibes” spread easily, helping mood-heavy games achieve cultural presence even when mechanics are niche.
+Breath of the Wild builds a world meant to be wandered. Quiet, soundscape, and physics support curiosity. The game makes loitering feel like play.
 
+<<<<<<< HEAD
 How mood is created
 
 - Consistency of sensory grammar: sound motifs, animation cadence, UI tone, color logic, environmental semantics.  
@@ -164,29 +205,47 @@ How we weaken mood (counterfactual)
 - Interrupt emotional states with UI noise and constant reward popups.  
 - Use generic audio and lighting.  
 - Force pacing that contradicts tone.
+=======
+Silent Hill 2 uses oppressive mood as a narrative engine. The atmosphere is not decoration; it is the vehicle for meaning.
 
-When mood holds, it becomes a strong engine of long-term memory.
+Mood matters for transmission because it compresses well. Screenshots, music, and short clips carry mood across platforms. Even when mechanics are niche, mood can recruit attention and set expectations.
+
+Mood is created through consistency of sensory grammar: recurring sound motifs, animation cadence, UI tone, color logic, environmental semantics. It also requires negative space: permission for silence, slowness, and unoptimized moments. A world becomes a place when the game allows you to be there.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
+
+When mood is weak, the world becomes a menu. Players sprint, fast travel, skip dialogue, mute audio, and reduce the game to tasks. That behavior is not just impatience; it is the game teaching them that presence is not rewarded.
+
+Checklist design, constant reward popups, and UI noise are mood killers. So is pacing that contradicts tone. If a game wants melancholy but showers the player with fireworks every ten seconds, it is asking the player to feel something it refuses to support.
 
 ## 5. Conversion mechanisms: how a game becomes “favorite,” not just “good”
 
-Many games are enjoyable. Fewer convert the player—produce a durable change in how they see themselves, how they see games, or what they believe play can do.
+Many games are enjoyable. Fewer convert the player—produce a durable change in how they see themselves, how they see games, or what they believe play can do. Conversion is the residue that turns a good experience into a “life object.”
 
-Five common conversions (each with examples):
+Conversion comes in recognizable forms.
 
+<<<<<<< HEAD
 ### 5.1 Mastery conversion: “I became capable”
 
 - Examples: Dark Souls, Sekiro, Celeste, Monster Hunter, Doom (2016/Eternal), Spelunky.  
 - Requires fairness, feedback, and a teaching ladder. Failure must feel like information.
+=======
+One is mastery conversion: “I became capable.” Celeste and Sekiro are clean examples. They demand precision, but they also teach. Failure feels like information, not humiliation. The player changes, and that change is the point.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
 
-Weakness mode: difficulty without learning. Counterfactual: add checkpoints that erase stakes, hide feedback, allow grinding to replace skill, or make difficulty spikes arbitrary.
+Another is rupture conversion: “I didn’t know a game could do that.” Outer Wilds turns knowledge into progression so completely that the player’s mind becomes the save file. BioShock’s famous reframe lands because it forces reconsideration of agency in a medium built on doing what you’re told.
 
+<<<<<<< HEAD
 ### 5.2 Rupture conversion: “I didn’t know a game could do that”
 
 - Examples: Final Fantasy VII, The Last of Us, BioShock, Nier: Automata, Spec Ops: The Line, Outer Wilds, Undertale.  
 - Rupture is a reclassification: grief, moral shock, revelation that lands because the player’s actions mattered.
+=======
+A third is mythic conversion: “I lived an archetype.” Ocarina of Time and Shadow of the Colossus operate here. They rely on restraint and symbolic weight. They are remembered as myths more than plots.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
 
-Weakness mode: twist as trivia. Counterfactual: overexplain, make consequences reversible, or treat revelation as optional lore.
+A fourth is identity conversion: “This named my taste.” World of Warcraft, Counter-Strike, League of Legends, Final Fantasy XIV—these become social languages. Fans use them to signal belonging, competence, and values. The game becomes part of the self-description.
 
+<<<<<<< HEAD
 ### 5.3 Mythic conversion: “I lived an archetype”
 
 - Examples: A Link to the Past, Ocarina of Time, Shadow of the Colossus, Elden Ring, God of War (2018), Hollow Knight.  
@@ -209,13 +268,19 @@ Weakness mode: identity without agency—progression purely numerical, discourag
 Weakness mode: home becomes a job—maintenance replaces meaning.
 
 Conversion mechanisms explain why favorites cluster around certain titles; they produce the residue that makes a game “favorite.”
+=======
+A fifth is habitat conversion: “This became home.” Minecraft, Stardew Valley, Terraria, RimWorld—these are not finished so much as lived in. The conversion is not a climax; it is a settling-in.
+
+Conversion mechanisms explain why favorites cluster around certain titles. They also explain divisiveness. A game that converts through mastery may repel players who interpret its demands as disrespect. A game that converts through habitat may look mechanically thin to players who want a tight loop. Divisiveness is often a sign that the game is delivering one kind of conversion strongly while failing others.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
 
 ## 6. Low unintended friction: pain must purchase meaning
 
 Players will endure brutal difficulty, long runs, and complex systems if the pain purchases meaning. They will not endure waste.
 
-Unintended friction includes: UI clutter, inconsistent inputs, camera fights, tedious traversal, inventory micromanagement that adds no strategic depth, and progression gates that exist only to pad.
+Unintended friction is any repeated pain that does not pay into the promised experience: UI clutter that slows decisions without adding depth, inconsistent inputs, camera fights, inventory micromanagement that adds no strategic texture, traversal that pads time without mood, gates that exist only to delay.
 
+<<<<<<< HEAD
 How low friction is created
 
 - Audit repeated interactions: does each teach, test, or express? If not, cut, automate, or compress it.  
@@ -231,13 +296,21 @@ How we weaken low-friction design (counterfactual)
 - Conflate time spent with value delivered.  
 - Force repetition of low-information actions.  
 - Use randomness without interpretability.
+=======
+The key distinction is not “easy vs hard.” It is “meaningful vs wasteful.” A survival game can demand labor if the labor is the point. A tactical game can demand careful planning if the planning is the point. But when friction teaches nothing, expresses nothing, and tests nothing, it becomes pure tax.
 
-Low unintended friction is a strong predictor of broad appeal because it determines how many players can reach deeper layers.
+Low unintended friction is built by auditing repeated interactions. Each repeated action should either teach, test, or express. If it does none of those, cut it, automate it, or compress it. Failure should be instructive. Controls and feedback should align with expectation. Randomness should be interpretable, not merely surprising.
 
-## 7. Sustained cadence: the pulse that prevents the midgame from dying
+When friction is high and unintended, players develop avoidance behaviors: they alt-tab to guides, exploit systems, skip content, or listen to podcasts to survive downtime. Discourse shifts toward “quality of life” instead of play. That shift is diagnostic. It means the game is spending player attention on chores.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
 
-Cadence is temporal architecture. It is not “constant dopamine.” It’s the alternation of novelty, mastery consolidation, payoff, rest, and escalation.
+This axis is a strong predictor of broad appeal because it determines how many players can reach the deeper layers. Many games are loved by the people who tolerate their friction. Fewer are loved widely.
 
+## 7. Sustained cadence: the pulse that keeps the middle alive
+
+Cadence is temporal architecture. It is not constant stimulation. It is the alternation of novelty, mastery consolidation, payoff, rest, and escalation.
+
+<<<<<<< HEAD
 Good cadence examples:
 
 - Super Mario World: steady drip of new ideas, quick iteration, minimal downtime.  
@@ -259,13 +332,25 @@ How we weaken cadence (counterfactual)
 - Pad traversal or side tasks without deepening the loop.  
 - Let progression be purely numerical.  
 - Mismanage intensity, creating fatigue.
+=======
+Super Mario World is an obvious cadence master. New ideas arrive steadily, iterate quickly, and exit before they overstay. The game respects fatigue.
 
-Cadence greatly affects completion rates and recommendation likelihood.
+Resident Evil 4 controls intensity with pressure and release. It recombines threats and tools so you feel both learning and surprise.
+
+Hades uses a reliable run rhythm while the meta-layer ensures that most runs produce some forward motion. Even when you fail, the session has shape.
+
+Cadence is created by measuring plateau length. You introduce a wrinkle, let the player stabilize, then introduce the next. You manage recovery time so peaks can feel like peaks. You avoid padding that looks like content but feels like delay.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
+
+When cadence fails, the midgame rots. The learning curve stalls. Rewards become predictable. The game starts to feel like work. Players who were enthusiastic stop recommending it because they cannot describe why someone should spend another ten hours to reach a payoff the game should have earned earlier.
+
+Length is not cadence. Length is inert. A long game with good cadence feels short. A short game with bad cadence feels endless.
 
 ## 8. Stakes clarity: what matters right now and why
 
-Stakes clarity is the difference between tension and noise. Players need to know what is valuable, what is at risk, and what “good decisions” look like now.
+Stakes clarity is the difference between tension and noise. Players need to know what is valuable, what is at risk, and what “good decisions” look like in the current moment.
 
+<<<<<<< HEAD
 Examples:
 
 - Chess: stakes are immediate and legible—material, tempo, king safety.  
@@ -290,13 +375,23 @@ How we weaken stakes clarity (counterfactual)
 - Make outcomes too reversible.  
 - Flood the player with currencies and indistinct rewards.  
 - Provide incentives that contradict the intended emotional state.
+=======
+Chess makes stakes legible through immediate, visible hierarchies: material, tempo, king safety. Even when the position is complex, the categories of value are clear.
 
-Stakes clarity is also a spectator property: it determines whether a game is readable and discussable.
+Horror games like Alien: Isolation rely on consistent threat logic. The stakes are vulnerability and survival; if the threat rules feel arbitrary, fear collapses into irritation.
 
-## 9. Recontextualization moments: the memory locks and cultural export points
+In Stardew Valley the stakes are gentle but structuring: time in a day, seasons, friendships, energy. You always know what you are trading.
 
-Human memory compresses a 60-hour game into peaks, transitions, and endings. Recontextualization moments are pivots that change how earlier play is interpreted. They’re not merely twists; they reweight meaning.
+Stakes clarity is created by making resources and consequences visible without turning the game into accounting. Players should be able to predict the type of consequence even if they cannot predict magnitude. Stakes should align with the game’s promise: a cozy game should not punish with opaque loss; a mastery game should not reward with random lottery outcomes that ignore skill.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
 
+When stakes are unclear, players disengage into grind or meta-goals. Choices feel arbitrary. Difficulty feels random. The player stops inhabiting decisions and starts managing the system as an external object.
+
+Stakes clarity is also a spectator property. It determines whether a game is readable to watch and discuss. If viewers cannot tell what matters, clips don’t land and discourse doesn’t stick.
+
+## 9. Recontextualization moments: hinges that reweight memory
+
+<<<<<<< HEAD
 Examples:
 
 - Outer Wilds: knowledge changes the world; recontextualization transforms the entire experience.  
@@ -319,15 +414,25 @@ How we weaken recontextualization (counterfactual)
 - Make revelations optional trivia.  
 - Overexplain, removing inference.  
 - Add twists that don’t change what play means.
+=======
+Human memory compresses long games into peaks, transitions, and endings. Recontextualization moments are hinges that change how earlier play is interpreted. They are not mere twists. They reweight meaning.
 
-Recontextualization makes a game a “you have to experience it” object and helps form canon.
+Outer Wilds is the cleanest demonstration: knowledge changes the world so completely that the player’s model becomes the progression system. What you learn rewrites what the game is.
 
-## 10. Named entities and symbols: the handles that let players attribute what they felt
+Nier: Automata uses repetition as argument, reframing previous structures so the player’s prior patience becomes part of the meaning.
 
-Experience is messy—fear, relief, competence, sadness, awe, pride. To talk about it, players need handles: names, faces, places, objects, motifs. These allow attribution: “It was Sif,” “It was Midgar,” “It was the cake.”
+A Link to the Past recontextualizes space and tone, turning what you thought was the world into only half of it, and making the shift retellable.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
 
-Named entities make games discussable and inheritable. We remember people and symbols more readily than systems.
+Strong recontextualization requires a stable model first. You plant seeds early, let the player settle into a coherent understanding, then disrupt it at a meaningful moment. The disruption should change behavior, not just knowledge. The player should play differently afterward, not merely know a fact.
 
+When recontextualization is weak, the experience becomes smooth but forgettable. There is no retellable hinge, no anchor that the mind uses to organize the whole.
+
+A common failure is mistaking lore for hinge. Lore can deepen, but it rarely reweights. A hinge is a structural change in meaning.
+
+## 10. Handles: named entities and symbols that let players talk about what they felt
+
+<<<<<<< HEAD
 Examples:
 
 - Final Fantasy VII: Midgar, Sephiroth, Aerith.  
@@ -351,30 +456,31 @@ How we weaken symbolic handles (counterfactual)
 - Spread attention across too many entities.  
 - Fail to connect entities to consequence; they become decorative.  
 - Overstuff lore so nothing stands out.
+=======
+Experience is messy—fear, relief, competence, sadness, awe. To talk about it, players need handles: names, faces, places, objects, motifs. Handles allow attribution. “It was Midgar.” “It was the bonfire.” “It was GLaDOS.” “It was the Creeper.”
 
-Symbols are essential for wide cultural presence—they’re the hooks for personal experience.
+Handles are how experiences become discussable and inheritable. We remember people and symbols more readily than systems. We also pass them on more easily. A handle is a compression tool: it lets a player carry a whole emotional and mechanical bundle in one word.
 
-## 11. How these axes interact without collapsing into one
+Final Fantasy VII has Midgar, Sephiroth, Aerith. Portal has GLaDOS and the cake. Dark Souls has bonfires, Anor Londo, Sif. Minecraft has the Nether, the End, the Creeper. Disco Elysium turns the city and the internal voices into named presences.
 
-Key intuitions:
+Handles are not created by lore volume. They are created by repetition with variation, ritual, consequence, and integration with play. A symbol becomes sticky when it participates in decisions. A place becomes memorable when it changes how you behave. A character becomes a handle when your relationship to them is tested by action, not just dialogue.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
 
-- Coherence cannot be bought with more features; features usually buy contradiction.  
-- Legibility cannot be deferred to later excellence; a lost player is gone.  
-- Signature primitive cannot be replaced with graphics; spectacle without a loop is passive.  
-- Mood is continuous and cannot be substituted by episodic plot.  
-- Conversion requires risk and demand; polish alone won’t convert.  
-- Low friction cannot be replaced by “hardcore” branding.  
-- Cadence is not length—length is inert.  
-- Stakes are value hierarchies, not currency spam.  
-- Recontextualization must change interpretation and behavior, not just add lore.  
-- Cultural stickiness requires symbols, not spreadsheets.
+When handles are weak, even mechanically strong games become culturally mute. Players talk in generalities and struggle to reference the experience. The game may still be loved, but it exports poorly.
 
-A widely appealing game is not one that maxes everything. It’s one that is decisively strong on a subset, adequately competent on the rest, and not catastrophically weak anywhere.
+## 11. How the axes interact without collapsing into one
 
-## 12. The cultural lifecycle: how games are adopted, talked about, lived with, and passed on
+It is tempting to treat these axes like a checklist, but that is not how games work. Games do not need to maximize everything. They need to be decisively strong on a subset, adequately competent on the rest, and not catastrophically weak anywhere.
 
-Wide appeal is partly designed and partly selected.
+Some interactions matter more than they look.
 
+Coherence cannot be bought with more features; features often buy contradiction. Legible promise cannot be deferred to later excellence; a lost player is gone. A signature primitive cannot be replaced with spectacle; spectacle without a loop is passive. Mood is continuous and cannot be substituted by episodic plot. Conversion requires demand; polish alone does not convert. Low unintended friction is not “casualization”; it is respect for meaning. Cadence is not length. Stakes are value hierarchies, not currency spam. Recontextualization is not lore. Handles are not spreadsheets.
+
+This is the design-facing layer. It explains why some games, once reached, are easy to love and easy to pass on.
+
+Now we turn to the layer that decides what gets reached.
+
+<<<<<<< HEAD
 ### 12.1 Adoption under attention scarcity
 
 Sampling punishes weak legible promise and poor early cadence. Deep games can fail culturally if players never reach the depth.
@@ -394,118 +500,79 @@ Streaming selects for stakes clarity, readable feedback, and visible skill expre
 ### 12.5 Games as identity artifacts
 
 “Favorite game” becomes a declaration of temperament and belonging. Mastery favorites signal discipline; rupture favorites signal sensitivity; habitat favorites signal comfort.
+=======
+## 12. Culture as editor: how games travel, and how travel changes the object
 
-## 13. Failure patterns as negative-space education
+A shipped game is not the whole cultural artifact. The cultural artifact includes launch conditions, patch history, ownership changes, platform shifts, community scaffolding, and the public story about what the game “really is.” The same underlying design can become different cultural objects depending on these factors.
 
-Negative examples teach faster than praise. Common syndromes and collapsing axes:
+The first pressure is attention scarcity. When players sample, legible promise, early cadence, and low unintended friction decide whether deeper axes get a chance. A game can have extraordinary conversion potential and still remain niche because the first hour fails to invite modern sampling speeds.
 
-- Assembled product — weak coherence: a list of features, no governing intent.  
-- Masterpiece behind a door — weak legible promise: greatness inaccessible.  
-- Competent but indistinct — weak signature primitive: no handle for play or talk.  
-- World as menu — weak mood: presence unrewarded.  
-- Polished emptiness — weak conversion: enjoyable, no residue.  
-- Respect-time breach — high unintended friction: wasted attention.  
-- Midgame rot — weak cadence: novelty frontloaded.  
-- Why should I care — weak stakes clarity: choices as noise.  
-- Smooth but forgettable — weak recontextualization: no hinges.  
-- Culturally mute — weak symbols: hard to reference and inherit.
+The second pressure is discourse compression. Compressed talk favors what survives the sentence, the clip, and the meme: signature primitives, handles, clear stakes, recontextualization hinges, and mood. Coherence is often felt but rarely named, which means it can be undervalued in conversation even as it silently does the work of making everything else land.
 
-This diagnostic separates “I disliked it” from “this axis collapsed.”
+Minecraft is the purest example of compression fitness. Its primitive is describable in a sentence, its symbols are instantly recognizable, and its outputs are visually shareable. Over time its cultural meaning can shift—from wild creativity to platform to classroom tool to brand substrate—without losing transmission power. The core design makes it resilient to re-framing.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
 
-## 14. A diagnostic baseline we can share, including the counterfactual
+The third pressure is community scaffolding. Communities can repair weak legible promise by teaching literacy. They can reduce friction through guides and mods. They can also narrow the game into optimization dogma, flattening expressive play into a meta. Culture can fix or destroy.
 
-When evaluating a game, ask not only “how strong is the axis” but “what are we doing that weakens it?” This avoids praising a game while reproducing its mistakes.
+The fourth pressure is spectator readability. Streaming elevates games whose stakes and skill expression are readable at a glance and whose feedback produces clip-worthy moments. This does not make other games “lesser,” but it changes which designs become lingua franca.
 
-1. Coherence  
-    - What is the governing intent, and what systems contradict it? What features exist only because we could build them?  
-2. Legible promise  
-    - What contract does the first hour teach, and where do we violate it later? What do we hide behind “it gets good”?  
-3. Signature primitive  
-    - What is the irreducible loop players will describe, and what systems compete with it? Where do dominant strategies collapse expression?  
-4. Mood  
-    - Does the game reward presence? What UI noise, checklist structure, or pacing turns the world into a menu?  
-5. Conversion mechanism  
-    - What transformation does the game reliably produce? Where do we sand down risk or demand until nothing converts?  
-6. Unintended friction  
-    - Where are we wasting time or attention without meaning? What repeated actions carry low information?  
-7. Cadence  
-    - Where does novelty stall? Where do we pad runtime instead of deepening the core loop?  
-8. Stakes clarity  
-    - What matters right now and why? Where do we flood players with indistinct currencies?  
-9. Recontextualization  
-    - What moments reframe earlier play and change behavior? Where do we mistake lore for pivot?  
-10. Named entities and symbols  
-    - What handles will players use to talk about what they felt? Where do we dilute salience?
+Finally, there is the meta-narrative layer: the story attached to the product as an economic and moral object. Players increasingly pre-judge whether a game will respect their time and trust. Sometimes this is accurate. Sometimes it is tribal shorthand. Either way, it alters adoption before the axes get evaluated.
 
-This is not a checklist for conformity but a shared language for tradeoffs.
+Culture, in other words, edits the funnel. It changes how many people reach the core experience, and it changes what parts of the experience become the public “meaning” of the game.
 
-## 15. The quiet implication: why the canon converges
+## 13. Boundary tests: the divisive giants that don’t fit cleanly
 
-Once we see these axes, canon formation looks less like taste and more like selection pressure.
+If the axes were a total explanation, we could predict cultural dominance from design fit alone. Reality includes canonical counter-examples: games with obvious weaknesses that nonetheless become enduring reference points. Skyrim and several Fallout entries sit here in a way that is both frustrating and instructive.
 
-To become widely appealing and enduring, a game must survive:
+These games are hard to explain cleanly because the loved object is not any single system. Combat can be clumsy. Systems can be inconsistent. Bugs and jank can be real. And yet the gravitational pull is undeniable.
 
-- Adoption under attention scarcity (legible promise, early cadence, low friction)  
-- Cultural compression (signature primitive, symbols, recontextualization, mood)  
-- Personal meaning-making (conversion mechanisms, stakes, coherence)  
-- Revisitability (mood, habitat, identity, cadence)
+What explains this without resorting to “people are irrational”?
 
-Games strong on enough of these pressures become stable nominees and reference points. That doesn’t make the canon morally complete, but it makes it predictable: the same pressures will keep producing similar winners—mastery crucibles, rupture narratives, mythic adventures, habitats, identity games, and a few pure-design objects whose primitives are universally legible.
+Start with a phenomenon that behaves like an override: one or two high-salience satisfactions can dominate perceived value even when other parts are uneven. In these divisive giants, the satisfactions are not usually a single parry window or a single combat verb. They are more ecological.
 
-The practical value is not to bow to the canon. It is to stop being surprised by it—and to design, critique, and teach games with a shared baseline that respects both craft and cultural reality.title = 'The Elements of a Good and Widely Appealing Game'
-date = 2025-12-15T06:30:00-05:00
-description = 'A structural analysis of the ten orthogonal axes that make games culturally enduring, from coherence and signature primitives to conversion mechanisms and symbolic handles.'
-summary = 'Why do certain games become canonical? This essay identifies ten design axes—coherence, legible promise, signature primitives, mood, conversion mechanisms, low friction, cadence, stakes clarity, recontextualization, and symbols—that explain how games earn wide appeal and cultural permanence.'
-tags = ['game design', 'analysis', 'craft', 'canon', 'mechanics', 'narrative']
-categories = ['Essays']
-showToc = true
-draft = false
-cover = { image = '', alt = '', caption = '' }
-+++
+One satisfaction is the loop of wandering into trouble and emerging with story. You walk in a direction, the world interrupts you, you improvise, you survive, you loot, you improve, and then you continue. The pleasure is not the mechanical elegance of any single encounter. It is the steady production of personal anecdotes: “I went to do one thing and ended up somewhere else entirely.” That anecdote engine is a kind of signature primitive, but it is not a clean verb. It is a world behavior.
 
-A strange thing happens when we ask someone for their “favorite game of all time.” The answer is rarely the game they played the most, or even the game from their favorite genre. It is usually the game that reorganized them: a first encounter with competence they did not know they could earn, with grief they did not expect to feel, with wonder that refused to fade, with a world that became a place to live rather than a product to finish.
+Another satisfaction is permissive self-authorship. You can roleplay in the loose sense: choose which rules to care about, which systems to lean on, which quests to treat as canon, which to ignore. Mods intensify this, but the core permissiveness often exists even without them. The player’s favorite version of the game is partially self-authored. That self-authorship creates a private canon inside the public one.
 
-That pattern is not mystical. It is structural. The games that become widely loved—and then repeatedly nominated, remade, cited, and inherited—tend to score well on a small set of orthogonal axes. These axes are not “genres,” not “themes,” and not “polish.” They are the underlying properties that make games legible to players, stable in memory, and transmissible through culture.
+A third satisfaction is handle density. Even when quests are uneven, the games provide places, factions, artifacts, and rituals that become landmarks. Cities become handles. Guilds become handles. Iconic items become handles. Handles are not only for discourse; they are for navigation of memory. They let players keep a long, messy experience coherent enough to retain.
 
-Many readers, including experienced designers and critics, are partially blind to some of these dimensions. We tend to overindex the axis we personally value: story people see narrative everywhere; systems people see mechanics; artists see mood; competitive players see mastery. The goal here is to rebuild a shared baseline. We will name each axis, show it concretely (with wide-ranging examples), explain how it is created, and—importantly—map its negative space: what it looks like when it is missing, and what we do (often accidentally) to weaken it.
+Put together, these games succeed through habitat dominance. The world becomes infrastructure: a place to return to, not a puzzle to solve. When a game becomes infrastructure, other weaknesses can be reinterpreted as texture rather than disqualifier. “It’s janky” becomes folk character. Players route around failures, and the routed-around version becomes the remembered version.
 
-By the end, a quiet conclusion should feel almost inevitable: the “canonical greats” are not arbitrary. They are selected by these axes, again and again, because these axes are how games become life objects rather than mere entertainment.
+This is the key boundary lesson: the axis model is design-facing, but canon formation is not only about design purity. It is about what a game allows people to do with it over time. A habitat can become canonical even when coherence is loose and mechanics are uneven, because it produces a durable form of personal meaning: home, story production, identity play, and returnability.
 
-## 0. Why “polish” is not an axis, and why “good” is not a number
+That does not refute the axes. It clarifies their limits.
 
-Before we define anything, we have to remove a trap word: polish. People reach for it because it is socially safe. “Polished” can mean bug-free, responsive, consistent, cleanly presented, professional. Those things matter. But “polish” is not an axis of greatness; it is table stakes plus taste, and it is often a proxy for production conditions rather than design insight.
+The axes predict cleanly in domains where the game’s primary value is the loop itself: mastery games, puzzle games, tightly-authored adventures. They predict less cleanly when the primary value is a permissive world that players use as a narrative and identity generator. In that terrain, the model must share explanatory power with other forces: modability, cohort imprint, distribution, and the sheer utility of “a place to be.”
 
-A highly polished game can be empty of meaning, indistinct in play, and culturally disposable. A rough game can become permanent if it nails the deeper structures and the roughness does not sabotage them. “Polish” is therefore not a category alongside the others; it is distributed across them as execution quality—especially in friction, legibility, cadence, and feedback.
+The most important move here is not to treat divisive giants as exceptions to ignore. They are the reason to keep the framework humble and useful. They show that “structural fit for transmission” can come from different kinds of structure than designers tend to valorize.
 
-The second trap is treating “good” as a scalar. Games are multi-object systems. Players are multi-object evaluators. Culture is a selection engine with biases. If we collapse all that into a single adjective, we lose the ability to diagnose why a game is widely appealing, narrowly beloved, respected but rarely finished, or intensely played but rarely nominated.
+## 14. A diagnostic baseline that stays practical
 
-We will use ten axes:
+If you want to use the axes without turning them into a textbook, do it as a set of questions you can ask while reading a game, not a checklist you fill out.
 
-1. Coherence  
-2. Legible promise  
-3. Signature primitive  
-4. Mood that invites lingering  
-5. Conversion mechanism  
-6. Low unintended friction  
-7. Sustained cadence  
-8. Stakes clarity  
-9. Recontextualization moments  
-10. Named entities and symbols (the handles for attribution)
+Ask what the governing intent is and where the game contradicts it. Ask what contract the first hour teaches and where the game violates it. Ask what the signature primitive is and what competes with it. Ask whether mood rewards presence or gets flattened into a menu. Ask what transformation the game reliably produces and what demands make that transformation possible. Ask where the game wastes attention without paying meaning. Ask where the middle dies. Ask what matters right now and whether consequences are readable. Ask what hinges reweight memory. Ask what handles players will use to name what they felt.
 
-Each axis is necessary in the weak sense: if it fails hard enough, the game’s appeal becomes fragile. Each is orthogonal in the strong sense: excellence on one cannot reliably compensate for collapse on another.
+Then ask one more question that protects you from being smug: if the game is widely loved and your framework says it “shouldn’t be,” what is the actual object of love? Is it a habitat? Is it identity? Is it an anecdote engine? Is it distribution and cohort timing? Is it network density? Do not solve the discomfort by calling the audience wrong. Use the discomfort to locate the boundary.
 
-## 1. Coherence: the single governing intent that makes the game feel inevitable
+## 15. The quiet implication: why the canon converges anyway
 
-Coherence is easiest to recognize by smell. When we enter a coherent game, we feel that someone is steering. Every mechanic, reward, aesthetic choice, and pacing decision seems to serve a central intent. Coherence is what makes the player think, often unconsciously: this is what this game is.
+Once you see these pressures, canon formation looks less like pure taste and more like selection.
 
-Consider three very different coherent experiences:
+To become widely appealing and enduring, a game must survive adoption under attention scarcity, cultural compression, personal meaning-making, and revisitability. The design axes explain much of what helps a game survive those pressures once encountered. Culture explains which games get encountered, how they are framed, and which parts of them become the public meaning.
 
-- Papers, Please: everything serves the feeling of bureaucratic moral compromise—UI as oppression, repetition as ethical erosion, the “game” as the gradual deformation of a conscience.  
-- Into the Breach: the entire design is a readable tactical puzzle about perfect information, consequence management, and small optimizations under pressure—no fluff, no detours.  
-- Shadow of the Colossus: enormous negative space, minimal dialogue, slow traversal, and singular fights—everything insists on the theme of grandeur, loneliness, and ambiguous purpose.
+That combination produces convergence. Not inevitability, not moral certainty, but a strong bias toward games that are easy to recommend, easy to describe, easy to retell, and capable of converting players into evangelists. The winners tend to be mastery crucibles, rupture narratives, mythic adventures, habitats, identity games, and a few pure-design objects whose primitives are universally legible.
 
-What coherence is not: “consistency” in the trivial sense. A game can be consistent in art style and still incoherent in incentives. Coherence is alignment of meaning-making machinery.
+The point is not to bow to the canon. The point is to stop being surprised by it—and to design, critique, and teach games with language that respects both craft and cultural reality.
 
+## 16. Epilogue: why canon matters
+
+Canon is an uncomfortable word because it sounds like gatekeeping. It evokes committees, hierarchies, and the idea that a living medium could be pinned to a shelf. The instinctive rejection—like what you like—is emotionally healthy, but analytically incomplete. The question is not whether individuals should obey canon. The question is what canon does to a medium once it exists.
+
+Canon is the medium’s shared compression format. It is the shortlist of objects that survive retelling across time, platforms, and cohorts. It is what we reach for when we explain games to non-players, justify budgets, teach design, recruit talent, or argue about what counts as “real.” Canon is not an honor roll. It is infrastructure.
+
+That infrastructure matters because games are unusually vulnerable to forgetting. Hardware ages. Services shut down. Control schemes fall out of fashion. Social contexts evaporate. In that environment, canon becomes a memory scaffold. It tells the next generation what was worth keeping alive, which then shapes what gets copied and funded. Studios copy what they can point to. Investors fund what they can name. Education teaches what has exemplars. Canon supplies exemplars, and exemplars steer a medium.
+
+<<<<<<< HEAD
 How coherence is created
 
 - Start with a governing sentence that survives hostile paraphrase: “This is a game about ____.” Not marketing—an intent that can be tested against every system.  
@@ -522,9 +589,17 @@ How we weaken coherence (counterfactual)
 - Inflate the game with “content” irrelevant to the core loop.  
 - Build a narrative tone that contradicts the primary activity.  
 - Ship multiple onboarding paths that teach different contracts.
+=======
+Canon also concentrates because attention is a network. The already-known becomes more knowable. Algorithms amplify the effect. A handful of games become hubs that shape discourse. Axis strength helps a game become a good hub—handles, primitives, hinges, mood, honest contracts—but path dependence and context decide which candidates reach hub status early.
 
-A useful test: remove a system—if nothing meaningful changes in how the game feels, that system was likely incoherent ornament.
+Sales do not settle this. Sales measure adoption, not cultural function. A game can sell massively and leave little behind except a monetization template. Another can sell modestly and alter the medium’s vocabulary for decades. Canon is closer to “what did this enable next?” than “how many units did it move?”
 
+Personal preference does not make the question irrelevant either, because preference is not sealed. It is shaped by exposure, framing, community scaffolding, and the life circumstances in which we played. When we can name the axes, we gain a vocabulary that protects us from mistaking extraction for value and compulsion for conversion. We become harder to manipulate with retention proxies because we can say, plainly, what has meaning and what merely captures time.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)
+
+Canon will exist whether we acknowledge it or not. The choice is whether we treat it as superstition and tribal badge, or as a map of forces that decide what the medium becomes. A mature discourse can hold both truths at once: these are the structural reasons a game traveled, and these are the externalities that amplified it.
+
+<<<<<<< HEAD
 ## 2. Legible promise: making the contract visible early and keeping it
 
 Players do not approach games like museum patrons. They approach games like people with jobs, friends, backlogs, and a phone in reach. They sample. They decide quickly whether the experience is for them, whether it respects their time, and whether the path to competence is visible.
@@ -1382,3 +1457,6 @@ Games that are strong on enough of these pressures become stable nominees. They 
 This does not mean the canon is morally correct or complete. It means it is predictable. The same pressures will keep producing the same kinds of winners: mastery crucibles, rupture narratives, mythic adventures, habitats, identity games, and a small subset of pure-design objects whose primitives are so clean they become universal.
 
 The practical value of this is not to bow to the canon. It is to stop being surprised by it—and to become capable of designing, critiquing, and teaching games with a shared baseline that respects both craft and cultural reality.
+=======
+If the essay did its job, the axes are now less like doctrine and more like instruments. They are ways to see what a game is asking of a player, what it rewards, what it wastes, what it teaches, what it makes memorable, and why some messy, divisive worlds still become homes that millions cannot stop returning to.
+>>>>>>> cdcb079 (Add essay "When the Funnel Eats the Work" exploring the impact of the attention economy on creative work and discourse)

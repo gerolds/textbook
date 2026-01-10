@@ -1,4 +1,4 @@
-baseURL = 'https://geroldschneider.com/'
+baseURL = 'https://gerolds.github.io/textbook/'
 languageCode = 'en'
 title = 'Textbook'
 theme = 'monochrome'

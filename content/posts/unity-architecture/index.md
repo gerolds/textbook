@@ -11,6 +11,10 @@ slug = "unity-architecture"
 cover = { image = '', alt = '', caption = '' }
 +++
 
+# Unity Architecture for Growing Projects
+
+![alt text](images/title.png)
+
 ## Premise
 
 Successful games often have the worst codebases. Not because the teams were bad, but because success came fast—fast enough that the prototype became production before anyone could make it sustainable.
@@ -218,7 +222,7 @@ Cross-mode communication must be explicit. You can't call "the inventory" from t
 
 ## Unity's instantiation reality
 
-![Registration](images/registration.png)
+![Registration](images/immigration.png)
 
 Unity instantiates from content: scenes, prefabs, additive loading, Addressables. Insisting that a central orchestrator explicitly construct every gameplay object means writing spawners for everything and fighting iteration.
 
@@ -346,6 +350,8 @@ If two modules both need to write the same field, your boundaries are wrong, or 
 **Entities are not modules.** A character might have `DamageReceiver` (Combat), `InventoryHolder` (Inventory), `CharacterMotor` (Movement). Each component belongs to its module; the entity is an assemblage. "Which module owns the player?" is the wrong question; modules own *aspects* of entities.
 
 ## Premature abstraction
+
+![Abstractions, fight!](abstraction.png)
 
 Abstractions have a cost. Every interface, every indirection, every "what if we need to swap this later" adds cognitive load. Contracts and interfaces should be *earned*, not pre-emptive.
 

@@ -381,7 +381,7 @@ Contracts are the membrane. Inside, do what works.
 
 ## The singleton trap
 
-![Trophy room](trophyroom.png)
+![Trophy room](images/trophyroom.png)
 
 One of the most expensive early assumptions: there's one player, one UI, one camera, one inventory. It simplifies everything, until it doesn't.
 

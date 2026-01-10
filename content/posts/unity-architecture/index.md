@@ -49,15 +49,30 @@ The goal is a codebase where:
 
 ### This is not OOP architecture
 
-This architecture uses objects because C# and Unity use objects. But the pattern itself is not object-oriented in the design-patterns sense.
+This architecture uses objects because C# and Unity use objects. But the pattern itself is not object-oriented in the design-patterns sense. And game architecture operates under constraints that enterprise patterns don't account for:
 
-The principles apply regardless of paradigm:
+- **Dynamic populations**: objects spawn and despawn constantly
+- **Large-scale state transitions**: entire levels load/unload in real-time
+- **Soft real-time**: 16ms per frame, every frame
+- **Multiple modes**: menus, gameplay, cutscenes, editors—different apps sharing a process
+- **Spatial structure**: 3D space, scene graphs, streaming, physics volumes
+- **Dual data domains**: authored content vs. user-generated state
+- **Editor as runtime**: inspectors, gizmos, and tooling are first-class concerns
+- **Scripting and systems**: high-level game logic alongside optimized infrastructure
+- **Cross-cutting coherence**: a sword swing touches animation, audio, particles, damage, UI, camera
+- **Performance as architecture**: allocation patterns and update frequency are design decisions, not afterthoughts
+
+Traditional patterns (MVC, clean architecture, repository) assume stable object graphs and cheap milliseconds. What works here embraces transience, space, real-time constraints, and the editor.
+
+#### The principles still travel
+
+Despite these differences, the core principles (ownership, boundaries, communication surfaces) apply regardless of paradigm:
 
 - In **MonoBehaviour-heavy code**, hosts are often MonoBehaviours that coordinate other MonoBehaviours.
 - In **ECS/DOTS**, a system *is* the host: it's the authority for a slice of logic. Components are data; systems own the processing. The membrane is the system's public queries and events.
 - In **Unreal**, Subsystems fill the host role. In **Godot**, Autoloads can serve similarly.
 
-The mechanisms differ; the principles (ownership, boundaries, defined surfaces for communication) stay the same. What you see here uses Unity's MonoBehaviour vocabulary, but the mental model travels.
+The mechanisms differ; the principles stay the same. What you see here uses Unity's MonoBehaviour vocabulary, but the mental model travels.
 
 ### What this means for solo developers
 

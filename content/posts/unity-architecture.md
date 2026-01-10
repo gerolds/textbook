@@ -1,16 +1,15 @@
 +++
-title = 'Unity Architecture for Growing Projects'
+title = "Unity Architecture for Growing Projects"
 date = 2026-01-10T18:00:00-01:00
-description = ''
-summary = ''
-tags = ['architecture']
-categories = ['Essays']
+description = "A modular architecture that works with Unity's grain: modules, hosts, contracts, and orchestration for scaling from prototype to production."
+summary = "Unity makes spaghetti easy to start and painful to unwind. This article describes an architecture that keeps editor-friendly workflows while adding explicit structure for ownership, lifecycle, and dependencies—scaling by changing rigor, not model."
+tags = ["architecture", "unity", "game-development", "software-design"]
+categories = ["Essays"]
 showToc = true
 draft = false
+slug = "unity-architecture"
 cover = { image = '', alt = '', caption = '' }
 +++
-
-# Unity Architecture for Growing Projects
 
 <!--
 ## Planning Notes
@@ -48,6 +47,23 @@ The engine's design (scenes, prefabs, `GetComponent`, serialized references, lif
 
 This article describes an architecture that works *with* Unity's grain: it keeps editor-friendly workflows and content-driven instantiation while adding explicit structure for ownership, lifecycle, and dependencies. The architecture scales from prototype to production by changing *rigor*, not *model*. The same mental framework applies at every stage; what changes is how strictly you enforce it.
 
+### The core idea: hosts as membranes
+
+The architecture rests on one central concept: **the host is the module's membrane**.
+
+A membrane is a boundary that controls what enters, what exits, and what belongs inside. This is a *principle for seeing*, not a prescription for structure. The membrane helps you answer: "where does this belong? who is responsible? how do these communicate?"
+
+In this architecture:
+
+- **Everything participates by belonging to a host.** Scene objects, spawned prefabs, loaded content—they don't just exist; they belong to a module by registering with its host. "Registration" is conceptual: for a component, it might be a formal call; for a pooled object, it might just be "this pool belongs to Combat."
+- **Registration is the handshake.** When something joins a module, the host gives it context (dependencies, configuration). The object doesn't fish for these later.
+- **Communication crosses the membrane through contracts.** Modules don't reach into each other's internals. They talk through the host's public surface.
+- **The host owns what's inside.** State, lifecycle, persistence—the host is the authority. If you need to save, enumerate, or debug, you ask the host.
+
+This concept generates everything else in this article. But it's orientation, not prescription: the specific mechanisms (DI containers, manual wiring, singletons-with-discipline) vary by project. The principle stays the same.
+
+### What this gives you
+
 The goal is a codebase where:
 
 - New team members can learn one module at a time.
@@ -57,9 +73,15 @@ The goal is a codebase where:
 
 ### This is not OOP architecture
 
-This architecture uses objects because C# and Unity use objects. But the pattern itself is not object-oriented in the design-patterns sense. Hosts are analogous to ECS systems: long-lived processes that own state and run logic. Components inside a module can be plain data structures (like ECS components) or bridges to the view layer (which ECS also needs). The orchestration layer is a composition root, a concept that exists in any paradigm.
+This architecture uses objects because C# and Unity use objects. But the pattern itself is not object-oriented in the design-patterns sense.
 
-The same architecture applies to Unreal, Godot, or a custom engine. The specifics change (Unreal has Subsystems, Godot has Autoloads), but the principles are the same: coherent modules, explicit boundaries, clear ownership, controlled lifecycle. What you see here caters to Unity's particulars, but the mental model travels.
+The principles apply regardless of paradigm:
+
+- In **MonoBehaviour-heavy code**, hosts are often MonoBehaviours that coordinate other MonoBehaviours.
+- In **ECS/DOTS**, a system *is* the host: it's the authority for a slice of logic. Components are data; systems own the processing. The membrane is the system's public queries and events.
+- In **Unreal**, Subsystems fill the host role. In **Godot**, Autoloads can serve similarly.
+
+The mechanisms differ; the principles (ownership, boundaries, defined surfaces for communication) stay the same. What you see here uses Unity's MonoBehaviour vocabulary, but the mental model travels.
 
 ### What this means for solo developers
 
@@ -77,9 +99,9 @@ What you can skip:
 - Assembly definitions. One assembly is fine.
 - Explicit orchestration layer. Let Unity's scene loading be your orchestrator.
 
-The architecture is a direction, not a destination. Solo projects can travel light. Its worth considering however, that as your solo project grows, you may have to look at yourself as a different developer if you can't keep all details in your head anymore. Then this architecture helps your protect you from yourself.
+The architecture is a direction, not a destination. Solo projects can travel light. It's worth considering, however, that as your solo project grows, you may have to look at yourself as a different developer if you can't keep all details in your head anymore. Then this architecture helps protect you from yourself.
 
-Also, one certain modules mature and turn into reusable libraries that are portable between projects that are all built with this mindset, you can prototype quickly while using production ready infrastructure for the generic bits.
+Also, once certain modules mature and turn into reusable libraries that are portable between projects that are all built with this mindset, you can prototype quickly while using production-ready infrastructure for the generic bits.
 
 ### How dynamics change as teams grow
 
@@ -144,13 +166,15 @@ A "module" is one district. Inventory is a district. Combat is a district. Dialo
 
 ### What changes from prototype to production
 
-The model stays the same; what changes is how explicit and enforced it is:
+The principles stay the same. What changes is how explicit you make them:
 
 | Stage          | Modules                | Hosts                   | Contracts                  | Enforcement |
 | -------------- | ---------------------- | ----------------------- | -------------------------- | ----------- |
 | Prototype      | Folders, conventions   | MonoBehaviours          | Implicit (public methods)  | Social      |
 | Vertical slice | Named responsibilities | Own state as plain data | Deliberate interfaces      | Code review |
 | Production     | Assembly-separated     | Formal lifecycle        | Shared assembly            | Compiler    |
+
+A prototype host might just be "the MonoBehaviour that holds this feature's state." A production host might have formal lifecycle methods, assembly isolation, and tooling. The *principle* (this is the authority for this slice) is identical; the *rigor* scales with coordination cost.
 
 ### Host-scenes: game modes as isolated worlds
 
@@ -241,15 +265,17 @@ The compromise that scales is:
 
 This keeps workflows editor-friendly while still making ownership and boundaries explicit.
 
-## The one constraint that prevents architectural collapse
+## Why init-time resolution matters
 
-Service location isn't inherently evil; *unscoped, always-available resolution* is.
+The membrane model implies a specific constraint: **resolve dependencies only during initialization, store them, and never resolve again.**
 
-The safe rule is:
+This isn't arbitrary—it's a direct consequence of "registration is the handshake." If components could resolve dependencies at any time, they would bypass the host, and the membrane would become porous. Runtime dependency fishing reintroduces hidden coupling, just behind a nicer API.
 
-> Scene objects may resolve contracts **only during initialization**, store them, and **never resolve again**.
+The safe rule:
 
-That single constraint blocks the worst failure mode: runtime dependency fishing. If scripts can call `Resolve<T>()` in `Update`, people stop designing APIs and coupling becomes invisible again, just hidden behind a nicer global hook.
+> Scene objects find their host and resolve contracts **only during initialization**. After that, they use stored references.
+
+That constraint blocks the worst failure mode: invisible dependencies that appear mid-gameplay, untraceable in code review, and brittle to ordering changes.
 
 ## Dependencies should always be ready
 
@@ -265,7 +291,8 @@ Many Unity projects don't fail because Unity has callbacks; they fail because ca
 
 Hosts make lifecycle explicit:
 
-- `Awake`/`OnEnable` is for registration and capturing dependencies.
+- `Awake`/`OnEnable` is for finding the host and registering.
+- Registration triggers dependency injection.
 - A deliberate initialization phase transitions modules to "running".
 - Update order is owned by a single place, not emergent behavior.
 
@@ -282,6 +309,18 @@ Keep these separated:
 - **Event:** announce something happened (observers optional).
 
 Let modules accept commands/queries through their contracts. If modules expose events, expose them deliberately and typed (as part of the contract), not as a global publish-anything mechanism.
+
+A well-designed event is part of a host's contract:
+
+```csharp
+public interface ICombatEvents
+{
+    event Action<DamageEvent> OnDamageDealt;
+    event Action<Entity> OnEntityDied;
+}
+```
+
+Subscribers are explicit: a module that cares about combat outcomes takes a dependency on `ICombatEvents` during initialization and subscribes. There is no anonymous broadcast; the dependency is visible in the code.
 
 ## The physical world as a shared channel
 
@@ -343,6 +382,8 @@ When two parts of the game care about the same data, pick an owner.
 If both combat and UI need health, one module owns the canonical health value. Combat issues commands (apply damage). UI observes changes. Shared mutable state accessed from everywhere is how coupling sneaks back in.
 
 If two modules both need to write the same field, your boundaries are wrong, or you need a third module to own that field.
+
+Note that **entities are not modules**. A player character, an enemy, a vehicle—these are *things that modules operate on*, not modules themselves. A character might have a `DamageReceiver` (belonging to Combat), an `InventoryHolder` (belonging to Inventory), and a `CharacterMotor` (belonging to Movement). Each component belongs to its module; the entity is an assemblage of components. The question "which module owns the player?" is usually malformed—modules own *aspects* of entities, not entities themselves.
 
 ## Premature abstraction is the root of all evil
 
@@ -408,7 +449,9 @@ If gameplay objects can be created at runtime (enemies, projectiles, items, effe
 
 Without spawners, dynamic content becomes untracked. You lose the ability to enumerate, save, or reason about what exists. When you need to implement "pause all enemies" or "serialize all active projectiles," you discover that nothing knows what's alive.
 
-Note: this is an escalation, not a foundational requirement. Early on, Unity's content-driven instantiation is fine; prefabs spawn, self-register, and participate in the architecture. As the project grows and you need enumeration, persistence, or pooling, you formalize spawners. The self-registration pattern from earlier still applies; spawners just become the hosts that registrants report to.
+Note: this is an escalation, not a foundational requirement. Early on, Unity's content-driven instantiation is fine; prefabs spawn, self-register, and participate in the architecture. As the project grows and you need enumeration, persistence, or pooling, you formalize spawners.
+
+For high-frequency content (thousands of projectiles, particles), "registration" adapts to the mechanism: the *pool* belongs to the host, not each individual instance. Activation and deactivation happen within the pool; the principle ("everything belongs somewhere") holds without per-object overhead.
 
 ### Everything discoverable without static references
 
@@ -448,9 +491,15 @@ The cost of designing for multiplicity is minimal; you pass a reference instead 
 
 ## Cross-cutting concerns
 
-Logging, input, time and analytics are services many modules use but that do not belong inside any domain module. Treat them as **infrastructure contracts**: interfaces that the orchestration layer provides. Input translates raw Unity input into game-meaningful actions. *Time* provides pausable, scalable game time. *Logging_* and *Analytics* accept calls without modules knowing how data is stored or sent.
+Logging, input, time, and analytics are services many modules use but that do not belong inside any domain module. Treat them as **infrastructure contracts**: interfaces that the orchestration layer provides and binds to implementations at startup.
 
-These contracts live in a shared assembly. The orchestration layer binds them to implementations at startup. Cross-cutting concerns become explicit dependencies, not invisible singletons.
+This differs from domain contracts (like `IInventory` or `ICombat`), which are provided by hosts. Infrastructure contracts are provided by the orchestration layer itself—they exist before any domain host initializes and remain stable for the scene's lifetime.
+
+- **Input** translates raw Unity input into game-meaningful actions.
+- **Time** provides pausable, scalable game time.
+- **Logging** and **Analytics** accept calls without modules knowing how data is stored or sent.
+
+These contracts live in a shared assembly. Cross-cutting concerns become explicit dependencies, not invisible singletons.
 
 The benefit is testability and swappability. When you want to record a replay, you swap the input contract for a playback implementation. When you want to fast-forward time in a test, you swap the time contract. When you ship to a platform without analytics, you swap for a no-op. None of this requires touching the modules that consume the contracts.
 
@@ -461,6 +510,16 @@ Unity's own APIs are full of static access: `Time.deltaTime`, `Input.GetKey`, `P
 Static APIs and singletons are often a necessary constraint in games. They provide global access to things that are genuinely global: the physics engine, the render pipeline, platform services. We do not reject them. We do work to respect what makes them valuable (simplicity, predictability, single source of truth) while protecting them from abuse.
 
 The pattern: wrap external singletons in modules that adapt them to your contracts. An input module wraps Unity's input system (or Rewired, or the new Input System) and exposes a contract that your game code consumes. A time module wraps `Time.deltaTime` and provides pausable, scalable game time. An audio module wraps FMOD or Wwise and exposes your game's audio vocabulary.
+
+```csharp
+// Without wrapping: scattered static calls, hard to test or swap
+float delta = Time.deltaTime;
+FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Click");
+
+// With wrapping: game code talks to contracts
+float delta = _time.DeltaTime;  // IGameTime, pausable
+_audio.Play(Sounds.UIClick);    // IAudio, uses your symbol vocabulary
+```
 
 This wrapping serves two purposes:
 
@@ -524,6 +583,8 @@ The danger is that containers make resolution so easy that developers stop think
 
 Some teams find that a lightweight hand-rolled locator (one static class that holds hosts during a scene's lifetime, populated at startup, cleared on unload) is enough. Others find that Zenject's installers and scopes match their mental model precisely. The choice is less important than the discipline: whatever system you use, it should enforce the same constraints (init-only resolution, scoped lifetimes, contracts over concrete types).
 
+**If you are unsure where to start:** begin with a hand-rolled service locator. It is explicit, easy to debug, and teaches your team the constraints directly. Upgrade to Zenject or VContainer when you need child scopes, async installers, or factory patterns that the hand-rolled approach handles clumsily.
+
 ## Runtime debugging
 
 Explicit architecture pays dividends in debugging. If hosts own state and expose contracts, you can build editor tools to inspect any host. You can log calls at boundaries. You can visualize module status.
@@ -547,7 +608,7 @@ What changes is rigor. You add structure when structure earns its keep, when it 
 
 The payoff is a codebase that grows gracefully. New features slot into existing modules or become new modules with clear contracts. New team members find their footing faster. Debugging starts with "what did this module see?" rather than "what is everything connected to?" Prototyping and production feel like different points on a continuum, not different worlds.
 
-If you implement only one constraint from this entire article, implement this: scene objects may resolve contracts only during initialization, store them, and never resolve again. That single rule forces hidden dependencies into visible fields. From there, the rest of the architecture has a chance to grow with you.
+If you take one thing from this article, take the membrane model: **everything participates by registering with a host; the host injects dependencies and owns what's inside; communication crosses the boundary through contracts.** That mental model forces hidden dependencies into visible relationships and gives you a foundation to grow on.
 
 ---
 
@@ -555,16 +616,22 @@ If you implement only one constraint from this entire article, implement this: s
 
 For readers who have been here before:
 
+**The core idea:**
+
+> **The host is the module's membrane.** Everything participates by registering with a host. Registration injects dependencies. Communication crosses the membrane through contracts. The host owns what's inside.
+
 **The shape:**
 
 - **Modules** own coherent slices of functionality. One sentence per module.
-- **Hosts** are the entry point and state owner for each module.
-- **Contracts** are the narrow public interface. Other code talks to contracts, not internals.
+- **Hosts** are the membrane—the entry point, state owner, and authority for each module.
+- **Contracts** are the membrane's external surface. Other code talks to contracts, not internals.
 - **Orchestration** creates hosts, controls lifetimes, wires contracts.
 
-**The one rule:**
+**Registration is the handshake:**
 
-> Resolve contracts only during initialization, store them, never resolve again.
+- Scene objects and spawned content **register with their host** during initialization.
+- The host **injects dependencies** upon registration.
+- After registration, components use stored references—**no runtime resolution**.
 
 **Communication:**
 
@@ -573,30 +640,24 @@ For readers who have been here before:
 
 **Ownership:**
 
-- Every piece of state has one owner.
+- Every piece of state has one owner (a host).
 - If two modules need to write the same field, the boundaries are wrong.
+
+**Inside vs. outside:**
+
+- Inside a module, do whatever works. The architecture governs boundaries, not internals.
+- Contracts are the membrane. Respect them; internals are free.
 
 **Multiplicity:**
 
 - Design systems to operate on *a* thing, not *the* thing.
 - Player ≠ avatar. Pass references; avoid singletons in reusable code.
-- Project-specific scripts can assume singletons. Reusable systems cannot.
-
-**Abstraction:**
-
-- Start concrete. Abstract when you see the compression.
-- Inside a module, do whatever works. The architecture governs boundaries, not internals.
 
 **Enforcement escalation:**
 
 - Solo: folders, conventions, social.
 - Small team: named responsibilities, code review.
 - Larger team: assembly definitions, compiler-enforced contracts.
-
-**What to wrap:**
-
-- Third-party singletons and Unity statics go inside modules that expose contracts.
-- Concentrate static access; don't scatter it.
 
 **Persistence:**
 

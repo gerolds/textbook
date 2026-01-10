@@ -13,6 +13,7 @@ enableGitInfo = false
 
 [markup.tableOfContents]
   startLevel = 2
+  endLevel = 3
 
 [markup.highlight]
   style = 'monokai'
@@ -24,6 +25,9 @@ enableGitInfo = false
   BookComments = false
   BookDateFormat = 'Jan 2, 2006'
   BookPortableLinks = 'warning'
+  enable_toc = true
+  toc_position = 'right'
+  enable_collapsible_toc = false
 
 [[menu.after]]
   name = 'Essays'

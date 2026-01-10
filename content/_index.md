@@ -1,7 +1,7 @@
 +++
-title = 'Latest Essays'
-description = 'Personal reflections on craft, meaning, and the quiet corners of everyday life.'
+title = 'Articles'
+description = 'Intro to articles.'
 hideSidebar = true
 +++ 
 
-Welcome! This collection gathers essays, letters, and dispatches about making art, staying close to people, and noticing the small details that shape a day. New writing appears a few times a month—have a look around, or subscribe to the RSS feed to keep up.
+These essays are research notes, summaries and compressions of ideas I care (or have cared about at some point); mostly around software engineering and game development from all angles. They serve as a memory and reference for talking about these subjects. All articles are evolving documents that are reshaped as new information, understanding and time permit.

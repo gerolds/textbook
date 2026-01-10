@@ -1,8 +1,8 @@
 +++
 title = "Unity Architecture for Growing Projects"
-date = 2026-01-10T18:00:00-01:00
+date = 2026-01-09T00:00:00-01:00
 description = "A modular architecture that works with Unity's grain: modules, hosts, contracts, and orchestration for scaling from prototype to production."
-summary = "Unity makes spaghetti easy to start and painful to unwind. This article describes an architecture that keeps editor-friendly workflows while adding explicit structure for ownership, lifecycle, and dependencies—scaling by changing rigor, not model."
+summary = "Unity makes spaghetti easy to start and painful to unwind. This article describes an architecture that keeps editor-friendly workflows while adding explicit structure for ownership, lifecycle, and dependencies; scaling by changing rigor, not model."
 tags = ["architecture", "unity", "game-development", "software-design"]
 categories = ["Essays"]
 showToc = true
@@ -41,26 +41,30 @@ cover = { image = '', alt = '', caption = '' }
 
 ## Premise
 
-Unity does not make you write spaghetti. Unity makes spaghetti easy to start and painful to unwind.
+Successful games often have the worst codebases. Not because the teams were bad, but because success came fast; fast enough that the prototype became production before anyone could make it sustainable.
 
-The engine's design (scenes, prefabs, `GetComponent`, serialized references, lifecycle callbacks) prioritizes iteration speed and designer access. That's not a flaw. It's why prototyping in Unity feels fast. But those same features create implicit coupling: any object can find any other object, callbacks run in engine-determined order, and state scatters across the hierarchy.
+You know the symptoms. Iteration slows to a crawl. More time goes to bugs than features. New hires take months to become productive. Certain systems are owned by "the only person who understands it." Some code has an unspoken rule: *don't touch it.* Everything depends on everything; logically, structurally, and through assumptions nobody wrote down. What should be a module is actually a tangle of implicit behaviors wired through the editor, and untangling it would cost more than the feature is worth.
 
-This article describes an architecture that works *with* Unity's grain: it keeps editor-friendly workflows and content-driven instantiation while adding explicit structure for ownership, lifecycle, and dependencies. The architecture scales from prototype to production by changing *rigor*, not *model*. The same mental framework applies at every stage; what changes is how strictly you enforce it.
+None of this happens because Unity is bad. It happens because Unity optimizes for starting fast. Scenes, prefabs, serialized references, `GetComponent`, lifecycle callbacks; these make the first month effortless. But they create invisible coupling. Any object can find any other object. State scatters across the hierarchy. Dependencies live in serialized fields that only the editor knows about. By month six, you've built a machine that works but that nobody fully understands.
+
+This article describes an architecture that works *with* Unity's grain (keeping editor-friendly workflows and fast iteration) while adding structure that makes ownership, boundaries, and dependencies explicit. The architecture scales from prototype to production by changing *rigor*, not *model*. The same principles apply at every stage; what changes is how strictly you enforce them.
 
 ### The core idea: hosts as membranes
 
-The architecture rests on one central concept: **the host is the module's membrane**.
+> ![alt text](images/unity-architecture-membrane.png)
+>
+> Picture a living cell. The cell membrane isn't a wall, it is a selective boundary. It controls what enters (nutrients, signals), what exits (waste, messages), and what belongs inside (the cell's machinery). The membrane doesn't block communication; it mediates it. Without the membrane, the cell's contents would dissolve into the environment. With it, the cell maintains identity and can cooperate with other cells without losing itself.
+>
+> The cell is a module, a living unit that the membrane defines and protects. When molecules pass through the membrane, they enter the cell's domain. The cell receives them, integrates them into its machinery, and puts them to work. The cell knows what's inside, maintains its own state, and is the authority for its own function. Other cells don't reach in and manipulate its internals, they send signals through the membrane.
 
-A membrane is a boundary that controls what enters, what exits, and what belongs inside. This is a *principle for seeing*, not a prescription for structure. The membrane helps you answer: "where does this belong? who is responsible? how do these communicate?"
+In this architecture, the **host is the module's membrane**. It's the boundary you pass through to belong, the thing that equips you when you enter, and the surface through which the module communicates with the outside world. The host isn't just a class that ; it's the answer to "who owns this?", "how do I join?", and "how do I talk to this module?" If you can point to the host, you can understand the module's shape.
 
-In this architecture:
-
-- **Everything participates by belonging to a host.** Scene objects, spawned prefabs, loaded content—they don't just exist; they belong to a module by registering with its host. "Registration" is conceptual: for a component, it might be a formal call; for a pooled object, it might just be "this pool belongs to Combat."
+- **Everything participates by belonging to a host.** Scene objects, spawned prefabs, loaded content--they don't just exist--they belong to a module by registering with its host. "Registration" is conceptual: for a component, it might be a formal call; for a pooled object, it might just be "this pool belongs to Combat."
 - **Registration is the handshake.** When something joins a module, the host gives it context (dependencies, configuration). The object doesn't fish for these later.
 - **Communication crosses the membrane through contracts.** Modules don't reach into each other's internals. They talk through the host's public surface.
-- **The host owns what's inside.** State, lifecycle, persistence—the host is the authority. If you need to save, enumerate, or debug, you ask the host.
+- **The host owns what's inside.** State, lifecycle, persistence; the host is the authority. If you need to save, enumerate, or debug, you ask the host.
 
-This concept generates everything else in this article. But it's orientation, not prescription: the specific mechanisms (DI containers, manual wiring, singletons-with-discipline) vary by project. The principle stays the same.
+This concept generates everything else in this article. Read it as orientation, not prescription: the specific mechanisms (DI containers, manual wiring, singletons-with-discipline) vary by project. The principle stays the same.
 
 ### What this gives you
 
@@ -158,6 +162,8 @@ Modules communicate through contracts. The orchestration layer is the only code 
 
 ### Why legibility matters: the city metaphor
 
+![City](images/city.png)
+
 To understand why these constraints matter, picture a large Unity project as a city. The problem in most Unity cities is that any building can build a private road to any other building. At first it feels efficient. Later you discover you cannot reason about traffic, you cannot reroute, and you cannot tell which roads are essential and which are accidental.
 
 Architecture is deciding where the districts are, what roads are allowed to cross districts, and where the entry points are. You are not trying to eliminate roads; you are trying to make the road network legible.
@@ -204,16 +210,16 @@ These modes are **conceptually decoupled**. They share no runtime lifecycle. Whe
 
 **What does NOT live in a host-scene:**
 
-The host-scene contains only **infrastructure**—the hosts and orchestration that will manage gameplay. It does not contain gameplay content itself.
+The host-scene contains only **infrastructure**; the hosts and orchestration that will manage gameplay. It does not contain gameplay content itself.
 
-Levels, enemies, items, NPCs, interactables—all of this is **loaded additively** into the host-scene's scope. A level scene loads on top of the host-scene. Prefabs spawn at runtime. Addressables stream in as needed. None of this content exists in the host-scene asset.
+Levels, enemies, items, NPCs, interactables; all of this is **loaded additively** into the host-scene's scope. A level scene loads on top of the host-scene. Prefabs spawn at runtime. Addressables stream in as needed. None of this content exists in the host-scene asset.
 
 This is where **self-registration** does the heavy lifting. When a content scene loads or a prefab spawns, its components discover the active hosts (via the service locator) and register themselves. The host-scene does not need to know what content will arrive; it only needs to be ready to receive it.
 
 This separation has major workflow benefits:
 
 - **Content teams work independently.** Level designers build levels in their own scenes. Character artists set up prefabs. Environment artists place props. None of them edit the host-scene.
-- **Content modules integrate cleanly.** A new enemy type, a new weapon, a new interactable—each is a prefab or scene that self-registers with the appropriate hosts. If it implements the right components, it just works.
+- **Content modules integrate cleanly.** A new enemy type, a new weapon, a new interactable; each is a prefab or scene that self-registers with the appropriate hosts. If it implements the right components, it just works.
 - **Iteration is fast.** You can test a single level by loading the host-scene and then additively loading just that level. You do not need to boot through menus or load the entire game world.
 - **Memory is predictable.** Content loads and unloads while hosts persist. You can stream levels without tearing down the mode's infrastructure.
 
@@ -244,7 +250,7 @@ This separation has major workflow benefits:
 
 **Why this matters:**
 
-- **Clean unload.** When the mode ends, you destroy the scene. All hosts, all registered components, all scoped state—gone. No lingering singletons, no manual cleanup lists.
+- **Clean unload.** When the mode ends, you destroy the scene. All hosts, all registered components, all scoped state; gone. No lingering singletons, no manual cleanup lists.
 - **Parallel development.** Teams can work on different modes without stepping on each other. The menu team and the gameplay team load different host-scenes.
 - **Testability.** You can load a host-scene in isolation, pass it test parameters, and verify behavior without booting the entire game.
 - **Mode-specific optimization.** Each mode loads only the hosts it needs. A credits sequence does not initialize combat.
@@ -254,6 +260,8 @@ The cost is that cross-mode communication must be explicit. You cannot call into
 ---
 
 ## Unity's instantiation reality (and the compromise that works)
+
+![Registration](registration.png)
 
 Unity instantiates things from content: scenes, prefabs, additive loading, Addressables. If you insist that a central orchestrator must explicitly construct every gameplay object, you end up writing spawners for everything and fighting iteration.
 
@@ -269,7 +277,7 @@ This keeps workflows editor-friendly while still making ownership and boundaries
 
 The membrane model implies a specific constraint: **resolve dependencies only during initialization, store them, and never resolve again.**
 
-This isn't arbitrary—it's a direct consequence of "registration is the handshake." If components could resolve dependencies at any time, they would bypass the host, and the membrane would become porous. Runtime dependency fishing reintroduces hidden coupling, just behind a nicer API.
+This isn't arbitrary; it's a direct consequence of "registration is the handshake." If components could resolve dependencies at any time, they would bypass the host, and the membrane would become porous. Runtime dependency fishing reintroduces hidden coupling, just behind a nicer API.
 
 The safe rule:
 
@@ -346,9 +354,9 @@ The key insight: **the querying code and the discovered component belong to the 
 
 Different modules can attach different marker components to the same GameObject. A character might have:
 
-- `DamageReceiver` (Combat module) — for taking damage.
-- `InteractionTarget` (Interaction module) — for player interaction prompts.
-- `AIPerceptionTarget` (AI module) — for enemy detection.
+- `DamageReceiver` (Combat module) for taking damage.
+- `InteractionTarget` (Interaction module) for player interaction prompts.
+- `AIPerceptionTarget` (AI module) for enemy detection.
 
 Each module queries for its own markers. Combat raycasts look for `DamageReceiver`. Interaction raycasts look for `InteractionTarget`. AI perception queries look for `AIPerceptionTarget`. The modules share the physics world but not each other's components.
 
@@ -371,7 +379,7 @@ Even if you move most logic out of MonoBehaviours and into hosts, MonoBehaviours
 - **Collider components** that can be queried via raycast or overlap.
 - **Marker components** that identify what a GameObject means to a particular module.
 
-These MonoBehaviours are thin: they hold data, implement callbacks, and delegate to their module's host or systems. They are "spatial markup"—the module's way of saying "this point in space participates in my domain."
+These MonoBehaviours are thin: they hold data, implement callbacks, and delegate to their module's host or systems. They are "spatial markup"; the module's way of saying "this point in space participates in my domain."
 
 The physical world is not a back door around the architecture. It is a *discovery mechanism* that each module uses independently, with coordination happening through contracts when needed.
 
@@ -383,7 +391,7 @@ If both combat and UI need health, one module owns the canonical health value. C
 
 If two modules both need to write the same field, your boundaries are wrong, or you need a third module to own that field.
 
-Note that **entities are not modules**. A player character, an enemy, a vehicle—these are *things that modules operate on*, not modules themselves. A character might have a `DamageReceiver` (belonging to Combat), an `InventoryHolder` (belonging to Inventory), and a `CharacterMotor` (belonging to Movement). Each component belongs to its module; the entity is an assemblage of components. The question "which module owns the player?" is usually malformed—modules own *aspects* of entities, not entities themselves.
+Note that **entities are not modules**. A player character, an enemy, a vehicle; these are *things that modules operate on*, not modules themselves. A character might have a `DamageReceiver` (belonging to Combat), an `InventoryHolder` (belonging to Inventory), and a `CharacterMotor` (belonging to Movement). Each component belongs to its module; the entity is an assemblage of components. The question "which module owns the player?" is usually malformed; modules own *aspects* of entities, not entities themselves.
 
 ## Premature abstraction is the root of all evil
 
@@ -493,7 +501,7 @@ The cost of designing for multiplicity is minimal; you pass a reference instead 
 
 Logging, input, time, and analytics are services many modules use but that do not belong inside any domain module. Treat them as **infrastructure contracts**: interfaces that the orchestration layer provides and binds to implementations at startup.
 
-This differs from domain contracts (like `IInventory` or `ICombat`), which are provided by hosts. Infrastructure contracts are provided by the orchestration layer itself—they exist before any domain host initializes and remain stable for the scene's lifetime.
+This differs from domain contracts (like `IInventory` or `ICombat`), which are provided by hosts. Infrastructure contracts are provided by the orchestration layer itself; they exist before any domain host initializes and remain stable for the scene's lifetime.
 
 - **Input** translates raw Unity input into game-meaningful actions.
 - **Time** provides pausable, scalable game time.
@@ -623,7 +631,7 @@ For readers who have been here before:
 **The shape:**
 
 - **Modules** own coherent slices of functionality. One sentence per module.
-- **Hosts** are the membrane—the entry point, state owner, and authority for each module.
+- **Hosts** are the membrane; the entry point, state owner, and authority for each module.
 - **Contracts** are the membrane's external surface. Other code talks to contracts, not internals.
 - **Orchestration** creates hosts, controls lifetimes, wires contracts.
 
@@ -631,7 +639,7 @@ For readers who have been here before:
 
 - Scene objects and spawned content **register with their host** during initialization.
 - The host **injects dependencies** upon registration.
-- After registration, components use stored references—**no runtime resolution**.
+- After registration, components use stored references; **no runtime resolution**.
 
 **Communication:**
 
@@ -677,13 +685,13 @@ To bootstrap this architecture, you need a small amount of infrastructure: a ser
 
 The companion article will cover:
 
-1. **Service locator** — a scoped container that holds host references for a scene's lifetime.
-2. **Host base classes** — optional infrastructure for consistent initialization, registration, and shutdown.
-3. **Bootstrapper pattern** — how the entry point of a host-scene initializes hosts, populates the locator, and triggers the play-mode FSM.
-4. **Play-mode state machine** — the authoritative orchestrator for input routing, time scale, UI layers, and mode-wide concerns.
-5. **Contract interfaces** — the narrow public surface that modules expose.
-6. **Symbol pattern** — ScriptableObjects as designer-friendly identity tokens.
-7. **Folder and assembly structure** — organizing code for eventual compiler-enforced boundaries.
+1. **Service locator**: a scoped container that holds host references for a scene's lifetime.
+2. **Host base classes**: optional infrastructure for consistent initialization, registration, and shutdown.
+3. **Bootstrapper pattern**: how the entry point of a host-scene initializes hosts, populates the locator, and triggers the play-mode FSM.
+4. **Play-mode state machine**: the authoritative orchestrator for input routing, time scale, UI layers, and mode-wide concerns.
+5. **Contract interfaces**: the narrow public surface that modules expose.
+6. **Symbol pattern**: ScriptableObjects as designer-friendly identity tokens.
+7. **Folder and assembly structure**: organizing code for eventual compiler-enforced boundaries.
 
 For now, the principles in this article give you the mental model. The implementation details will follow, with working code you can adapt to your project.
 

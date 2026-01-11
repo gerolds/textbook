@@ -63,6 +63,8 @@ Traditional patterns (MVC, clean architecture, repository) assume stable object 
 
 These principles (ownership, boundaries, communication surfaces) apply regardless of paradigm. In MonoBehaviour-heavy code, hosts coordinate other MonoBehaviours. In ECS/DOTS, systems *are* the hosts: they own processing for a slice of logic, and the membrane is the system's public queries and events. In Unreal, Subsystems fill the role; in Godot, Autoloads. The mechanisms differ; the mental model travels.
 
+Different engines ship different "rails" for them. Unity gives you freedom, and you build the rails yourself. Treat this article as orientation, not a framework to copy wholesale.
+
 ### What this means for solo developers
 
 If you're working alone on a short project, most of this is optional. You don't need assembly separation, formal contracts, or explicit orchestration. You can use singletons freely. The cost of unwinding assumptions is bounded by the project's lifespan and your own memory.

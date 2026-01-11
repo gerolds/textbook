@@ -13,7 +13,7 @@ cover = { image = '', alt = '', caption = '' }
 
 # Unity Architecture for Growing Projects
 
-![Architecture party](images/title.png)
+![Architecture party](images/title.jpg)
 
 ## Premise
 
@@ -27,7 +27,7 @@ This article describes an architecture that works *with* Unity's grain (keeping 
 
 ### The core idea: hosts as membranes
 
-> ![alt text](images/membrane.png)
+> ![alt text](images/membrane.jpg)
 >
 > Picture a living cell. The cell membrane isn't a wall, it is a selective boundary. It controls what enters (nutrients, signals), what exits (waste, messages), and what belongs inside (the cell's machinery). The membrane doesn't block communication; it mediates it. Without the membrane, the cell's contents would dissolve into the environment. With it, the cell maintains identity and can cooperate with other cells without losing itself.
 >
@@ -128,7 +128,7 @@ Modules communicate through contracts. The orchestration layer is the only code 
 
 ### Why legibility matters: the city metaphor
 
-> ![City](images/city.png)
+> ![City](images/city.jpg)
 >
 > *Looks impressive but just because roads are there, doesn't mean they make sense.*
 
@@ -224,7 +224,7 @@ Cross-mode communication must be explicit. You can't call "the inventory" from t
 
 ## Unity's instantiation reality
 
-> ![Registration](images/immigration.png)
+> ![Registration](images/immigration.jpg)
 >
 > *New citizens arrive constantly, how are they, what do they want, do we want them, do they bring diseases?*
 
@@ -355,7 +355,7 @@ If two modules both need to write the same field, your boundaries are wrong, or 
 
 ## Premature abstraction
 
-![Abstractions, fight!](images/abstraction.png)
+![Abstractions, fight!](images/abstraction.jpg)
 
 Abstractions have a cost. Every interface, every indirection, every "what if we need to swap this later" adds cognitive load. Contracts and interfaces should be *earned*, not pre-emptive.
 
@@ -381,7 +381,7 @@ Contracts are the membrane. Inside, do what works.
 
 ## The singleton trap
 
-![Trophy room](images/trophyroom.png)
+![Trophy room](images/trophyroom.jpg)
 
 One of the most expensive early assumptions: there's one player, one UI, one camera, one inventory. It simplifies everything, until it doesn't.
 
@@ -469,7 +469,7 @@ The payoff is testability. Record a replay by swapping input for playback. Fast-
 
 ## Third-party code and static APIs
 
-![Checkpoint](images/checkpoint.png)
+![Checkpoint](images/checkpoint.jpg)
 
 Unity's own APIs are static: `Time.deltaTime`, `Input.GetKey`, `Physics.Raycast`. Third-party assets often use singletons. This isn't a problem to fight; it's reality.
 

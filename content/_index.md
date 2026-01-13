@@ -4,7 +4,7 @@ description = 'Intro to articles.'
 hideSidebar = true
 +++ 
 
-These essays are research notes, summaries and compressions of ideas I am curious about (or have cared for at some point). They serve as a memory and reference for talking about these subject.
+These essays are research notes, summaries and compressions of ideas I am curious about (or have cared for at some point). They serve as a memory and reference for talking about these subjects.
 
 All articles are evolving documents that are reshaped as new information, understanding and time permit.
 

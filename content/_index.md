@@ -11,3 +11,7 @@ All articles are evolving documents that are reshaped as new information, unders
 Some texts have been processed by a large language model to perform various changes, transformations and corrections. In most cases the model was used as a shortcut to create a readable synthesis of notes, for fact checking and exploration of counterfactuals. The substantive basis of all essays is my own and represent my judgement of what is important.
 
 If you don't care for this sort of translated information. Look elsehere.
+
+Contact: [github.com/gerolds](https://github.com/gerolds)
+
+License: All content on this site is free to use so long as you provide suitable attibution: [CC-BY](https://creativecommons.org/licenses/by/4.0/)

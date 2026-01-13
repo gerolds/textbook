@@ -218,3 +218,7 @@ But all of those are easier if the invariant is right. The invariant is the engi
 - *[Finding the Commitment]({{< ref "posts/finding-the-commitment" >}})* — how to find the commitment the invariant must serve.
 - *[When the Funnel Eats the Work]({{< ref "posts/when-the-funnel-eats-the-work" >}})* — why compression survival matters for design.
 - *[Studio OS]({{< ref "posts/studio-os" >}})* — the production primitive that frames the proof slice.
+
+---
+
+*Drafting assistance: Claude Opus. All claims mine; errors my responsibility.*

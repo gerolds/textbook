@@ -643,3 +643,7 @@ Companion article will cover:
 - Store dependencies during `Awake`/`Start`, never resolve again at runtime
 - Define contracts as interfaces in a shared folder
 - Use ScriptableObjects instead of strings or enums for identity
+
+---
+
+*Drafting assistance: Claude Opus. All claims mine; errors my responsibility.*

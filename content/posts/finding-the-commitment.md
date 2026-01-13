@@ -199,3 +199,7 @@ If it's stage-gate exit, execute the plan. Move to the barbell. Shrink the burn.
 
 - *[Making the Thing]({{< ref "posts/making-the-thing" >}})* — assumes you have a commitment; this essay argues why keeping one matters.
 - *[Prototyping the Loop]({{< ref "posts/prototyping-the-loop" >}})* — once you have a commitment, how to find a loop that serves it.
+
+---
+
+*Drafting assistance: Claude Opus. All claims mine; errors my responsibility.*

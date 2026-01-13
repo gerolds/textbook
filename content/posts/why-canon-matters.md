@@ -83,3 +83,7 @@ cover = { image = '', alt = '', caption = '' }
 ---
 
 *This article is a draft outline. Sections above indicate the key claims to develop.*
+
+---
+
+*Drafting assistance: Claude Opus. All claims mine; errors my responsibility.*

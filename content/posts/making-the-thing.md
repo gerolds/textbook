@@ -354,3 +354,7 @@ None of these are wrong. They emphasize different things. This essay bets on *co
 - *[Prototyping the Loop]({{< ref "posts/prototyping-the-loop" >}})*: testing whether a loop serves the commitment.
 - *[The Elements of a Good and Widely Appealing Game]({{< ref "wide-appeal" >}})*: the analytical framework these checkpoints derive from.
 - *[When the Funnel Eats the Work]({{< ref "when-the-funnel-eats-the-work" >}})*: cultural selection pressures.
+
+---
+
+*Drafting assistance: Claude Opus. All claims mine; errors my responsibility.*

@@ -144,3 +144,7 @@ When novelty is burned too quickly, fatigue accumulates. Fatigue creates room fo
 If we keep our lens on conversion versus capture, loop fitness versus habitat fitness, and funnel/compression/scaffolding as selection mechanisms, we can watch these shifts without turning them into moral panics.
 
 We can keep our healthy distrust—of institutions, of metrics, of narratives that sanctify scale—while also refusing the cheap comfort of despair. The point isn’t to save the medium with purity. The point is to keep learning how to tell when a work is being authored and when it is being processed, and to reward the former with the only currency that ultimately matters: honest attention, well-placed enthusiasm, and language that helps others see what we saw.
+
+---
+
+*Drafting assistance: Claude Opus. All claims mine; errors my responsibility.*

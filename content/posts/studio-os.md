@@ -245,3 +245,7 @@ The OS demands numbers that cash out:
 - **Time-to-proof**: how many calendar days between promise change and proof test with strangers?
 
 These aren’t “finance metrics.” They are anti-self-deception metrics. They keep us from mistaking social proof for sustainability, and they force the studio to treat learning speed as the real scarce resource.
+
+---
+
+*Drafting assistance: Claude Opus. All claims mine; errors my responsibility.*

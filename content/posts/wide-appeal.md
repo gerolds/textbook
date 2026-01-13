@@ -362,3 +362,7 @@ This essay is analytic: it names properties you can look for in finished work. I
 
 - *[Making the Thing]({{< ref "making-the-thing" >}})*: How to start from a governing commitment and let everything else follow. The same axes reframed as diagnostic checkpoints for production, not post-hoc analysis.
 - *[When the Funnel Eats the Work]({{< ref "when-the-funnel-eats-the-work" >}})*: On cultural selection pressures that shape what gets seen, and what gets converted before it can convert.
+
+---
+
+*Drafting assistance: Claude Opus. All claims mine; errors my responsibility.*

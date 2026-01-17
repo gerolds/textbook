@@ -11,8 +11,6 @@ slug = 'wide-appeal'
 cover = { image = '', alt = '', caption = '' }
 +++
 
-# The Elements of a Good and Widely Appealing Game
-
 ## TL;DR
 
 - Wide appeal is cultural transmissibility—games that recruit love across player types and survive retelling across cohorts.

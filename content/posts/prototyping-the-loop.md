@@ -11,8 +11,6 @@ slug = 'prototyping-the-loop'
 cover = { image = '', alt = '', caption = '' }
 +++
 
-# Prototyping the Loop
-
 ## The argument
 
 *[Making the Thing]({{< ref "posts/making-the-thing" >}})* says: derive your core loop from the commitment, then prototype it cheaply. But "prototype it cheaply" hides the real question: what are you actually looking for?

@@ -17,7 +17,7 @@ cover = { image = '', alt = 'Abstract illustration of a funnel compressing creat
 - Selection pressures tend to cannibalize **novelty** (everything becomes a trailer), **trust** (extractive tactics), and **discourse** (conversation as performance).
 - The goal isn’t purity or nostalgia; it’s learning to see the currents so we can reward authored work with honest attention.
 
-# When the Funnel Eats the Work
+---
 
 We grew up on a simple story about culture. There was *the work* and there was *the business*, and the business was a necessary evil that occasionally reached into the studio and rearranged the furniture. The moral vocabulary around this was crude but serviceable. Selling out meant you traded intent for access. Mainstream was a slur because it implied the work had been optimized for gatekeepers, not for people. The romance was that a rare band, filmmaker, or author might thread the needle: critical respect and mass reach without contamination.
 

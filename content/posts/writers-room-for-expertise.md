@@ -11,8 +11,6 @@ slug = 'writers-room-for-expertise'
 cover = { image = '', alt = '', caption = '' }
 +++
 
-# When the Proxy Breaks
-
 **When a craft is hard, its surface markers become a credibility shortcut.** Polish implies effort; effort implies care; care implies truth or taste. Audiences learn to treat "looks professional" as "probably worth my attention" because the cost of producing that surface deters most fakers. The proxy works until a technology collapses the cost. Then the correlation between surface and merit breaks, and audiences experience the break as betrayal.
 
 The backlash against LLM-assisted writing follows a repeating pattern: technology cheapens a craft surface, audiences lose a trusted shortcut, and the disruption gets framed as moral crisis rather than measurement problem. The resolution is predictable: value migrates from the newly-cheap surface to the decisions that remain expensive, and communities stabilize around signals that reward outcomes over tool purity.

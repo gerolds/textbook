@@ -11,8 +11,6 @@ slug = 'making-the-thing'
 cover = { image = '', alt = '', caption = '' }
 +++
 
-# Making the Thing
-
 You are making a game. You have ideas, constraints, maybe a team, maybe a deadline. You need something that coheres.
 
 ---

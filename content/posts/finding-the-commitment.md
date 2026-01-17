@@ -11,8 +11,6 @@ slug = 'finding-the-commitment'
 cover = { image = '', alt = '', caption = '' }
 +++
 
-# Finding the Commitment
-
 A commitment you keep is worth more than a better commitment you abandon.
 
 This sounds like motivational advice. It is not. It is a claim about how creative work compounds, and why changing direction costs more than you think.

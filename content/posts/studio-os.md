@@ -10,8 +10,6 @@ slug = 'studio-os'
 cover = { image = '', alt = '', caption = '' }
 +++
 
-# The Studio Primitive: *Promise → Proof → Cut → Ship*
-
 Most studios don’t fail because they lack talent. They fail because they never build the one thing that makes everything else cheaper: a small, repeatable way to turn intention into evidence.
 
 We keep trying to run studios on vibes. On myths about “the soul.” On inherited templates. On fear. On the hope that if we add enough content, the game will eventually justify itself. That’s how you end up with an expensive object that nobody can recommend without apologizing, and a team that’s exhausted but not confident.

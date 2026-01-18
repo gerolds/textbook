@@ -237,3 +237,7 @@ Review of resilience research distinguishing recovery (return to baseline) from 
 
 **Bonanno, G. A. (2004).** "Loss, Trauma, and Human Resilience: Have We Underestimated the Human Capacity to Thrive After Extremely Aversive Events?" *American Psychologist*, 59(1), 20–28.
 Demonstrates that resilience after major shocks is more common than previously assumed, and identifies protective factors. Relevant to why some people recover and others derail.
+
+---
+
+*Drafting assistance: Claude Opus. All claims mine; errors my responsibility.*

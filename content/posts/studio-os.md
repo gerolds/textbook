@@ -242,7 +242,87 @@ The OS demands numbers that cash out:
 - **Unit economics**: expected net revenue per player (after platform fees, refunds, taxes), not gross.
 - **Time-to-proof**: how many calendar days between promise change and proof test with strangers?
 
-These aren’t “finance metrics.” They are anti-self-deception metrics. They keep us from mistaking social proof for sustainability, and they force the studio to treat learning speed as the real scarce resource.
+These aren't "finance metrics." They are anti-self-deception metrics. They keep us from mistaking social proof for sustainability, and they force the studio to treat learning speed as the real scarce resource.
+
+---
+
+## Appendix C: Sources and Extended Reading
+
+### On Promises, Constraints, and Design Intent
+
+- **Christopher Alexander**, *Notes on the Synthesis of Form* (1964). The original argument for constraints as generative, not restrictive. Alexander shows how a well-defined problem statement (the "promise") makes solutions discoverable rather than arbitrary.
+
+- **Dieter Rams**, *Ten Principles for Good Design* (1970s, various). "Good design is as little design as possible." The cut step operationalizes Rams: everything not serving the promise is noise.
+
+- **Brian Eno and Peter Schmidt**, *Oblique Strategies* (1975). A deck of constraint cards for creative work. Demonstrates how artificial limitations unlock decisions that "freedom" paralyzes.
+
+### On Proof, Prototyping, and the Cost of Delaying Reality
+
+- **Alberto Savoia**, *The Right It* (2019). The core argument: most products fail not because they're built badly, but because they're the wrong thing. "Pretotyping" is Savoia's term for proof slices that test the promise before the build.
+
+- **Marty Cagan**, *Inspired* (2nd ed., 2017) and *Empowered* (2020). Product discovery practices from tech, directly applicable to games. Cagan's "four big risks" (value, usability, feasibility, business viability) map onto the proof slice.
+
+- **Steve Blank**, *The Four Steps to the Epiphany* (2003). The customer development model: get out of the building, test assumptions with strangers, iterate before scaling. The "proof with strangers" requirement comes from this lineage.
+
+- **Eric Ries**, *The Lean Startup* (2011). Popularized the minimum viable product (MVP) and the build-measure-learn loop. The proof slice is an MVP for the promise, not for the product.
+
+### On Cutting, Coherence, and the Psychology of Sunk Costs
+
+- **Chip Heath and Dan Heath**, *Decisive* (2013). How to make better decisions, including techniques for overcoming loss aversion and the sunk cost fallacy. Directly applicable to the cut step.
+
+- **Daniel Kahneman**, *Thinking, Fast and Slow* (2011). The psychological mechanisms behind why cutting feels like loss even when it's gain. Prospect theory explains why "keeping both ideas" is so tempting.
+
+- **Shigeru Miyamoto**, various interviews (collected at Iwata Asks, Nintendo). Miyamoto's practice of "upending the tea table" (chabudai gaeshi)—late-stage rethinking that forces coherence—is a legendary version of the cut step.
+
+- **Mark Rosewater**, "Twenty Years, Twenty Lessons Learned" (GDC 2016). Magic: The Gathering's head designer on why restrictions breed creativity and why "players are good at recognizing problems but bad at solving them."
+
+### On Trust, Compounding, and Network Effects
+
+- **Eugene Wei**, "Status as a Service" (2019, essay). How social networks create and distribute status. The "compressible object" concept—something networks can carry—draws from Wei's analysis of what goes viral and why.
+
+- **Kevin Simler and Robin Hanson**, *The Elephant in the Brain* (2018). On hidden motives and signaling. Trust is a signal; the proof slice is what makes the signal credible rather than cheap talk.
+
+- **W. Brian Arthur**, *Increasing Returns and Path Dependence in the Economy* (1994). The economics of preferential attachment: why early advantages compound and why proof slices are worth front-loading.
+
+- **Naval Ravikant**, "How to Get Rich (without getting lucky)" (2018, tweetstorm/podcast). The distinction between "renting your time" and "owning equity" applies to studios: trust is equity; content without trust is rented attention.
+
+### On Antifragility and Learning Under Uncertainty
+
+- **Nassim Nicholas Taleb**, *Antifragile: Things That Gain from Disorder* (2012). The source of the antifragility concept. Taleb distinguishes fragile (harmed by volatility), robust (neutral), and antifragile (strengthened). Studios that test early and ship small are antifragile.
+
+- **Annie Duke**, *Thinking in Bets* (2018). Decision-making under uncertainty, including how to separate outcome quality from decision quality. Relevant to treating invalidation as progress rather than failure.
+
+- **Gary Klein**, *Sources of Power: How People Make Decisions* (1998). Naturalistic decision-making research showing how experts use pattern recognition and mental simulation. The "questions that keep the OS alive" section draws on Klein's recognition-primed decision model.
+
+### On Funding, Incentives, and the Politics of Production
+
+- **Ben Horowitz**, *The Hard Thing About Hard Things* (2014). On the operational realities of running a company under funding pressure. Horowitz is candid about how incentive regimes shape behavior.
+
+- **Venkatesh Rao**, "The Gervais Principle" (2009–2013, Ribbonfarm essays). A cynical but useful lens on organizational dynamics, including how "cluelessness" (well-meaning ambiguity) enables dysfunction.
+
+- **Carlota Perez**, *Technological Revolutions and Financial Capital* (2002). On the relationship between finance and innovation cycles. Relevant to understanding why "low-trust funding" behaves the way it does.
+
+- **Jason Schreier**, *Blood, Sweat, and Pixels* (2017) and *Press Reset* (2021). Reported accounts of game studio dysfunction. Nearly every failure mode in "The Demons" section appears in Schreier's case studies.
+
+### On Game Design Specifically
+
+- **Jesse Schell**, *The Art of Game Design: A Book of Lenses* (3rd ed., 2019). A comprehensive design framework organized around questions ("lenses"). The "questions that keep the OS alive" section is structurally similar.
+
+- **Raph Koster**, *A Theory of Fun for Game Design* (2nd ed., 2013). On why games are fun (pattern learning) and what makes fun sustainable. Relevant to "the proof slice must work without progression."
+
+- **Tynan Sylvester**, *Designing Games: A Guide to Engineering Experiences* (2013). Practical game design from the creator of RimWorld. Sylvester's emphasis on "emotional mechanics" aligns with the promise step.
+
+- **Keith Burgun**, *Game Design Theory* (2012) and *Clockwork Game Design* (2015). Rigorous, opinionated frameworks for game design. Burgun's insistence on core loops over content volume supports the proof-before-content argument.
+
+### Extended Discussions
+
+**Agile vs. Waterfall vs. This Loop** — The article claims the loop is neither. For context: agile (Scrum, Kanban) optimizes for responsiveness but can lose strategic coherence; waterfall optimizes for planning but cannot handle discovery. The loop is closest to "dual-track agile" (discovery + delivery) or "shape up" (Basecamp's methodology), where betting on defined problems precedes execution.
+
+**The "Soul" Problem** — Studios often fear that systematization kills soul. The counterargument: soul is what remains after you remove the interchangeable parts. Systems don't kill soul; they reveal whether soul was there. See also: *Creativity, Inc.* by Ed Catmull (2014) on how Pixar operationalized creative excellence without flattening it.
+
+**Why Not Just "Ship Fast and Iterate"?** — Iteration requires feedback, and feedback requires legibility. If the promise isn't clear, feedback is noise. Shipping fast without a proof slice produces data, not learning. The loop front-loads legibility so that iteration actually teaches.
+
+**Content-First as Industry Default** — Why do studios default to content-first despite its costs? Partly because content is visible progress (easy to audit), partly because it defers the scary question ("is the core fun?"), and partly because production pipelines are easier to manage than design uncertainty. The loop is a deliberate inversion: prove the core, then scale content.
 
 ---
 

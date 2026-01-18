@@ -109,11 +109,83 @@ Once authors internalize constraint density, "LLM-assisted" stops being a credib
 
 ---
 
-## Retrieval questions
+## Closing questions
 
 - Which proxy do you use to infer "this author knows what they're doing"? What would you do if that proxy became free tomorrow?
 
 - What verification step do you consistently skip because the old proxy used to cover for it?
+
+---
+
+## Appendix: Sources and Extended Reading
+
+### On Proxy Collapse and Measurement
+
+- **Goodhart's Law** – "When a measure becomes a target, it ceases to be a good measure." The proxy collapse pattern is a special case: the measure does not become a target, but becomes cheap to satisfy. Marilyn Strathern's generalization ("When a measure becomes a target, it ceases to be a good measure") and the original formulation by Charles Goodhart (1975) on monetary policy both illuminate why surface signals degrade.
+
+- **Campbell's Law** – Donald T. Campbell, "Assessing the Impact of Planned Social Change" (1979). The more a quantitative indicator is used for decision-making, the more it corrupts the process it was intended to monitor. Relevant to understanding why polish stopped working as a quality filter.
+
+### On Photography and Artistic Legitimacy
+
+- **Charles Baudelaire**, "The Modern Public and Photography" (1859), in *The Mirror of Art*. The primary source for photography-as-corruption arguments. Baudelaire's moral framing is remarkably parallel to contemporary AI discourse.
+
+- **Walter Benjamin**, "The Work of Art in the Age of Mechanical Reproduction" (1935). The canonical analysis of how reproduction technology changes art's function and aura. Benjamin is more nuanced than Baudelaire—he sees political potential in the collapse of scarcity.
+
+- **Susan Sontag**, *On Photography* (1977). Essays on how photography changed not just art but perception itself. Sontag traces the way the medium creates new ways of seeing rather than simply recording old ones.
+
+### On Music Technology and Authenticity Discourse
+
+- **Trevor Pinch and Frank Trocco**, *Analog Days: The Invention and Impact of the Moog Synthesizer* (2002). Documents the authenticity debates around synthesizers and the "no synthesizers" album disclaimers of the 1970s.
+
+- **Simon Reynolds**, *Retromania: Pop Culture's Addiction to Its Own Past* (2011). Includes discussion of how technology disruptions get absorbed into nostalgia cycles and authenticity performance.
+
+- **Dave Tompkins**, *How to Wreck a Nice Beach: The Vocoder from World War II to Hip-Hop* (2010). History of vocal processing technology and the recurring "that's not real singing" critique.
+
+### On the Luddites and Skilled Labor
+
+- **E.P. Thompson**, *The Making of the English Working Class* (1963). The revisionist history that recovered Luddism from "irrational technophobe" caricature. Thompson shows skilled workers responding strategically to machines that threatened wages and autonomy.
+
+- **Eric Hobsbawm**, "The Machine Breakers" (1952), *Past & Present*. Shorter treatment of machine-breaking as rational collective bargaining rather than anti-technology panic.
+
+### On the Economics of Niche Content
+
+- **Chris Anderson**, *The Long Tail* (2006). The optimistic case for niche content economics online. Useful as a comparison: Anderson predicted discovery would solve distribution, but attention scarcity reasserted itself.
+
+- **Yochai Benkler**, *The Wealth of Networks* (2006). On peer production and how reduced coordination costs change what gets made. The "expert publishing" unlock is a specific instance of Benkler's general thesis.
+
+- **Clay Shirky**, *Here Comes Everybody* (2008) and *Cognitive Surplus* (2010). On what happens when participation costs drop. Shirky's analysis of amateur production applies, with modifications, to expert production when assembly costs drop.
+
+### On Epistemic Signals and Trust
+
+- **Harry Frankfurt**, *On Bullshit* (1986/2005). The distinction between lying (caring about truth and inverting it) and bullshit (not caring about truth at all). Relevant to why fluent falsehoods are a distinct problem from mere error.
+
+- **Philip Tetlock**, *Expert Political Judgment* (2005) and *Superforecasting* (2015, with Dan Gardner). On what actually predicts expert accuracy (hint: not credentials or fluency). The "constraint density" argument draws on Tetlock's findings about hedged, specific claims outperforming confident broad ones.
+
+- **Julia Galef**, *The Scout Mindset* (2021). Popular treatment of epistemic practices that resist motivated reasoning. The "what would change your mind" prompt is central to Galef's framework.
+
+### On Writers' Rooms and Collaborative Creation
+
+- **Brett Martin**, *Difficult Men* (2013). History of the prestige TV era, including how writers' rooms actually function and how authorship is distributed.
+
+- **Pamela Douglas**, *Writing the TV Drama Series* (4th ed., 2018). Practitioner's guide to room structure, including how showrunners maintain voice across multiple writers.
+
+### On AI and Writing (Contemporary Discourse)
+
+- **Ted Chiang**, "ChatGPT Is a Blurry JPEG of the Web" (2023), *The New Yorker*. Influential framing of LLMs as lossy compression. Useful for understanding what the model "knows" and what it approximates.
+
+- **Emily Bender et al.**, "On the Dangers of Stochastic Parrots" (2021), *FAccT*. The paper that introduced "stochastic parrots" as a frame for large language models. Important for understanding the "fluent falsehoods" problem.
+
+- **Ethan Mollick**, *Co-Intelligence: Living and Working with AI* (2024). Practical treatment of LLM integration into knowledge work, including writing workflows.
+
+### Extended Discussions
+
+The proxy-collapse pattern connects to several broader conversations:
+
+**Signaling theory in economics** – Michael Spence's work on job-market signaling (Nobel Prize, 2001) explains why costly signals work: they separate types when cheap signals cannot. Proxy collapse is what happens when a previously costly signal becomes cheap.
+
+**Mimetic theory** – René Girard's work on imitation and rivalry helps explain why the moral framing persists: when everyone can produce the surface, the surface stops conferring distinction, and those who built status on it fight to preserve the old hierarchy.
+
+**Craft vs. art debates** – The proxy collapse pattern recurs wherever a previously difficult technique becomes automated. See also: CNC machining and woodworking, digital typography and lettering, CGI and practical effects. Each debate follows the "is it cheating?" → "does it work?" → "what new skills matter?" arc.
 
 ---
 

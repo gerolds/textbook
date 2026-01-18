@@ -8,7 +8,7 @@ These essays are research notes, summaries and compressions of ideas I am curiou
 
 All articles are evolving documents that are reshaped as new information, understanding and time permit.
 
-Some texts have been processed by a large language model to perform various changes, transformations and corrections. In most cases the model was used as a shortcut to create a readable synthesis of notes, for fact checking and exploration of counterfactuals. The substantive basis of all essays is my own and represent my judgement of what is important.
+The essays are also an experiment: Some texts have been processed by a large language model to perform various changes, transformations and corrections. In most cases the model was used as a shortcut to create a readable synthesis of notes, for fact checking and exploration of counterfactuals. The substantive basis of all texts is my own and represent my judgement of what is important (unless noted otherwise). As such these texts raise an interesting question of how we detect such processed information that is worth our attention when [everyhting looks equally polished]({{< ref "posts/writers-room-for-expertise" >}}).
 
 If you don't care for this sort of translated information. Look elsehere.
 

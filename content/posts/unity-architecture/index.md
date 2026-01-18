@@ -11,8 +11,6 @@ slug = "unity-architecture"
 cover = { image = '', alt = '', caption = '' }
 +++
 
-# Unity Architecture for Growing Projects
-
 ![Architecture party](images/title.jpg)
 
 ## Premise

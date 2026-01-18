@@ -4,7 +4,9 @@ description = 'Intro to articles.'
 hideSidebar = true
 +++ 
 
-These essays are research notes, summaries and compressions of ideas I am curious about (or have cared for at some point). They serve as a memory and reference for talking about these subjects.
+The essays below are research notes, summaries and compressions of ideas [I](https://github.com/gerolds) am curious about (or have cared for at some point). They serve as a memory and reference for talking about these subjects.
+
+## Disclaimer
 
 All articles are evolving documents that are reshaped as new information, understanding and time permit.
 
@@ -12,6 +14,6 @@ The essays are also an experiment: Some texts have been processed by a large lan
 
 If you don't care for this sort of translated information. Look elsehere.
 
-Contact: [github.com/gerolds](https://github.com/gerolds)
+Source: [github.com/gerolds](https://github.com/gerolds), Problems? [Raise an issue](https://github.com/gerolds/textbook/issues).
 
-License: All content on this site is free to use so long as you provide suitable attibution: [CC-BY](https://creativecommons.org/licenses/by/4.0/)
+License: *All content on this site is free to use so long as you provide suitable attibution: [CC-BY](https://creativecommons.org/licenses/by/4.0/).*

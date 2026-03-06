@@ -15,19 +15,19 @@ A "good hire" is situational. It fills a gap that actually exists and augments w
 
 ## What this article covers
 
-1. **[Hiring as design decision](#why-hiring-is-a-design-decision)** — why adding a person changes what the game can become, not just how fast it ships.
-2. **[Cost of a wrong hire](#the-cost-of-a-wrong-hire-at-small-scale)** — coordination tax, taste dilution, morale erosion, commitment drift.
-3. **[The pathologies, named](#the-pathologies-named)** — title inflation, all talk, not getting it, complacency, wrong questions.
-4. **[How hiring goes wrong](#how-hiring-goes-wrong-management-pathologies)** — comfort, referral traps, shallow search, proximity, fear of competence, lowballing, wishful thinking, self-rationalisation, reorganising, overlooking existing skills, not taking it seriously.
-5. **[Functions, not job titles](#what-the-team-actually-needs-functions-not-job-titles)** — commitment keeper, eye, author, loop guardian, architect, skeptic's advocate, bridge, unblocker.
-6. **[Scale changes what breaks](#scale-changes-what-breaks)** — 4–8, 8–20, 20–40, and the checks-and-balances principle.
-7. **[Taste](#taste-the-word-that-needs-defining)** — what it actually means, how it manifests, why it scales inversely with headcount.
-8. **[Heroes](#the-irreplaceable-why-games-need-heroes)** — why process alone is insufficient and why calibration against real excellence matters.
-9. **[Individual traits](#what-to-look-for-in-individuals)** — orientation, practice, opinions, alternatives, order, maturity, ambition.
-10. **[When not to hire](#when-not-to-hire)** — scope, process, and commitment problems that hiring cannot solve.
-11. **[When to exit](#when-to-exit)** — the signals, and how to act on them.
-12. **[How to evaluate](#how-to-evaluate)** — the nose, evidence trails, live tests, trials, and what to watch for.
-13. **[The unifying principle](#the-unifying-principle)** — the one question that governs every hiring decision.
+- **[Hiring as design decision](#why-hiring-is-a-design-decision)** — why adding a person changes what the game can become, not just how fast it ships.
+- **[Cost of a wrong hire](#the-cost-of-a-wrong-hire-at-small-scale)** — coordination tax, taste dilution, morale erosion, commitment drift.
+- **[The pathologies, named](#the-pathologies-named)** — title inflation, all talk, not getting it, complacency, wrong questions.
+- **[How hiring goes wrong](#how-hiring-goes-wrong-management-pathologies)** — comfort, referral traps, shallow search, proximity, fear of competence, lowballing, wishful thinking, self-rationalisation, reorganising, overlooking existing skills, not taking it seriously.
+- **[Functions, not job titles](#what-the-team-actually-needs-functions-not-job-titles)** — commitment keeper, eye, author, loop guardian, architect, skeptic's advocate, bridge, unblocker.
+- **[Scale changes what breaks](#scale-changes-what-breaks)** — 4–8, 8–20, 20–40, and the checks-and-balances principle.
+- **[Taste](#taste-the-word-that-needs-defining)** — what it actually means, how it manifests, why it scales inversely with headcount.
+- **[Heroes](#the-irreplaceable-why-games-need-heroes)** — why process alone is insufficient and why calibration against real excellence matters.
+- **[Individual traits](#what-to-look-for-in-individuals)** — orientation, practice, opinions, alternatives, order, maturity, ambition.
+- **[When not to hire](#when-not-to-hire)** — scope, process, and commitment problems that hiring cannot solve.
+- **[When to exit](#when-to-exit)** — the signals, and how to act on them.
+- **[How to evaluate](#how-to-evaluate)** — the nose, evidence trails, live tests, trials, and what to watch for.
+- **[The unifying principle](#the-unifying-principle)** — the one question that governs every hiring decision.
 
 ---
 
@@ -40,8 +40,6 @@ Hiring is a design decision. Every person you add changes what the team can perc
 The useful question is not "is this person talented?" but *does this person's talent push the game toward its commitment, or away from it?*
 
 Hiring against a generic rubric ("five years of Unity experience, shipped two titles") produces generic teams. The rubric measures capability in the abstract. It does not measure fit with the specific problem the studio is solving, the specific [loop]({{< ref "posts/prototyping-the-loop" >}}) it is trying to prove, or the DNA it has accumulated.
-
----
 
 ## The cost of a wrong hire at small scale
 
@@ -58,8 +56,6 @@ At 4–40 people, a wrong hire is not absorbed. It metastasizes.
 **The commitment drift.** A person who doesn't fully understand or believe in the commitment will subtly redirect the project toward what they do understand. This is rarely malicious. It's gravitational. They advocate for what they know how to build. They ask questions that assume a different kind of game. They push back on cuts that serve the commitment because the commitment isn't real to them. Over months, the project drifts. By the time it's visible, the cost of correcting it is enormous.
 
 At small scale, you cannot afford a person who is merely not making the game worse. Neutral is negative, because every seat that isn't generating leverage is consuming the attention and energy of people who could be.
-
----
 
 ## The pathologies, named
 
@@ -102,8 +98,6 @@ The person who is diligent, engaged, and well-intentioned, but whose mental mode
 This pathology is insidious because the questions sound professional. In a different context, they'd be the right questions. But questions reveal priorities, and priorities shape the game. A team full of people asking the wrong questions will build a game that answers them, which is how you end up with a technically proficient, market-aware product that nobody loves.
 
 **The tell:** Their concerns consistently skip ahead of the project's actual stage. They solve for problems the game doesn't have yet while ignoring the problems it does.
-
----
 
 ## How hiring goes wrong: management pathologies
 
@@ -199,8 +193,6 @@ Every one of these shortcuts is a bet that the hiring decision doesn't matter en
 
 The studios that hire well treat the process as seriously as they treat any other design problem. They invest time, thought, and structure, not because they enjoy bureaucracy, but because they understand that the people in the room determine the game, and getting the wrong people in the room is the most expensive mistake the studio can make.
 
----
-
 ## What the team actually needs: functions, not job titles
 
 A common mistake is to think in job titles. "We need a level designer." "We need a character artist." "We need a UI programmer." These are descriptions of craft skills, not descriptions of what the team is missing.
@@ -255,8 +247,6 @@ Producer. The function is: *remove whatever prevents other people from succeedin
 
 The best producers are invisible when things are working and decisive when things aren't. The worst producers add process that creates the illusion of control without improving outcomes.
 
----
-
 ## Scale changes what breaks
 
 The functions above are constant. What changes with team size is *how they fail.*
@@ -309,8 +299,6 @@ At 20–40, the checks must be formalized into review structures. Playtests, bui
 
 **The hiring implication is concrete:** when you look at the team and see functions merged in a single person, ask whether those functions should be in tension. If they should, that tension is currently dead. Reviving it is a higher priority than filling whatever role feels most urgent on the production schedule.
 
----
-
 ## Taste: the word that needs defining
 
 Every section above invokes "taste" without defining it. Taste in game development is hard to define and easy to fake, but it is the most important quality in a small-team hire, and its absence is the root cause of most of the pathologies listed above.
@@ -342,8 +330,6 @@ This is why the smallest teams need the most extraordinary people. Not the most 
 - The person cannot distinguish between their own preferences and the game's needs.
 - The person's work makes the game feel like a collection of parts rather than a whole.
 
----
-
 ## The irreplaceable: why games need heroes
 
 This article has argued for functions, structure, checks and balances, and process. All of that is necessary. None of it is sufficient.
@@ -363,8 +349,6 @@ This is why the first exceptional person on a team changes everything. They don'
 The risk: "we need heroes" can become an excuse for tolerating dysfunction, ego, or cruelty. It can justify building a team around one person's moods rather than around a commitment. The guard is the same as everywhere else: *does this person make the game more likely to be great?* A hero who makes the game better but makes the team worse is still a net negative at small scale, because the team *is* the game.
 
 Do not hire exclusively for reliability. A team of reliable, professional, process-following contributors will produce reliable, professional, process-following work. It will not produce the moment that makes someone tell their friend about the game. That moment comes from someone who sees something nobody else sees, and who has the skill to make it real.
-
----
 
 ## What to look for in individuals
 
@@ -414,8 +398,6 @@ The person understands the magnitude of the challenge. Making a good game is har
 
 The right hire knows this and is not deterred. They are humble in the face of the difficulty but ferocious in getting after it. They accept that they will be a different person at the end: different skills, different understanding, different maturity. If they don't aim to be transformed by the work, they are already a weak spot, because the work *will* demand transformation, and the person who resists it will become a bottleneck.
 
----
-
 ## When not to hire
 
 The most important hiring decision is often the decision not to hire.
@@ -431,8 +413,6 @@ Studios hire when they should cut scope. Studios hire when they should fix their
 **Don't hire to avoid a hard conversation.** Sometimes the team needs a difficult reckoning: someone isn't performing, the direction isn't working, the schedule is unrealistic. Hiring a new person to fill the gap that the existing problem creates is a way of avoiding the conversation. The problem remains, and now there's a new person navigating around it.
 
 The right time to hire is when the team has a proven loop, a clear commitment, a functional process, and a specific capability gap that is preventing the game from reaching the next stage. That's a real gap. Fill it with someone extraordinary.
-
----
 
 ## When to exit
 
@@ -465,8 +445,6 @@ The mechanics of firing are outside this article's scope; jurisdictions, contrac
 **Be structural, not personal.** The conversation is not "you are bad at your job." The conversation is "your instincts and this project's needs have not aligned, and we don't see a path to alignment." This is usually *true*, not diplomatic softening. Most people who fail in one game team would succeed in a different one. The failure is the match, not the person.
 
 **Protect the team's ability to trust the process.** If the team sees someone underperforming for months with no action, they learn that the hiring standard is aspirational, not real. They start hedging their own investment. They lose faith that the studio means what it says about quality, commitment, and taste. Exiting someone promptly when the signals are clear *reinforces* the standard. It tells the team: we meant it.
-
----
 
 ## How to evaluate
 

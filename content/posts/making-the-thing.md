@@ -45,16 +45,16 @@ So coherence is not the only thing that matters. But it is a useful place to sta
 
 This essay gives you a sequence:
 
-1. Find your **governing commitment**
-2. Derive your **core loop** from it
-3. Use **diagnostic checkpoints** to see what's emerging
-4. **Protect the commitment** through production
+1. Find your **[governing commitment](#find-your-governing-commitment)**
+2. Derive your **[core loop](#derive-your-core-loop-from-the-commitment)** from it
+3. Use **[diagnostic checkpoints](#diagnostic-checkpoints)** to see what's emerging
+4. **[Protect the commitment](#protect-the-commitment-through-production)** through production
 
 The sequence is not a checklist. It is a way of working that treats coherence as an outcome of repeated decisions rather than as a final polish pass.
 
 ---
 
-## 1. Find your governing commitment
+## Find your governing commitment
 
 The governing commitment is the thing you are unwilling to betray. Not a feature, not a genre, not a market position. The experience you are protecting.
 
@@ -106,7 +106,7 @@ Sometimes the commitment doesn't arrive easily. You have too many ideas, or your
 
 ---
 
-## 2. Derive your core loop from the commitment
+## Derive your core loop from the commitment
 
 The core loop is what the player does most of the time. It needs to serve the commitment, or the commitment is mostly rhetorical.
 
@@ -143,7 +143,7 @@ If yes, you have something. If no, try a different loop. The commitment stays; t
 
 ---
 
-## 3. Diagnostic checkpoints
+## Diagnostic checkpoints
 
 Once you have a loop that serves the commitment, you start building. As you build, use these questions to see what is emerging. They are lenses, not mandates.
 
@@ -257,7 +257,7 @@ A hinge is a recontextualization moment that changes how earlier play is interpr
 
 ---
 
-## 4. Protect the commitment through production
+## Protect the commitment through production
 
 Production will put pressure on your commitment. Scope, schedule, feedback, fatigue, and a hundred reasonable compromises will push you toward diffusion. This is normal.
 

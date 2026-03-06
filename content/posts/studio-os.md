@@ -22,7 +22,7 @@ The article is scoped to a specific failure zone: first-time founders, small-to-
 
 We're going to skip the metaphysics. The vocabulary for "what makes a good, widely appealing game" lives in other articles. Here we care about one thing: how to run a studio so that those ideas become daily practice, not aspirational posters.
 
-## 1) The promise: one sentence that binds the room
+## The promise: one sentence that binds the room
 
 A studio without a binding promise doesn't have "creative freedom." It has ambiguous decision-making. Ambiguity feels kind, but it's also the most expensive state you can be in.
 
@@ -38,7 +38,7 @@ If we can't write the promise in one sentence, we're not being deep, we're being
 
 > ***The first string:** a vague promise forces the team to “be nice” because nobody can justify a hard no. Hard decisions get delayed until they’re traumatic.*
 
-## 2) The proof: a 10-minute slice that does not borrow meaning
+## The proof: a 10-minute slice that does not borrow meaning
 
 Now the part studios tend to avoid because it threatens their identity: *proof*. Not proof that the game is finished, but proof that the promise is true in a small, playable unit. The proof slice is the smallest build that lets a stranger say, unprompted, *"Oh, I get it. This is a game where I ___"*.
 
@@ -54,7 +54,7 @@ This is where "soul" anxiety usually shows up. People fear that reducing the vis
 
 > ***The second string:** if we skip proof, we will compensate with content. Content is expensive. Proof is cheap. Content-first is how budgets die.*
 
-## 3) The cut: the kindness tax, priced in hours
+## The cut: the kindness tax, priced in hours
 
 Once we have a proof slice, something becomes possible: cutting stops being a political act and becomes a mathematical one.
 
@@ -79,7 +79,7 @@ That sounds harsh, but it's reality accounting. When we keep a feature "just in 
 
 > ***The third string:** conflict avoidance doesn’t remove conflict. It defers it, multiplies its cost, and makes it personal.*
 
-# 4) The ship: trust is the only compounding asset
+## The ship: trust is the only compounding asset
 
 Shipping turns craft into reality, but it also turns trust into an asset.
 
@@ -91,7 +91,7 @@ When you ship with a clear promise and a proven slice, you can also ship with a 
 
 > ***The fourth string:** if we ship without proof, we will spend trust as if it were free. We will discover later that trust was the whole runway.*
 
-# 5) The flywheel: how luck becomes a multiplier instead of a prayer
+## The flywheel: how luck becomes a multiplier instead of a prayer
 
 Luck matters in how far a work travels. It doesn't matter in whether we give luck something to multiply.
 
@@ -115,7 +115,7 @@ A studio is antifragile when:
 
 Antifragility isn’t “we can take hits.” It’s “hits teach us fast enough to improve.”
 
-# 6) The demons: why studios betray themselves predictably
+## The demons: why studios betray themselves predictably
 
 Every studio has demons. The point isn't to moralize them but to name them as predictable failure modes with predictable bills.
 
@@ -133,7 +133,7 @@ The bill arrives as distrust. Players may comply. They won’t love. The next la
 
 *Promise → Proof → Cut → Ship* is not therapy, but it is a demon trap. It forces the team to produce evidence early, when demons thrive on ambiguity.
 
-## 7) What leaders and funders need to hear, bluntly
+## What leaders and funders need to hear, bluntly
 
 Leaders want to believe they’re steering by vision. Funders want to believe they’re steering by metrics. Both can become forms of self-deception.
 
@@ -145,7 +145,7 @@ If you want one “string” that ties finance to design, it’s this:
 
 Funding terms that require short-term predictability push studios toward building for metrics, not for conversion. That can work as extraction. It rarely works as enduring love. And if your business depends on a second launch, you should care about enduring love.
 
-## 8) The questions that keep the OS alive
+## The questions that keep the OS alive
 
 We don’t need more principles. We need a small set of questions that can be asked in the heat of decision-making.
 

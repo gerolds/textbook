@@ -619,3 +619,7 @@ This article's positions are informed by the following. None of them are about g
 - **"Blood, Sweat, and Pixels"** — Jason Schreier. Case studies of game development that illustrate nearly every pathology and hero dynamic described in this article. Useful for calibrating expectations about how hard the work actually is.
 - **"A Theory of Fun for Game Design"** — Raph Koster. The argument that games are learning machines and that "fun" is the feeling of mastering a pattern. Relevant to the loop guardian function and to the taste distinction between "this works" and "this is right for this game."
 - **GDC Vault** (gdcvault.com). Postmortems and talks from shipped projects are the closest thing to field reports on what this article describes. Pay particular attention to talks about what went wrong, not what went right; the failure postmortems are where the real hiring lessons live.
+
+---
+
+*Drafting assistance: Claude. All claims mine; errors my responsibility.*

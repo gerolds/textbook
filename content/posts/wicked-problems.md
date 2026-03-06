@@ -1,8 +1,8 @@
 +++
 title = "Wicked Problems"
 date = 2026-03-06T00:00:00-06:00
-description = "Good advice builds a model and argues what must be done. Real studios face a jungle where multiple models overlap, contradict, and none of them are complete. This essay names the common failure patterns, explains why they resist standard advice, and describes the ground-level tactics that let a team regroup when the strategy has collapsed."
-summary = "Advice about what to do is abundant. Advice about what to do when the advice conflicts is almost nonexistent. This essay is a taxonomy of the wicked problems that small game studios actually face: contradictions, traps, and compounding failures that no single framework resolves. It names the patterns, traces how they interact, and describes jungle tactics for teams that have lost contact with a coherent strategy."
+description = "Small studios rarely fail because they lack advice. They fail because several correct pieces of advice apply at once, conflict with each other, and are filtered through limited money, limited capability, and misaligned incentives. This essay identifies recurring failure patterns and practical responses."
+summary = "This essay is a taxonomy of common wicked problems in small game studios: coupled constraints, self-protective habits, and structural traps that no single framework resolves. It describes the patterns, how they interact, and what teams can do when ordinary best practices stop being enough."
 tags = ['game design', 'studio', 'craft', 'process', 'management', 'strategy']
 categories = ["Essays"]
 showToc = true
@@ -11,29 +11,27 @@ slug = 'wicked-problems'
 cover = { image = '', alt = '', caption = '' }
 +++
 
-Good advice is everywhere. Read it for a week and you will know that you should find the fun early, cut scope ruthlessly, hire for taste, prove the loop before scaling production, commit to a vision, stay lean, test with players, and ship on time. Every piece of it builds a model that is usually true and uses that model to argue what must be done, which is also usually true.
+There is no shortage of advice for running a game project. Teams are told to find the fun early, cut scope, hire for taste, prove the loop before scaling, commit to a vision, test with players, and ship with discipline. Most of this advice is sound. The problem is that it is usually presented one principle at a time, as though teams were dealing with one clean problem at a time.
 
-The trouble is that real studios face five of these imperatives at once, and they contradict each other. Prove the loop, but the grant milestones demand deliverables that aren't the loop. Hire for taste, but the budget can only afford juniors. Cut scope, but the publisher bought a pitch that included the scope. Commit to the vision, but nobody on the team agrees on what the vision is, and the person who should decide is afraid of the conflict. Stay lean, but the project already has more people than the production can usefully employ and nobody will make the exit call.
+Small studios rarely have that luxury. They face several valid demands at once, and the demands often conflict. A team may need to prove the loop, but have funding tied to feature milestones. It may need stronger taste in the room, but only be able to afford juniors. It may need to cut scope, but already be contractually tied to the larger pitch. It may need a clear decision, but have leadership that avoids conflict. None of these constraints is unusual. The difficulty comes from their interaction.
 
-Each model is correct in isolation. The jungle is what happens when they overlap. And almost nobody writes about the jungle.
+This essay is about that interaction. It is a taxonomy of recurring patterns in small-scale game development: 4–40 people, mixed incentives, limited funding, and teams where each person is structurally load-bearing. At that scale, unresolved contradictions do not stay local. They accumulate in the game, the schedule, the team structure, and the decision-making process.
 
-This essay is scoped to small-scale game development: 4–40 people, mixed incentives, limited funding, teams where every person is structurally load-bearing. Larger organizations have their own pathologies, but they also have slack, HR departments, and the institutional memory to absorb mistakes. At small scale, there is no absorption. Every unresolved contradiction compounds into the game.
-
-The goal is not to resolve every contradiction. Some are genuinely irreconcilable and the best you can do is choose which side of the tradeoff to eat. The goal is to name the patterns clearly enough that a team can stop being lost in the swamp and start making deliberate choices about which problems to solve first, which to accept, and which to stop pretending don't exist.
+The goal here is diagnostic more than prescriptive. Some of these contradictions can be solved. Some can only be managed. A few are terminal. The useful step is to name the pattern accurately enough that the team can stop treating it as a vague feeling and start treating it as a real constraint with real consequences.
 
 ---
 
 ## Why the advice doesn't help
 
-Advice fails in the jungle for a structural reason, not an intellectual one.
+Advice fails here for a structural reason, not an intellectual one.
 
 Good advice assumes you can isolate one problem, apply one solution, and observe the result. In practice, a small studio's problems are coupled. The hiring problem is coupled to the budget problem, which is coupled to the funding structure, which is coupled to the scope, which is coupled to the commitment (or lack of one), which is coupled to the taste of the people in the room, which is coupled to the hiring problem again. Pull on one thread and three others tighten.
 
-This is why frameworks that work beautifully in talks break down on Monday morning. The framework says "find the fun first." Leadership agrees. But finding the fun requires a prototype, and the prototype requires someone who can build one quickly, and that person doesn't exist on the team, and hiring them requires money, and the money is locked to milestones that specify features, not prototypes. The framework was correct. It was also useless, because it assumed a degree of freedom the studio doesn't have.
+This is why frameworks that work well in talks break down on Monday morning. The framework says "find the fun first." Leadership agrees. But finding the fun requires a prototype, and the prototype requires someone who can build one quickly, and that person doesn't exist on the team, and hiring them requires money, and the money is locked to milestones that specify features, not prototypes. The framework was correct. It was also useless, because it assumed a degree of freedom the studio doesn't have.
 
-A second failure mode of advice is that it describes what a healthy studio does without describing how to become one. It is the equivalent of telling someone lost in the jungle to "head north." Correct, but the question was never about north. The question was about the vine in front of your face, the water up to your waist, and whether the sounds in the trees are friendly.
+A second failure mode of advice is that it describes what a healthy studio does without describing how to become one. It says what stable teams do once they are already stable. It is much less useful on the path from instability to stability.
 
-A third failure is that advice rarely models its own failure modes. It tells you what to do when things go right. It does not tell you what the failure looks like from the inside when you are in it, which is the moment you most need the advice to work. From inside a failing project, every failure mode feels like a special case. "We know the advice says X, but our situation is different because..." That sentence is the immune system of the status quo, and advice that doesn't anticipate it will be neutralized by it.
+A third failure is that advice rarely models its own failure modes. It tells you what to do when things go right. It says less about what failure looks like from the inside, which is usually when teams most need guidance. From inside a failing project, every failure mode feels specific. "We know the advice says X, but our situation is different because..." is often enough to keep the current process intact.
 
 **Rule: advice that does not model its own failure modes will be absorbed by the problems it was meant to solve.**
 
@@ -43,7 +41,7 @@ A third failure is that advice rarely models its own failure modes. It tells you
 
 What follows is a catalogue of wicked problems that recur in small studios. They are not bugs. They are structural traps that emerge from the interaction of real constraints: limited money, limited people, misaligned incentives, and the emotional difficulty of honest assessment. Each pattern has a surface that looks reasonable and a cost that is invisible until it compounds.
 
-### 1. The taste gap
+### The taste gap
 
 The studio wants to make good games. Nobody on the team has the taste to know what "good" means at the level the market requires.
 
@@ -61,9 +59,9 @@ Taste is not uncovered by talking to successful makers. It is developed through 
 
 What the studio needs, then, is not a celebrated developer on retainer. It is someone who can look at the team's actual output, identify the specific perceptual gap (not "this isn't good" but "you cannot yet distinguish X from Y, and here is an exercise that will teach you the difference"), and then do that repeatedly, pushing the team to the limit of what the humans executing the advice are capable of reaching. Each round closes the gap a little. Over months, the team's diagnostic precision improves because it has been trained, not because someone else's precision was borrowed.
 
-This is the territory described in *[The Price of Seeing Clearly]({{< ref "posts/the-price-of-seeing-clearly" >}})*: the floor still has to collapse before the new floor can form. But a good teacher controls the collapse. They make it survivable and productive rather than random and destructive.
+This is the territory described in *[The Price of Seeing Clearly]({{< ref "posts/the-price-of-seeing-clearly" >}})*: the floor still has to collapse before a new one can form. But a good teacher controls the collapse. They make it survivable and productive rather than random and destructive.
 
-### 2. Building without proving
+### Building without proving
 
 The team builds systems, art, infrastructure, and content before proving that the core loop works. By the time someone asks "is this fun?", the answer is buried under months of sunk cost and emotional investment.
 
@@ -81,26 +79,26 @@ This is the single most expensive failure in small-scale game development, and i
 
 **Third: this puts enormous pressure on the pitch.** The people selling the project need to be specific enough to be credible and open enough to not lock the team into a contract that makes honest discovery impossible. Selling a rigid feature list feels safe but creates the trap. Selling a process, with a clear commitment and a defined proof gate, requires a funder who understands how games are actually made. Finding that funder, or educating the ones you have, is itself a load-bearing skill that most studios underinvest in.
 
-If none of this is achievable, if the funding is locked, the milestones are rigid, and the proof was never done, the studio needs to accept that it is operating inside the trap described in *[The Dream That Won't Compound]({{< ref "posts/the-dream-that-wont-compound" >}})*: the money teaches the team to complete a checklist, not to make a game. 
+If none of this is achievable, if the funding is locked, the milestones are rigid, and the proof was never done, the studio needs to accept that it is operating inside the trap described in *[The Dream That Won't Compound]({{< ref "posts/the-dream-that-wont-compound" >}})*: the money teaches the team to complete a checklist, not to make a game.
 
-_Acknowledging the trap does not escape it, but it stops the team from mistaking compliance for progress. And it may free one or two people to work on the proof in parallel, even if the official schedule does not account for it. **Sometimes the most important work on the project is the work that doesn't appear on the milestone chart.**_
+*Acknowledging the trap does not escape it, but it stops the team from mistaking compliance for progress. It may also free one or two people to work on the proof in parallel, even if the official schedule does not account for it. Sometimes the most important work on the project is the work that does not appear on the milestone chart.*
 
-### 3. Compensation mythology
+### Compensation mythology
 
-> _We can't afford good people, so we'll compensate with process / passion / long hours / clever scope management._
+> *We can't afford good people, so we'll compensate with process / passion / long hours / clever scope management.*
 
 This is the myth that allows a studio to operate below the quality threshold required to compete while feeling responsible about it. It takes many forms:
 
-- _We'll train juniors up._ Training requires a senior who has time and ability to teach. If the team had that person, they would not need the juniors.
-- _We'll use middleware and templates. _ Middleware solves implementation problems, not design problems. The gap between a game built from templates and a game with real pull is not in the code.
-- _We'll work harder._ Effort compounds only when pointed in a productive direction. Effort pointed at the wrong thing produces a polished artifact that nobody wants.
-- _We'll be scrappy._ Scrappiness works when the team knows what to cut and what to protect. Without taste, scrappiness is just under-resourcing dressed in virtue.
+- *We'll train juniors up.* Training requires a senior who has time and ability to teach. If the team had that person, they would not need the juniors.
+- *We'll use middleware and templates.* Middleware solves implementation problems, not design problems. The gap between a game built from templates and a game with real pull is not in the code.
+- *We'll work harder.* Effort compounds only when pointed in a productive direction. Effort pointed at the wrong thing produces a polished artifact that nobody wants.
+- *We'll be scrappy.* Scrappiness works when the team knows what to cut and what to protect. Without taste, scrappiness is just under-resourcing dressed in virtue.
 
 **Why it resists advice:** "Hire better people" is not actionable when the budget is fixed. The studio knows it needs stronger talent and cannot afford it. The compensation myth is not delusion. It is a coping mechanism for a real constraint. The problem is that the coping mechanism prevents the team from confronting the constraint honestly: *if we cannot afford the people required to execute this vision, the vision must change to match the people we have.*
 
 **The ground-level tactic:** Scope to the team, not the aspiration. *[Making the Thing]({{< ref "posts/making-the-thing" >}})* frames the governing commitment as the thing you are unwilling to betray. If the team cannot execute a commitment at the quality level required, the commitment must shrink until it fits the team's actual capability. A small, proven, coherent game built by the people you have is worth more than an ambitious, unproven, incoherent game built by the people you wish you had.
 
-### 4. The dual narrative
+### The dual narrative
 
 Every pitch is a simplification. That is fine. The problem starts when the studio maintains two simplifications that point in different directions and treats both as true.
 
@@ -116,7 +114,7 @@ The lies are not only about scope. They can be about genre, about promised featu
 
 **The ground-level tactic:** Find the overlap before the money arrives, and have the courage to reject funding that requires a narrative you do not believe. If the funding is already locked, name the conflicts explicitly within the team. A team that knows it is navigating a contradiction can make deliberate compromises. A team that pretends the contradiction doesn't exist will discover it as production friction, morale erosion, and a game that tries to serve two masters and satisfies neither. And when scoping the prototype, match the prototype team to the production team. If you will ship with four people, prototype with two. The prototype must prove the game that *this team* can finish, not the game that would impress a funder in a slide deck.
 
-### 5. Comfort as default
+### Comfort as default
 
 The team optimizes for comfort: avoiding conflict, avoiding hard calls, avoiding cuts, avoiding honest assessment. Meetings end with vague agreement. Critiques are softened until they carry no information. Decisions are deferred because making them would hurt someone's feelings.
 
@@ -133,7 +131,7 @@ The team optimizes for comfort: avoiding conflict, avoiding hard calls, avoiding
 
 **The ground-level tactic:** Install a mechanism that forces confrontation with evidence at regular intervals. *[The Studio Primitive]({{< ref "posts/studio-os" >}})* uses the proof slice for this: a playable artifact that makes the state of the game visible to everyone, including the things nobody wants to see. If the proof slice is ugly, the game is ugly. If the loop doesn't hold attention, no amount of meeting consensus will fix it. The artifact does the arguing that people are afraid to do.
 
-### 6. Toxic optimism
+### Toxic optimism
 
 Toxic optimism is not about saying "it'll come together." That is just the verbal tic. The real pathology sits deeper: a fundamental rejection of failure as a possibility, or — distinctly — a rejection of failure as something that could happen *to this team, on this project*.
 
@@ -158,7 +156,7 @@ The poison pill is not a sentence anyone says out loud. It is the assumption, em
 
 **The ground-level tactic:** Create tests you cannot talk your way out of. Put the game in front of strangers with no explanation and watch. Record the session. Watch it together as a team. The recording is the mirror that optimism cannot fog. If the player is confused, the game is confusing. If the player quits, the game is not holding. No narrative can survive a recording of a player having a bad time.
 
-### 7. Scope blindness
+### Scope blindness
 
 The team cannot see that the project exceeds what the budget, team, and timeline can deliver. Features accumulate because adding is easier than cutting, and because each addition seems small in isolation. The cumulative scope is never honestly assessed against the actual resources.
 
@@ -168,7 +166,7 @@ This is related to compensation mythology but distinct. Compensation mythology i
 
 **The ground-level tactic:** Price every feature in person-weeks, publicly, on a board the whole team can see. Put the total next to the actual available person-weeks. The gap is the project's reality. If the gap cannot be closed by cutting, the project is already failing and the only question is whether the team acknowledges it now or later. *[Making the Thing]({{< ref "posts/making-the-thing" >}})* frames this as a coherence question: every feature that does not serve the commitment is guilty until proven innocent.
 
-### 8. Ignoring the ossification clock
+### Ignoring the ossification clock
 
 Decisions harden whether the team manages the process or not. A name chosen in week two becomes the word the team thinks with. A prototype hack promoted to production becomes the architecture the game ships on. A placeholder mechanic survives because removing it would mean rewriting everything downstream.
 
@@ -186,7 +184,7 @@ The tactic, then, is not to prevent ossification. It is to *budget for the cost 
 
 This means the schedule, the budget, and the team's psychological contract with itself must include rebuilding as a normal activity, not a failure. A team that treats a rebuild as evidence that something went wrong will avoid rebuilds until avoidance is more expensive than the rebuild would have been. A team that treats rebuilding as the expected cost of learning will do it early, when the cost is small, and will produce a game whose foundations were chosen deliberately rather than inherited from a prototype that was never meant to ship.
 
-### 9. Pattern blindness
+### Pattern blindness
 
 The team has someone, usually an experienced lead, a producer, or a consultant, who can see the trajectory of the project based on patterns, extrapolation, and first principles. They have seen this before. They know what happens next. The team does not listen.
 
@@ -198,13 +196,13 @@ These are funnels, not prophecies. The pattern-reader is saying: "Given this inp
 
 **The ground-level tactic:** Make the patterns testable. Instead of arguing about whether the project is on a bad trajectory, agree on a test: "If the next playtest does not produce at least one moment of unprompted enthusiasm from a stranger, we revisit the loop." The test removes the argument from the realm of opinion and puts it in the realm of evidence. People who resist patterns will sometimes accept experiments.
 
-### 10. The exceptionalism trap
+### The exceptionalism trap
 
 Underlying many of these patterns is a single meta-belief that almost nobody states out loud and almost everybody holds: *the rules apply to other teams, not to us.*
 
 This is not hubris in the dramatic sense. Nobody stands in a meeting and declares "we are exceptional." The belief is quieter than that. It lives as a feeling: a background conviction that the team's passion, taste, intelligence, or sheer willingness to suffer will compensate for structural deficits that would sink a lesser group. It is a coping mechanism, not a boast. Facing the alternative — that the team is ordinary, that the structural problems are real, that the project might fail for the same boring reasons most projects fail — threatens identity. Not professional identity. *Personal* identity. The story the founders tell themselves about who they are and what they are capable of.
 
-This is why exceptionalism does not respond to argument. If you tell someone suffering from it "you aren't good enough and you won't make it," they are not merely offended. They are *shocked*. Even in private, even when the evidence is laid out, the idea is rejected at a level deeper than reason. It is not processed as feedback. It is processed as an attack on the self. The machinery described in *[The Price of Seeing Clearly]({{< ref "posts/the-price-of-seeing-clearly" >}})* applies in full: the old mindset is not a position you hold, it is a lens you see through. You cannot examine a lens while you are looking through it.
+This is why exceptionalism does not respond to argument. If you tell someone caught in it "you aren't good enough and you won't make it," they are not merely offended. They are *shocked*. Even in private, even when the evidence is laid out, the idea is rejected at a level deeper than reason. It is not processed as feedback. It is processed as an attack on the self. The machinery described in *[The Price of Seeing Clearly]({{< ref "posts/the-price-of-seeing-clearly" >}})* applies in full: the old mindset is not a position you hold, it is a lens you see through. You cannot examine a lens while you are looking through it.
 
 Because exceptionalism is felt rather than stated, it does not show up in the words a team uses. It shows up in the decisions. A team that skips the proof slice is not saying "we don't need proof." They are feeling "we know this works." A team that doesn't hire for taste is not saying "we don't need taste." They are feeling "we have enough." A team that doesn't cut scope is not saying "we can ship all of this." They are feeling "we'll find a way." The feeling precedes the decision, and the decision is never examined because the feeling was never articulated.
 
@@ -214,7 +212,7 @@ The result is a team that does everything a good team would do — holds meeting
 
 **The ground-level tactic:** Exceptionalism breaks when the evidence becomes undeniable, and undeniable means *felt*, not argued. This is why *[The Price of Seeing Clearly]({{< ref "posts/the-price-of-seeing-clearly" >}})* describes mindset change as a wound, not a decision. The floor collapses. Until it does, the best tactic is to create as many opportunities for evidence as possible: playtests, proof slices, honest external critiques, shipped artifacts that face the market. Each one is a chance for reality to penetrate the mythology. Most will be absorbed. Eventually, one won't.
 
-### 11. Negotiating with the inevitable
+### Negotiating with the inevitable
 
 Someone identifies a constraint. The constraint produces a hard conclusion: "We cannot do X and Y. We must choose." Instead of choosing, the team negotiates. They look for the compromise that lets them keep both. They muddle through. They split the difference. They do a little of X and a little of Y, poorly, instead of all of one thing, well.
 
@@ -238,7 +236,7 @@ The deepest version of this pattern is when the negotiation actively sabotages t
 
 These patterns rarely appear alone. They form clusters that reinforce each other, and the clustering is what makes them wicked.
 
-**The classic spiral:** The taste gap (1) means the team builds without proving (2) because nobody can tell the loop doesn't work. Compensation mythology (3) prevents hiring someone who could. The dual narrative (4) locks scope to a pitch that was written to win funding, not to describe the game. Comfort (5) prevents anyone from naming the problem. Toxic optimism (6) fills the silence. Scope blindness (7) keeps the feature list growing. The ossification clock (8) hardens bad decisions into load-bearing structure. The person who sees the pattern (9) is dismissed. Exceptionalism (10) seals the system shut. And when someone finally forces a clear choice, the team negotiates with the inevitable (11) and splits the difference instead of committing.
+**The classic spiral:** *[The taste gap](#the-taste-gap)* means the team *[builds without proving](#building-without-proving)* because nobody can tell the loop doesn't work. *[Compensation mythology](#compensation-mythology)* prevents hiring someone who could. *[The dual narrative](#the-dual-narrative)* locks scope to a pitch that was written to win funding, not to describe the game. *[Comfort as default](#comfort-as-default)* prevents anyone from naming the problem. *[Toxic optimism](#toxic-optimism)* fills the silence. *[Scope blindness](#scope-blindness)* keeps the feature list growing. *[Ignoring the ossification clock](#ignoring-the-ossification-clock)* hardens bad decisions into load-bearing structure. The person who sees the pattern is dismissed. *[The exceptionalism trap](#the-exceptionalism-trap)* seals the system shut. And when someone finally forces a clear choice, the team *[negotiates with the inevitable](#negotiating-with-the-inevitable)* and splits the difference instead of committing.
 
 By the time the project ships, or fails to ship, the team has a coherent explanation for what went wrong that does not reference any of these patterns. The market was tough. The budget was too small. The timeline was too short. The publisher didn't support them. All of these may be true. None of them are the root cause.
 

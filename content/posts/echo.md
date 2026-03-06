@@ -31,8 +31,6 @@ This is why experienced leads care about things that seem disproportionately sma
 
 The same works in reverse. Taking care with a name, building a prototype with clean enough structure that the real version can replace it, flagging a shortcut that is quietly becoming permanent: these are structural contributions that compound silently and never show up in a sprint review. The project is better for them even if nobody notices.
 
----
-
 ## Why projects ossify
 
 A fresh project is fluid. Everything is revisable. A team can rename a system, swap an art style, restructure the codebase, pivot the core loop. The cost of change is low because nothing depends on anything yet.
@@ -45,8 +43,6 @@ It happens in art. A concept painting sets a color palette, a silhouette languag
 
 **Rule: ossification is the process by which reversible decisions become load-bearing structure. It happens in every discipline, at every scale, whether it is managed or not.**
 
----
-
 ## The ossification gradient
 
 Not all decisions harden at the same rate. A useful model is a gradient from fluid to frozen, where position depends on how many downstream decisions a choice supports.
@@ -58,8 +54,6 @@ At the **frozen end**: the core loop, the data model, the team's shared vocabula
 In between sits most of production. An inventory system's interface is moderately ossified: changing it means updating every system that reads inventory, but the blast radius is bounded. A level's layout is moderately ossified: changing it means re-testing encounters and re-routing navigation, but other levels are unaffected.
 
 The gradient indicates where scrutiny pays off. Spending a week debating a particle color is waste. Spending a week pressure-testing the core loop before building content on it is possibly the highest-leverage time on the entire project. The further toward the frozen end a decision sits, the more it deserves deliberate evaluation before production grows around it.
-
----
 
 ## What serious teams actually protect
 
@@ -77,8 +71,6 @@ Every established production practice in game development is an attempt to contr
 
 **Rule: production practices are ossification management. Prototyping controls what hardens. Concept art controls when. Vertical slices test compatibility. Vision statements anchor the center. Playtesting audits the result.**
 
----
-
 ## Ossification in code
 
 Software ossification has a specific shape. It is more legible than other forms because dependencies are trackable, and more dangerous because the tracking creates a false sense of control.
@@ -88,8 +80,6 @@ A decision ossifies in code when other code depends on it. An interface becomes 
 The common failure is promoting a prototype's architecture to production without auditing which decisions were meant to be temporary. A prototype's `GameManager` singleton might reference everything because speed of iteration mattered more than boundaries. In production, that singleton becomes the most coupled object in the codebase. Every new feature touches it. Every refactor risks it. It ossified not because it was good design but because it was there first, and everything else latched on.
 
 *[Unity Architecture for Growing Projects]({{< ref "posts/unity-architecture" >}})* addresses this directly. Its core recommendation, making ownership and boundaries explicit through hosts and contracts, is a strategy for choosing which code relationships should harden (contracts between modules) and which should stay changeable (internals behind the host boundary). The host is a deliberate ossification point. Everything inside the module can evolve. The membrane is what other modules depend on, so it hardens by design and changes by negotiation. The same question applies in any codebase: which interfaces are meant to be load-bearing, and which are accidents of proximity?
-
----
 
 ## Ossification past ship
 
@@ -101,8 +91,6 @@ QA processes ossify too. Test cases accumulate into a second specification, ofte
 
 The mechanism is identical at every scale. Players, communities, and QA teams are all downstream of shipped decisions, and they build structures on top of those decisions. Managing post-launch ossification means understanding that every patch, every community post, and every support interaction is itself a decision that will harden as people build around it.
 
----
-
 ## The accident problem
 
 Some teams manage ossification well by accident. They land on a strong core loop early, the loop generates clear constraints, and production flows because every decision has something solid to attach to. The game ships. Players love it. The team looks talented.
@@ -112,8 +100,6 @@ The test is the second project. A team that managed ossification deliberately ca
 This connects to why *[Finding the Commitment]({{< ref "posts/finding-the-commitment" >}})* argues that commitment matters more than correctness. A mediocre commitment held long enough to ossify properly outperforms a brilliant commitment that keeps getting swapped. The held commitment compounds. The swapped commitment never gets deep enough for downstream decisions to reinforce each other. Every pivot restarts the ossification clock.
 
 **Rule: if a team cannot name the decision that made a project cohere, it cannot repeat the result.**
-
----
 
 ## Working with the gradient
 

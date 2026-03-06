@@ -1,0 +1,60 @@
+{{ $show_date := .show_date | default true }}
+{{ $pages := .pages }}
+{{ $group_by_year := .group_by_year | default true }}
+
+{{- if $pages -}}
+    {{- if $show_date -}}
+        {{- $pages = $pages.ByPublishDate.Reverse -}}
+    {{- end -}}
+    <div class="section-list-layout">
+        {{ range $pages }}
+            {{- $page := . -}}
+            {{- $summary := .Params.description | default .Params.summary | default .Summary -}}
+            {{- $cover := .Params.cover -}}
+            {{- $image := "" -}}
+            {{- $imageAlt := .Title -}}
+            {{- with .Params.image -}}
+                {{- $image = . -}}
+            {{- end -}}
+            {{- with $cover -}}
+                {{- with .image -}}
+                    {{- $image = . -}}
+                {{- end -}}
+                {{- with .alt -}}
+                    {{- $imageAlt = . -}}
+                {{- end -}}
+            {{- end -}}
+
+            <article class="section-list-card">
+                {{ with $image }}
+                    <a class="section-list-card__media" href="{{ $page.RelPermalink }}">
+                        <img src="{{ . | relURL }}" alt="{{ $imageAlt }}" loading="lazy">
+                    </a>
+                {{ end }}
+
+                <div class="section-list-card__body">
+                    <div class="section-list-card__header">
+                        <h2 class="section-list-card__title">
+                            <a href="{{ .RelPermalink }}">{{- .Title -}}</a>
+                        </h2>
+                        {{ if $show_date }}
+                            <time class="section-list-card__date" datetime="{{ .PublishDate.Format "2006-01-02" }}">
+                                {{ if $group_by_year }}
+                                    {{- .PublishDate.Format "01/02" -}}
+                                {{ else }}
+                                    {{- .PublishDate.Format "2006/01/02" -}}
+                                {{ end }}
+                            </time>
+                        {{ end }}
+                    </div>
+
+                    {{ with $summary }}
+                        <div class="section-list-card__summary">
+                            {{ . | markdownify }}
+                        </div>
+                    {{ end }}
+                </div>
+            </article>
+        {{ end }}
+    </div>
+{{- end -}}

@@ -124,3 +124,96 @@ article table.tableblock > caption.title {
 article table.tableblock code {
   font-size: 0.95em;
 }
+
+/* Richer section/article index cards */
+.section-list-layout {
+  margin: 2rem 0;
+}
+
+.section-list-card {
+  padding: 1rem;
+  margin: 1.25rem 0;
+  background-color: var(--color-background-card, var(--color-background));
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.section-list-layout > .section-list-card:first-child {
+  margin-top: 0;
+}
+
+.section-list-card__media {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.85rem;
+}
+
+.section-list-card__media img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 18rem;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  background: var(--color-background-card, var(--color-background-hover));
+}
+
+.section-list-card__body {
+  min-width: 0;
+}
+
+.section-list-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.section-list-card__title {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.section-list-card__title a {
+  text-decoration: none;
+}
+
+.section-list-card__title a:hover,
+.section-list-card__title a:focus {
+  text-decoration: underline;
+}
+
+.section-list-card__date {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary, var(--color-text));
+  white-space: nowrap;
+}
+
+.section-list-card__summary {
+  color: var(--color-text-secondary, var(--color-text));
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.section-list-card__meta {
+  margin-top: 0.65rem;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, var(--color-text));
+}
+
+.section-list-card__summary > :first-child {
+  margin-top: 0;
+}
+
+.section-list-card__summary > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .section-list-card__media img {
+    max-height: 14rem;
+  }
+}

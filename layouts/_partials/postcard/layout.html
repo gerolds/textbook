@@ -1,0 +1,70 @@
+{{ $ctx := .ctx }}
+
+<div class="section-list-layout content-margin">
+    {{ range ($ctx.Paginator).Pages }}
+        {{- $page := . -}}
+        {{- $summary := .Params.description | default .Params.summary | default .Summary -}}
+        {{- $cover := .Params.cover -}}
+        {{- $image := "" -}}
+        {{- $imageAlt := .Title -}}
+        {{- with .Params.image -}}
+            {{- $image = . -}}
+        {{- end -}}
+        {{- with $cover -}}
+            {{- with .image -}}
+                {{- $image = . -}}
+            {{- end -}}
+            {{- with .alt -}}
+                {{- $imageAlt = . -}}
+            {{- end -}}
+        {{- end -}}
+
+        <article class="section-list-card section-list-card--homepage">
+            {{ with $image }}
+                <a class="section-list-card__media" href="{{ $page.RelPermalink }}">
+                    <img src="{{ . | relURL }}" alt="{{ $imageAlt }}" loading="lazy">
+                </a>
+            {{ end }}
+
+            <div class="section-list-card__body">
+                <div class="section-list-card__header">
+                    <h2 class="section-list-card__title">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h2>
+                    <time class="section-list-card__date" datetime="{{ .Date.Format "2006-01-02" }}">
+                        {{ .Date.Format "2006/01/02" }}
+                    </time>
+                </div>
+
+                {{ with $summary }}
+                    <div class="section-list-card__summary">
+                        {{ . | markdownify }}
+                    </div>
+                {{ end }}
+
+                <div class="section-list-card__meta">
+                    <span>{{ template "breadcrumbtext" (dict "p1" .Page.Parent) }}</span>
+                </div>
+            </div>
+        </article>
+    {{ end }}
+
+    {{ partial "pagination.html" $ctx }}
+</div>
+
+{{ define "breadcrumbtext" }}
+    {{ if .p1.Parent }}
+        {{ if not .p1.Parent.IsHome }}
+            {{ template "breadcrumbtext" (dict "p1" .p1.Parent)  }}
+        {{ end }}
+    {{ end }}
+
+    {{ if .p1.Parent }}
+        {{ if .p1.Parent.IsHome }}
+            <span>{{ .p1.Title }}</span>
+        {{ else }}
+            <span>/</span>
+            <span>{{ .p1.Title }}</span>
+        {{ end }}
+    {{ end }}
+{{ end }}

@@ -217,3 +217,82 @@ article table.tableblock code {
     max-height: 14rem;
   }
 }
+
+/* ===================================================================
+   Long-article navigability: chapter breaks, numbering, progress bar
+   =================================================================== */
+
+/* --- 0. Markdown horizontal rules (<hr> from ---) ---------------- */
+/* Make <hr> visually distinct from the thin structural h2 border:
+   thicker, but lower contrast — a soft thematic pause, not a heading. */
+
+article hr {
+  border: none;
+  height: 8px;
+  background: var(--color-border);
+  opacity: 0.45;
+  border-radius: 1px;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* When an <hr> sits right before an h2 chapter heading (the hr is the
+   last child of one section, the h2 opens the next sibling section),
+   collapse the combined whitespace to ~1rem so they don't float apart. */
+article > section:has(> hr:last-child) + section > h2 {
+  margin-top: 0;
+  padding-top: 0.5rem;
+  border-top: none;          /* the <hr> already provides the divider */
+}
+
+/* --- 1. Visual chapter breaks ------------------------------------ */
+/* Give each top-level section (which contains an h2) generous vertical
+   breathing room and a subtle top rule so readers perceive discrete
+   chapters, not a wall of text.
+   DOM: <article> > <section id="..."> > <h2 class="header-anchor-wrapper">
+   h3 sub-sections are nested *inside* the h2 section. */
+
+article > section > h2 {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* The intro section (no h2) and the first h2 section need no top divider */
+article > section:first-child > h2,
+article > section:nth-child(2) > h2 {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* --- 2. Section numbering (CSS counters) ------------------------- */
+/* Auto-number h2 headings so readers can orient themselves
+   ("I'm in section 7 of 16") — pairs with the ToC. */
+
+article {
+  counter-reset: chapter-counter;
+}
+
+article > section > h2::before {
+  counter-increment: chapter-counter;
+  content: counter(chapter-counter) ". ";
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+/* --- 3. Reading progress bar ------------------------------------- */
+/* A thin fixed bar at the very top of the viewport showing how far
+   the reader has scrolled through the page. */
+
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--color-text-secondary);
+  z-index: 9999;
+  transition: width 50ms linear;
+  pointer-events: none;
+}

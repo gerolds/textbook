@@ -1,8 +1,8 @@
 +++
 title = "The Benefits of Failure"
 date = 2026-03-06T00:00:00-06:00
-description = "A track record of failed, mediocre, and underfunded projects does not disqualify a person from excellence. For those who pay attention, it is one of the most efficient educations available, and the most reliable way to develop taste, originality, and voice."
-summary = "A career spent inside failing studios and forgettable projects looks like a liability on paper. This essay argues that it is, for the right kind of person, one of the most efficient educations in what excellence actually requires, because dysfunction makes every variable visible, dissatisfaction trains taste, and the absence of proven solutions forces originality. Proximity to excellence refines execution; distance from it builds the judgment that decides what is worth executing."
+description = "A track record of failed, mediocre, and underfunded projects does not disqualify a person from excellence. For those who pay attention, failure can be a brutal education in what excellence requires, but only when its lessons are tested against higher standards rather than romanticized."
+summary = "A career spent inside failing studios and forgettable projects looks like a liability on paper. This essay argues that it can become an unusually powerful education for the right kind of person, because dysfunction makes hidden variables visible and trains judgment by contrast. But failure alone is not enough: excellence develops through contact with higher-resolution feedback, real standards, and repeated correction. Proximity to excellence is not optional. What matters is how a person turns exposure, dissatisfaction, and comparison into models that can survive reality."
 tags = ['craft', 'process', 'studio', 'management', 'hiring', 'mindset', 'appendix']
 categories = ["Essays"]
 showToc = true
@@ -19,11 +19,11 @@ This essay is about that second person, and about why the environments most peop
 
 ## The core claim
 
-A career mostly spent in failing, mediocre, irrelevant, or misguided projects fails to teach one thing: what it feels like to ship something excellent while you are doing it. The daily texture of a well-run production, the rhythm of a team that trusts its own process, and the confidence of knowing the game works before the market confirms it are not available inside a studio that has never produced them.
+A career mostly spent in failing, mediocre, irrelevant, or misguided projects fails to teach one thing directly: what it feels like to ship something excellent while you are doing it. The daily texture of a well-run production, the rhythm of a team that trusts its own process, and the confidence of knowing the game works before the market confirms it are not available inside a studio that has never produced them.
 
-But that career teaches, to those who pay attention, something that years inside a successful studio often does not: **what excellence actually requires.** Not what it looks like from the outside, but the actual generative conditions: the decisions, the disciplines, the refusals that separate a team that ships something people love from a team that ships something people forget.
+But that career can still teach, to those who pay attention, something years inside a successful studio often leave implicit: **which conditions make excellence impossible, and therefore which conditions excellence probably depends on.** Not a complete recipe, and not a substitute for proximity to strong work, but a sharper understanding of the disciplines, refusals, and standards without which a team ships something people forget.
 
-**Thesis:** Inside a failing organization, every variable is exposed. Nothing works well enough to become invisible. Process, taste, communication, scope, hiring, accountability, direction: all of it is visibly broken, visibly load-bearing, and visibly connected to the outcome. A person who works inside that for years and *studies it* develops a negative-space expertise because they have mapped everything that prevents excellence.
+**Thesis:** Inside a failing organization, many variables that success normally hides become exposed. Process, taste, communication, scope, hiring, accountability, direction: all of it becomes easier to see because so little is working well enough to disappear into the background. A person who works inside that for years and *studies it* develops a negative-space expertise. But negative-space expertise is only part of excellence. To become fully reliable, it has to be brought into contact with environments, peers, and artifacts that can provide higher-resolution feedback than failure usually can.
 
 ## Why dysfunction is legible
 
@@ -45,7 +45,9 @@ This creates a laboratory. Not a well-funded one. A messy one, with no controls.
 
 Build a small game for an exhibition nobody important will attend. Make it in three weeks on no budget. Watch it become the only thing visitors aged 10–25 remember. Then look at the ten other things built by colleagues under the same constraints and notice they did not produce the same result. The variables are almost identical (timeline, budget, tools, audience, context), so the difference must live in the decisions. That difference is data.
 
-This is not a controlled experiment. It is a paired comparison in the wild, where the person running it is also the one interpreting the result, and the feedback is immediate, embodied, and impossible to dismiss as someone else's context.
+This is not a controlled experiment. It is a paired comparison in the wild, where the person running it is also the one interpreting the result, and the feedback is immediate, embodied, and difficult to dismiss as someone else's context.
+
+Still, there is a limit. Low-stakes environments are good at revealing what obviously fails. They are often much worse at revealing what separates the merely competent from the genuinely excellent. The audience may be too forgiving, the peers too inexperienced, the incentives too weak, and the consequences too noisy. So the laboratory matters, but only if the person inside it keeps looking beyond it.
 
 The same logic applies across every role. A programmer who builds three prototypes and notices that one of them is the only one the team actually plays has learned something about what makes interaction sticky. A designer who writes four pitch documents and notices that one of them is the only one that makes a funder lean forward has learned something about clarity. An artist who tries two visual directions and notices that one of them makes strangers stop scrolling has learned something about signal density.
 
@@ -55,17 +57,17 @@ None of these experiments require permission, budget, or institutional support. 
 
 Most people assume the best way to learn excellence is to be inside it. Work at a great studio. Ship a great game. Absorb the culture.
 
-This works, sometimes, for a specific kind of learning: pattern replication. A person who spends five years at a studio with strong creative direction will absorb some of that direction's instincts. They will learn what "good" feels like in daily reviews, what the bar is for acceptable work, what gets praised and what gets reworked.
+This works, sometimes, for a specific kind of learning: pattern replication and standards acquisition. A person who spends five years at a studio with strong creative direction will absorb some of that direction's instincts. They will learn what "good" feels like in daily reviews, what the bar is for acceptable work, what gets praised and what gets reworked.
 
 What they often will not learn is **why** those patterns exist, or what would break if the patterns changed, or how to rebuild them in a different context. The patterns are inherited, not derived. The person knows the answer without knowing the problem.
 
-This is the profile of someone who is excellent *inside the system that trained them* and often lost outside it. They joined an organization where a few wise decisions, made years earlier by people who are sometimes no longer there, produced a self-reinforcing culture of quality. The culture does the work. The individual rides the culture. When they leave and try to reproduce the result somewhere without that culture, they discover that what they thought was personal capability was institutional momentum.
+This is the profile of someone who may be excellent *inside the system that trained them* yet less transferable than they appear. They joined an organization where a few wise decisions, made years earlier by people who are sometimes no longer there, produced a self-reinforcing culture of quality. The culture carries more of the developmental burden than the individual realizes. When they leave and try to reproduce the result somewhere without that culture, they discover that what they thought was entirely personal capability was partly institutional momentum.
 
 **Success makes its own causes invisible.** The person inside it learns what excellence looks like but not what generates it. They learn the posture, the vocabulary, and the taste, the outputs, without necessarily learning the inputs. When the inputs are needed, they reach for what they remember: the surface, not the engine.
 
-The person who came up through failure has the opposite problem and the opposite advantage. They have never experienced the daily texture of excellence. They might not know the posture or have the vocabulary. But they know, with high resolution, what prevents excellence from emerging. They have watched it fail to emerge in dozens of configurations, and they have mapped the failure modes.
+The person who came up through failure has the opposite problem and the opposite advantage. They have never experienced the daily texture of excellence. They might not know the posture or have the vocabulary. But they may know, with unusually high resolution, what prevents excellence from emerging. They have watched it fail to emerge in dozens of configurations, and they have mapped the failure modes.
 
-Given the right opportunity, this person can build. Not replicate. **Build.** Their knowledge is generative, not imitative. They understand the physics, not just the shape.
+Given the right opportunity, this person can sometimes build. Not just replicate. **Build.** But only if their negative knowledge is eventually disciplined by contact with real standards: strong peers, demanding audiences, clear comparisons, and honest feedback from outside the failing system that trained them. Otherwise they risk becoming brilliantly diagnostic and only intermittently excellent.
 
 ## The eyes that see it
 
@@ -79,7 +81,7 @@ This is not natural. It requires a disposition most people do not have and most 
 
 That disposition can be partly innate, but it is mostly trained. Study helps. Reading about production, design, organizational behavior, systems thinking, and market dynamics gives the person a vocabulary for what they are observing. Without that vocabulary, the observations stay intuitions: accurate but inarticulable. With it, the observations become models. Models can be tested, communicated, and applied.
 
-The sequence is: **study gives the vocabulary, experience provides the cases, comparison generates the insight, and small experiments validate it.** Run that sequence for a decade inside failing organizations and you end up with a body of practical knowledge about what makes creative work succeed or fail that is very hard to acquire any other way.
+The sequence is: **study gives the vocabulary, experience provides the cases, comparison generates the insight, small experiments test it, and stronger external standards correct the parts you cannot see yourself.** Run that sequence for a decade inside failing organizations and you may end up with a body of practical knowledge about what makes creative work succeed or fail that is very hard to acquire any other way.
 
 ## Why media and entertainment is special
 
@@ -97,13 +99,13 @@ This closes the loop. The person working inside a failing studio has direct expe
 
 ## Where taste, originality, and voice actually come from
 
-Three capabilities matter more than almost anything else in creative work: taste, originality, and voice. All three share a property that is rarely discussed honestly: **they cannot be trained by proximity to excellence. They can only be trained by dissatisfaction with its absence.**
+Three capabilities matter more than almost anything else in creative work: taste, originality, and voice. All three share a property that is rarely discussed honestly: **proximity to excellence is not sufficient to develop them, but distance from excellence is not sufficient either.** They emerge from a harsher combination: exposure to strong work, dissatisfaction with weak work, and repeated attempts to close the gap.
 
-Taste is not the ability to recognize good work. Anyone can do that after enough exposure. Taste is the ability to feel, early and accurately, that something is *not yet good enough*, and to know which direction "better" lives in. That feeling is not sharpened by years inside a studio where everything already meets the bar. It is sharpened by years where nothing does, where the gap between what the work is and what it should be is so wide that the person who cares has to build their own instruments for measuring it.
+Taste is not the ability to recognize good work. Anyone can do that after enough exposure. Taste is the ability to feel, early and accurately, that something is *not yet good enough*, and to know which direction "better" lives in. That feeling is often sharpened by years where nothing quite meets the bar, where the gap between what the work is and what it should be is so wide that the person who cares has to build their own instruments for measuring it. But those instruments still need calibration. Without recurrent contact with truly strong work and people capable of naming the difference, dissatisfaction can harden into private preference rather than taste.
 
-Originality is the refusal to accept inherited solutions when those solutions do not fit the problem. A person trained inside a great studio inherits a toolbox of proven approaches. Those approaches work, which is why they are dangerous: they solve the last studio's problems, not the next one's. The person who never had proven approaches to reach for, and had to reason from first principles because nothing around them was worth copying, develops a different relationship with convention. They are not original because they are trying to be. They are original because **imitation was never a viable strategy.**
+Originality is the refusal to accept inherited solutions when those solutions do not fit the problem. A person trained inside a great studio inherits a toolbox of proven approaches. Those approaches work, which is why they are dangerous: they solve the last studio's problems, not the next one's. The person who never had proven approaches to reach for, and had to reason from first principles because nothing around them was worth copying, develops a different relationship with convention. They are not original because they are trying to be. They are original because **imitation was never a sufficient strategy.** But originality without correction drifts easily into idiosyncrasy. What makes it valuable is not merely difference, but useful difference proven against reality.
 
-Voice is the hardest to define and the easiest to recognize. It is the quality in someone's work that is irreducibly theirs. Voice does not emerge inside institutions. Institutions sand it off. Every review, every template, every house style, every approval chain optimizes for consistency, and consistency is the enemy of voice. Voice emerges when a person is alone with the problem long enough to stop solving it the way they were taught and start solving it the way they see it.
+Voice is the hardest to define and the easiest to recognize. It is the quality in someone's work that is irreducibly theirs. Institutions often sand it off. Every review, every template, every house style, every approval chain optimizes for consistency, and consistency can flatten voice. But solitude alone does not produce voice either. Voice emerges when a person is alone with the problem long enough to stop solving it only the way they were taught, and then returns with something strong enough to survive contact with other people.
 
 This is what the successful studio, despite all its advantages, structurally cannot provide. **A disciple who never leaves the master's studio becomes a copy of the master.** They learn the master's taste, the master's solutions, the master's voice. They may execute at an extraordinarily high level. But when they are asked to lead, to set the bar instead of meeting it, they reach for the master's instincts because those are the only instincts they have.
 
@@ -111,7 +113,7 @@ The disciple who leaves and wanders (working in bad studios, shipping forgettabl
 
 The people who eventually build the great studios are almost never people who spent their entire careers inside existing great ones. They are people who spent time inside systems that were not good enough, knew why they were dissatisfied, and eventually got the opportunity to build something that resolved it. The dissatisfaction was not a phase. **It was the training.**
 
-Working near excellence refines execution. Working far from it, while studying it from the outside, **builds the judgment that decides what is worth executing.** One produces reliable contributors. The other produces the people who set the direction. Both are necessary. But the second cannot be trained in the first's environment.
+Working near excellence often refines execution. Working far from it, while studying it from the outside, can **build the judgment that decides what is worth executing.** One tends to produce reliable contributors. The other can produce people capable of setting direction. Both are necessary. Neither is sufficient alone.
 
 ## Contrasting environments
 
@@ -145,15 +147,15 @@ The person who grew up in excellence and the person who grew up studying its abs
 
 ## The synthesis
 
-Excellence is not a thing you absorb by standing near it. It is a thing you understand by studying the conditions that produce it and the conditions that prevent it.
+Excellence is not a thing you absorb by standing near it. But it is also not a thing you derive from failure alone. It develops by studying the conditions that produce it and the conditions that prevent it, then testing those models against standards harsh enough to expose what you still cannot see.
 
 A career spent inside failing organizations, combined with study, reflection, and the discipline to run small experiments, can produce a practitioner who understands those conditions better than someone who spent the same years inside a successful organization and never had to ask why it worked.
 
-The failure-trained person's knowledge is hard-won, empirically grounded, and structurally deep. It is also invisible on a résumé. It does not come with brand names, shipped titles that sold millions, or the social proof that makes hiring committees comfortable.
+The failure-trained person's knowledge is hard-won, empirically grounded, and structurally deep. It is also incomplete until it has survived stronger feedback than failure usually offers. And it is invisible on a résumé. It does not come with brand names, shipped titles that sold millions, or the social proof that makes hiring committees comfortable.
 
-That is the claim: **a track record of shitty jobs can produce an exceptionally capable person.** Not despite the shitty jobs. *Because* of them. The dysfunction was the curriculum. The person who studied it, honestly and rigorously, without the comfort of narrative, learned things no successful studio can teach directly.
+That is the claim: **a track record of shitty jobs can produce an exceptionally capable person.** Not despite the shitty jobs. *Partly because* of them. The dysfunction was part of the curriculum. The person who studied it honestly and rigorously, and then sought out better standards than the local culture could provide, learned things no successful studio can teach directly and no failing studio can teach completely.
 
-The only question, for the person and for anyone evaluating them, is whether they actually did the studying. The environment provided the material. Whether it became an education depends entirely on whether someone was paying attention.
+The only question, for the person and for anyone evaluating them, is whether they actually did the studying, and whether they found ways to test what they learned against reality. The environment provided the material. Whether it became an education depends on whether someone was paying attention and whether they kept climbing toward feedback that could still prove them wrong.
 
 ---
 
@@ -181,7 +183,7 @@ The only question, for the person and for anyone evaluating them, is whether the
 
 ### On expertise outside prestigious institutions
 
-**K. Anders Ericsson**, *Peak: Secrets from the New Science of Expertise* (2016). Ericsson's concept of "deliberate practice" requires feedback, reflection, and progressive difficulty, all of which the attentive person inside a failing organization has to provide for themselves.
+**K. Anders Ericsson**, *Peak: Secrets from the New Science of Expertise* (2016). Ericsson's concept of "deliberate practice" requires feedback, reflection, and progressive difficulty. Failing organizations may provide discomfort and many opportunities for reflection, but they often do not provide the kind of precise, high-quality feedback that excellence requires. The attentive person has to seek or construct that missing feedback elsewhere.
 
 **Nassim Nicholas Taleb**, *Antifragile* (2012). Systems that gain from disorder. Useful for thinking about the difference between someone strengthened by exposure to dysfunction and someone trained under unusually stable conditions.
 

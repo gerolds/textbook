@@ -111,11 +111,11 @@ The previous section named what's wrong with the people you hire. This section n
 
 ### Hiring for comfort
 
-The most common and least visible failure. The person doing the hiring picks someone who feels safe: similar background, similar temperament, easy to talk to, unlikely to challenge the status quo. The interview feels smooth. Everyone gets along. The hire is pleasant, agreeable, and does not push the team to be better.
+This is often the least visible failure. The person doing the hiring picks someone who feels safe: similar background, similar temperament, easy to talk to, unlikely to challenge the status quo. The interview feels smooth. Everyone gets along. The hire is pleasant, agreeable, and does not push the team to be better.
 
 Comfort hiring is seductive because it produces a functional team. People communicate well. Meetings are cordial. The problem is that cordial teams with aligned blind spots will march in formation toward mediocrity and nobody will raise the alarm, because raising alarms is uncomfortable, and the team was built to avoid discomfort.
 
-The antidote is to notice when a candidate makes you slightly uneasy because they're sharper than you expected, or because they challenged something you said, or because their taste is strong enough to create friction. That unease is information. It might mean "wrong fit." It often means "better than what we have."
+Pay attention when a candidate makes you slightly uneasy because they're sharper than you expected, or because they challenged something you said, or because their taste is strong enough to create friction. That unease is information. It might mean "wrong fit." It can also mean "better than what we have."
 
 ### The referral trap
 
@@ -137,17 +137,17 @@ Active search is expensive. It is also the only way to hire above the median. If
 
 The person who once touched something vaguely related to what you need. They used Unity once, so they're a "Unity developer." They shipped a game that had multiplayer, so they "have multiplayer experience." They worked at a studio that made an RPG, so they "understand RPG design."
 
-Proximity is not competence. Having been in the building where a thing happened is different from having done the thing. The fix is simple and uncomfortable: ask them to *demonstrate*. Not describe. Demonstrate. If their experience is real, the demonstration will be obvious. If it's proximity, the gap will be visible within minutes.
+Proximity is not competence. Having been in the building where a thing happened is different from having done the thing. Ask them to *demonstrate*, not just describe. If their experience is real, the demonstration will be obvious. If it's proximity, the gap will be visible within minutes.
 
 This pathology thrives when the hiring team itself lacks depth in the area they're hiring for. If nobody on the team can distinguish real multiplayer expertise from proximity to multiplayer, the proximity hire will look like an expert. This is the calibration problem from the heroes section, appearing in a different guise: you cannot evaluate what you have never seen done well.
 
 ### Fear of competence
 
-The most corrosive pathology, and the one nobody admits to. The person doing the hiring, consciously or not, avoids candidates who are clearly better than they are. The truly excellent candidate makes the interviewer feel inadequate. Their answers are too sharp. Their portfolio is too strong. Their questions expose gaps in the interviewer's own understanding. So the interviewer finds a reason to pass: "not a culture fit," "might be hard to manage," "overqualified."
+This is one of the most corrosive pathologies, and almost nobody admits to it. The person doing the hiring, consciously or not, avoids candidates who are clearly better than they are. The truly excellent candidate makes the interviewer feel inadequate. Their answers are sharp. Their portfolio is strong. Their questions expose gaps in the interviewer's own understanding. So the interviewer finds a reason to pass: "not a culture fit," "might be hard to manage," "overqualified."
 
 This is how studios maintain a ceiling. The strongest person on the team determines the maximum quality of anyone they'll hire. If that person is threatened by excellence, the team can never exceed their level. The ceiling lowers with every hire, because each new person was chosen to be non-threatening to the person above them.
 
-The only fix is structural: the people making hiring decisions must be secure enough to hire people better than themselves, and the studio must *reward* them for doing so rather than treating it as a threat to the hierarchy. A lead who hires someone who outgrows the lead's role has done the studio an enormous favor. The studio must treat it that way.
+The fix has to be structural: the people making hiring decisions must be secure enough to hire people better than themselves, and the studio must *reward* them for doing so rather than treating it as a threat to the hierarchy. A lead who hires someone who outgrows the lead's role has done the studio a favor. The studio should treat it that way.
 
 ### Lowballing
 
@@ -163,7 +163,7 @@ Pay people what the work is worth. If you can't afford to pay market rate, hire 
 
 Wishful thinking is the gap between what the evidence shows and what the hiring manager *wants* to believe. It thrives under time pressure (we need someone now), scarcity (we can't find anyone better), and affinity (I liked them). Each of these is a real pressure. None of them change whether the person can do the job.
 
-The discipline: separate what you *observed* from what you *inferred*. Write down the evidence. Read it without the narrative. If the evidence alone does not support the hire, the narrative is wishful thinking, and the hire will fail in exactly the ways the evidence predicted.
+Separate what you *observed* from what you *inferred*. Write down the evidence. Read it without the narrative. If the evidence alone does not support the hire, the narrative is wishful thinking, and the hire will likely fail in the ways the evidence predicted.
 
 ### Self-rationalising bad decisions
 
@@ -171,7 +171,7 @@ The hire is made. The first month is rough. The work isn't at the level the team
 
 Some of this is legitimate. People do ramp up. Briefs are sometimes unclear. But rationalisation and patience look identical from the outside, and the person who made the decision is the worst judge of which one they're engaged in, because admitting the hire was wrong means admitting their own judgment failed.
 
-The structural fix: make the evaluation of a new hire someone *else's* responsibility. The person who championed the hire should not be the one who decides whether it's working. They have too much invested in the answer being yes. Give the evaluation to the canary, or to a lead who wasn't involved in the hiring decision, or to the team as a whole.
+Make the evaluation of a new hire someone *else's* responsibility. The person who championed the hire should not be the one who decides whether it's working. They have too much invested in the answer being yes. Give the evaluation to the canary, or to a lead who wasn't involved in the hiring decision, or to the team as a whole.
 
 ### Reorganising instead of recognising
 
@@ -191,7 +191,7 @@ Before hiring for any function, ask: is anyone already doing this? If so, would 
 
 ### Not taking hiring seriously
 
-The deepest pathology, and the one that enables all the others. The team treats hiring as an interruption to the real work rather than as one of the highest-leverage activities the studio performs.
+This is the pathology that enables most of the others. The team treats hiring as an interruption to the real work rather than as one of the highest-leverage activities the studio performs.
 
 The symptoms: job descriptions written in ten minutes. Interviews conducted without preparation. Portfolios skimmed rather than studied. References not checked. Trials not done because "we don't have time." Decisions made in a single meeting based on gut feel.
 
@@ -570,7 +570,7 @@ For the reader who has been through the article and wants the compressed version
 
 **Taste:** the ability to distinguish "this works" from "this is right for this game." It scales inversely with team size. At 4 people, everyone's taste is the game's taste.
 
-**Heroes:** process creates conditions; heroes generate the thing that makes strangers care. A team that has never seen real excellence cannot calibrate its own standards.
+**Heroes:** process creates conditions; exceptional people still generate work the rest of the team cannot. A team that has never seen real excellence cannot calibrate its own standards.
 
 **The nose:** include someone with calibrated pattern recognition in every hiring process. They must explain what they notice and have been trained by proximity to genuine excellence, not just competent execution.
 
@@ -584,7 +584,7 @@ For the reader who has been through the article and wants the compressed version
 
 Hiring for games at small scale comes down to one question: **does this person make the game more likely to be great?**
 
-Not more likely to ship, or to be on time, or to be technically impressive. More likely to be *great*: coherent, compelling, and true to its commitment.
+The standard is not shipping, schedule, or technical impressiveness by themselves. The standard is whether the game becomes more *great*: coherent, compelling, and true to its commitment.
 
 If the answer is clearly yes, hire fast. If the answer is "maybe, but they're available and we need someone," stop. That calculus is how studios fill seats with adequate people, and adequate people produce adequate games. The standard has to be higher than adequate because the problem is harder than adequate can solve.
 

@@ -27,9 +27,9 @@ This article describes an architecture that works *with* Unity's grain (keeping 
 
 > ![alt text](images/membrane.jpg)
 >
-> Picture a living cell. The cell membrane isn't a wall, it is a selective boundary. It controls what enters (nutrients, signals), what exits (waste, messages), and what belongs inside (the cell's machinery). The membrane doesn't block communication; it mediates it. Without the membrane, the cell's contents would dissolve into the environment. With it, the cell maintains identity and can cooperate with other cells without losing itself.
+> _Picture a living cell. The cell membrane isn't a wall, it is a selective boundary. It controls what enters (nutrients, signals), what exits (waste, messages), and what belongs inside (the cell's machinery). The membrane doesn't block communication; it mediates it. Without the membrane, the cell's contents would dissolve into the environment. With it, the cell maintains identity and can cooperate with other cells without losing itself._
 >
-> The cell is a module, a living unit that the membrane defines and protects. When molecules pass through the membrane, they enter the cell's domain. The cell receives them, integrates them into its machinery, and puts them to work. The cell knows what's inside, maintains its own state, and is the authority for its own function. Other cells don't reach in and manipulate its internals, they send signals through the membrane.
+> _The cell is a module, a living unit that the membrane defines and protects. When molecules pass through the membrane, they enter the cell's domain. The cell receives them, integrates them into its machinery, and puts them to work. The cell knows what's inside, maintains its own state, and is the authority for its own function. Other cells don't reach in and manipulate its internals, they send signals through the membrane._
 
 In this architecture, the **host is the module's membrane**. It's the boundary you pass through to belong, the thing that equips you when you enter, and the surface through which the module communicates with the outside world. The host answers "who owns this?", "how do I join?", and "how do I talk to this module?" If you can point to the host, you can understand the module's shape—and you can usually predict where its bugs will live.
 
@@ -128,9 +128,11 @@ Modules communicate through contracts. The orchestration layer is the only code 
 
 ### Why legibility matters: the city metaphor
 
+<!--
 > ![City](images/city.jpg)
 >
 > *Looks impressive but just because roads are there, doesn't mean they make sense.*
+-->
 
 Picture a large Unity project as a city. The problem in most Unity cities is that any building can build a private road to any other building. At first it feels efficient. Later you discover you cannot reason about traffic, you cannot reroute, and you cannot tell which roads are essential and which are accidental.
 
@@ -224,9 +226,11 @@ Cross-mode communication must be explicit. You can't call "the inventory" from t
 
 ## Unity's instantiation reality
 
+<!--
 > ![Registration](images/immigration.jpg)
 >
 > *New citizens arrive constantly, how are they, what do they want, do we want them, do they bring diseases?*
+-->
 
 Unity instantiates from content: scenes, prefabs, additive loading, Addressables. Insisting that a central orchestrator explicitly construct every gameplay object means writing spawners for everything and fighting iteration.
 
@@ -381,7 +385,9 @@ Contracts are the membrane. Inside, do what works.
 
 ## The singleton trap
 
+<!--
 ![Trophy room](images/trophyroom.jpg)
+-->
 
 One of the most expensive early assumptions: there's one player, one UI, one camera, one inventory. It simplifies everything, until it doesn't.
 

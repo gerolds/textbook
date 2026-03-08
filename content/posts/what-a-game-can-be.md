@@ -7,7 +7,7 @@ tags = ['game design', 'craft', 'process', 'creativity', 'preproduction', 'mecha
 categories = ["Essays"]
 showToc = true
 draft = false
-slug = 'what-games-are-all-about'
+slug = 'what-a-game-can-be'
 cover = { image = '', alt = '', caption = '' }
 +++
 
@@ -25,15 +25,9 @@ cover = { image = '', alt = '', caption = '' }
 
 ## Why this essay exists
 
-The other essays assume you already have a game concept worth committing to. *[Wide Appeal]({{< ref "posts/wide-appeal" >}})* names the axes of a finished work. *[Making the Thing]({{< ref "posts/making-the-thing" >}})* builds around a governing commitment. *[Prototyping the Loop]({{< ref "posts/prototyping-the-loop" >}})* finds the invariant. *[Finding the Commitment]({{< ref "posts/finding-the-commitment" >}})* explains why sticking matters.
+The companion essays assume a game concept already exists. *[Wide Appeal]({{< ref "posts/wide-appeal" >}})* evaluates a finished work. *[Making the Thing]({{< ref "posts/making-the-thing" >}})* builds around a governing commitment. *[Prototyping the Loop]({{< ref "posts/prototyping-the-loop" >}})* finds the invariant. *[Finding the Commitment]({{< ref "posts/finding-the-commitment" >}})* explains why sticking matters.
 
-All of them start after someone looked at a subject (a historical period, a profession, a conflict, a system) and decided it contained a playable game.
-
-This essay is about that prior step. You have a subject — something interesting, full of texture — and you need to know whether a game lives inside it before you bet a team on it. The territory is hostile. Most subjects that feel like games aren't. The ones that are will seduce you with theme and atmosphere before you've confirmed there's structure underneath.
-
-The six gates are field equipment. They test the ground before you build on it.
-
-The process needs a fail state. "Everything is secretly a game" is how you get elegant nonsense wearing a lanyard. A good method should sometimes look at a subject and say *nope, not a game.*
+This essay covers the prior step: testing whether a subject — a historical period, a profession, a conflict, a system — contains a viable game before committing a team to it. Six gates, applied in sequence, force the subject to prove it contains playable pressure, a classifiable loop, and a core action one person can build in two weeks. The process must be able to reject. A method that accepts every subject tests nothing.
 
 ---
 

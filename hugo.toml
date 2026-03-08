@@ -7,6 +7,15 @@ disablePathToLower = true
 enableRobotsTXT = true
 enableGitInfo = false
 
+[outputs]
+  section = ['HTML', 'RSS', 'pdf-manifest']
+
+[outputFormats.pdf-manifest]
+  mediaType = 'application/json'
+  baseName = 'pdf-manifest'
+  isPlainText = true
+  notAlternative = true
+
 [markup]
 [markup.goldmark.renderer]
   unsafe = true

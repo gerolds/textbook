@@ -1,0 +1,13 @@
+{
+  "name": "textbook-pdf-export",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Helpers for exporting Hugo articles in this repo to PDF.",
+  "scripts": {
+    "pdf:export": "node scripts/export-pdfs.mjs",
+    "pdf:export:all": "node scripts/export-pdfs.mjs --all"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}

@@ -1,0 +1,14 @@
+/*
+  Dedicated print stylesheet hook for article-to-PDF export.
+  Kept intentionally tiny so future PDF-specific tweaks can live here
+  without mixing too much with interactive site styling.
+*/
+
+body {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.article-pdf-download {
+  display: none !important;
+}

@@ -258,6 +258,305 @@ article > section > h2 {
   border-top: 1px solid var(--color-border);
 }
 
+/* ===================================================================
+   PDF / print export
+   =================================================================== */
+
+.article-pdf-download {
+  margin: 0.5rem 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.article-pdf-download a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.article-pdf-download a:hover,
+.article-pdf-download a:focus {
+  background: var(--color-background-hover);
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 18mm 22mm 22mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11.5pt !important;
+    line-height: 1.55 !important;
+  }
+
+  header,
+  body > header,
+  #header_content,
+  #header_left,
+  #header_right,
+  #sidebar_btn,
+  #theme_tool,
+  #search_tool,
+  .brand,
+  footer,
+  .reading-progress-bar,
+  .no-print,
+  nav,
+  aside,
+  .toc,
+  #TableOfContents,
+  .collapsible-menu,
+  .breadcrumbs,
+  .edit-page,
+  .navbar,
+  .search,
+  .theme-toggle {
+    display: none !important;
+  }
+
+  #content > .content-margin:first-child {
+    display: none !important;
+  }
+
+  .pdf-frontmatter {
+    display: block;
+    margin: 0 auto 2rem;
+    padding: 0;
+    width: 100%;
+    max-width: 34rem;
+  }
+
+  main,
+  #content,
+  .content-margin,
+  article {
+    width: 100% !important;
+    max-width: 34rem !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  article,
+  article p,
+  article li,
+  article blockquote {
+    font-size: 11.5pt !important;
+    line-height: 1.55 !important;
+  }
+
+  article p,
+  article ul,
+  article ol,
+  article blockquote,
+  article pre,
+  article table {
+    margin-top: 0;
+    margin-bottom: 0.95rem;
+  }
+
+  article h1 {
+    font-size: 22pt !important;
+    line-height: 1.2 !important;
+  }
+
+  article h2 {
+    font-size: 15pt !important;
+    line-height: 1.3 !important;
+  }
+
+  article h3 {
+    font-size: 12.5pt !important;
+    line-height: 1.35 !important;
+  }
+
+  a,
+  a:visited {
+    color: inherit !important;
+    text-decoration: none;
+  }
+
+  html[data-pdf-link-mode="public"] article a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+
+  html[data-pdf-link-mode="local"] article a[href^="http"]::after {
+    content: "";
+  }
+
+  .pdf-title-page {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    page-break-after: always;
+    break-after: page;
+    margin: 0;
+  }
+
+  .pdf-title-page__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 1rem;
+  }
+
+  .pdf-title-page__description {
+    font-size: 12pt;
+    line-height: 1.6;
+    max-width: 34rem;
+    color: #333;
+    margin: 0 0 1.5rem;
+  }
+
+  .pdf-title-page__source {
+    font-size: 0.85rem;
+    color: #666;
+    word-break: break-all;
+    margin: 0;
+  }
+
+  .pdf-toc {
+    page-break-after: always;
+    break-after: page;
+    margin: 0;
+    max-width: 34rem;
+  }
+
+  .pdf-toc__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1.25rem;
+  }
+
+  .pdf-toc__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pdf-toc__item {
+    margin: 0 0 0.65rem;
+    line-height: 1.45;
+    font-size: 11.5pt;
+  }
+
+  .pdf-toc__link {
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.3rem;
+    align-items: baseline;
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .pdf-toc__number {
+    min-width: 2.1rem;
+    font-variant-numeric: tabular-nums;
+    color: #666;
+  }
+
+  .pdf-toc__text {
+    flex: 1;
+  }
+
+  .pdf-toc__item--h3 {
+    padding-left: 1.5rem;
+    color: #333;
+    font-size: 0.95rem;
+  }
+
+  img,
+  table,
+  pre,
+  blockquote {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  article table,
+  article table.tableblock,
+  article table.mc-table {
+    width: min(100%, 44rem) !important;
+    max-width: 44rem !important;
+    margin-left: 50% !important;
+    margin-right: 0 !important;
+    transform: translateX(-50%);
+    font-size: 10pt !important;
+  }
+
+  article table.tableblock,
+  article table.mc-table {
+    display: table !important;
+    overflow: visible !important;
+  }
+
+  article table thead,
+  article table tbody,
+  article table tfoot {
+    display: table-header-group;
+  }
+
+  article table tbody {
+    display: table-row-group;
+  }
+
+  article table tfoot {
+    display: table-footer-group;
+  }
+
+  article table th,
+  article table td {
+    font-size: 10pt !important;
+    line-height: 1.35 !important;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  article > section > h2 {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 2rem;
+  }
+
+  article hr {
+    opacity: 0.2;
+    height: 2px;
+    margin: 2rem 0 1rem;
+  }
+
+  article table.tableblock,
+  article table.tableblock > thead,
+  article table.tableblock > tbody,
+  article table.tableblock > tfoot {
+    display: table;
+    width: 100%;
+    table-layout: auto;
+  }
+
+  pre,
+  code {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
 /* The intro section (no h2) and the first h2 section need no top divider */
 article > section:first-child > h2,
 article > section:nth-child(2) > h2 {

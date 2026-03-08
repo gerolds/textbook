@@ -6,6 +6,18 @@
     </div>
 {{ end }}
 
+{{ if and (eq .Section "posts") (not .Params.disable_pdf_download) }}
+    <div class="content-margin">
+        <p class="article-pdf-download no-print">
+            <a
+                href="{{ printf "pdf/%s.pdf" (.Params.slug | default .File.TranslationBaseName) | relURL }}"
+                data-pdf-download
+                data-pdf-slug="{{ .Params.slug | default .File.TranslationBaseName }}"
+            >Download PDF</a>
+        </p>
+    </div>
+{{ end }}
+
 {{ if and (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") (.Store.Get "params").enable_toc }}
     {{ $toc_position := (.Store.Get "params").toc_position }}
     {{ if eq $toc_position "right" }}

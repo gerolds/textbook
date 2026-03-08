@@ -1,0 +1,3 @@
+{{ if fileExists "/static/pdf-print.css" -}}
+    <link rel="stylesheet" href="{{ urls.JoinPath .Site.BaseURL "pdf-print.css" }}" media="print">
+{{- end }}

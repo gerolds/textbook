@@ -2,7 +2,17 @@
 <div class="reading-progress-bar" aria-hidden="true"></div>
 <script>
 (function () {
+  var pdfLink = document.querySelector('[data-pdf-download]');
   var bar = document.querySelector('.reading-progress-bar');
+
+  if (pdfLink) {
+    var slug = pdfLink.getAttribute('data-pdf-slug');
+    var href = pdfLink.getAttribute('href');
+    if (!href && slug) {
+      pdfLink.setAttribute('href', '/pdf/' + slug + '.pdf');
+    }
+  }
+
   if (!bar) return;
 
   function update() {

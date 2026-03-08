@@ -1,0 +1,12 @@
+{{- $items := slice -}}
+{{- range where .Site.RegularPages "Section" "posts" -}}
+  {{- if and (not .Draft) (not .Params.disable_pdf_download) -}}
+    {{- $items = $items | append (dict
+      "title" .Title
+      "slug" (.Params.slug | default .File.TranslationBaseName)
+      "permalink" .RelPermalink
+      "source" .File.Path
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- $items | jsonify -}}

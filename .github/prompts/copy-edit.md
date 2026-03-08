@@ -120,8 +120,29 @@ If a compressed passage depends on knowledge the text hasn't provided, expand it
 
 ---
 
+## 15 — Prose that doesn't build understanding
+
+A well-written section is a scaffold. The reader can see the structure, knows where they are in it, and watches detail attach to specific places on the frame. A badly written section — from any source — dumps thoughts as they arose. It documents what happened in the writer's mind without constructing the conditions for the reader to think the same thoughts.
+
+This is the hardest problem to fix because it is not a surface error. It is a missing argument. Every section of a text must have a *theory of how it produces understanding in the reader*, even if that theory is never stated. When the theory is absent, the prose becomes a log: events in sequence, claims in sequence, observations in sequence, none of them building on the previous one.
+
+**How to detect it.** For each section, ask: what is the reader supposed to understand by the end of this section, and what is the sequence of moves that gets them there? If you cannot reconstruct that sequence — if the section just *presents* information without *building* toward comprehension — the section fails this test regardless of how clean the sentences are.
+
+**What the toolkit includes.** Reordering is one tool, but not the only one and often not the most important:
+
+- **Scaffold first, detail second.** Give the reader the structural shape before filling it in. A visible frame — a stated question, a named tension, a promised structure — lets the reader place each subsequent detail.
+- **Callbacks and term reuse.** When a later passage depends on an earlier one, echo the earlier language. Reuse the same word, the same phrase, the same framing. The reader needs to see the connection, not infer it.
+- **Foreshadowing.** If a section will complicate or reverse an earlier claim, signal that the complication is coming. The reader should arrive at the turn prepared, not ambushed.
+- **Progressive attachment.** Each new idea should attach to a specific place on the scaffold the reader already has. If it doesn't attach anywhere — if it's just the next thing — it falls off.
+- **Punctuation as cognitive pacing.** Periods close a unit of thought. Commas group what belongs together. Colons promise delivery. Semicolons claim a parallel. When punctuation follows the writer's stream of consciousness rather than the reader's comprehension, the mental model can't form.
+- **Summaries and restatement.** After a complex passage, a single sentence that names what was just established — not restating it, but naming the takeaway — gives the reader a foothold before the next move.
+
+**How to fix it.** Do not mechanically reorder sentences. Instead: identify what the section is trying to make the reader understand, construct the argument for how it could do that, then restructure the section to implement that argument. The result may involve reordering, re-punctuating, adding a callback, splitting a paragraph, or sometimes just adding one sentence that makes the scaffold visible.
+
+---
+
 ## Execution
 
-Apply in order: vocabulary → throat clearing / buried lede → flattery → structure → fake reasoning → emotional manipulation → padding → voice → insider jargon → fear-hedging → run-on thinking → tangents → score-settling → overcompression.
+Apply in order: vocabulary → throat clearing / buried lede → flattery → structure → fake reasoning → emotional manipulation → padding → voice → insider jargon → fear-hedging → run-on thinking → tangents → score-settling → overcompression → comprehension scaffold.
 
 After all passes, read the result once more and apply this test: **if you removed a sentence and replaced it with a different sentence of the same length, you probably just swapped one problem for another.** Cuts should outnumber substitutions. The output should be noticeably shorter than the input.

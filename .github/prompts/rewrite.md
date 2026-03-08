@@ -124,6 +124,20 @@ Passages compressed past readability: missing antecedents, steps skipped in an a
 
 **Fix:** Expand the minimum amount needed for a careful reader to follow. Add no more than one sentence per gap. Do not pad — restore what's missing, nothing extra.
 
+### §14 — Missing comprehension scaffold → REWRITE
+
+The section presents information without building understanding. It documents what the writer thought rather than constructing the conditions for the reader to think it. The test: for each section, can you identify the sequence of moves that gets the reader from not-understanding to understanding? If you can't, the section is a log, not an argument.
+
+**Fix:** Do not mechanically reorder sentences. Instead:
+
+1. **Name what the section must make the reader understand** by the end.
+2. **Construct the argument** for how it gets there — what must come first, what attaches to what, where callbacks or foreshadowing are needed.
+3. **Restructure to implement that argument.** This may involve reordering, re-punctuating, adding a callback to an earlier term, splitting a paragraph, inserting one sentence that makes the scaffold visible, or adding a brief restatement after a complex passage so the reader has a foothold.
+
+The toolkit is wider than reordering: callbacks and term reuse (echo earlier language so the reader sees connections), foreshadowing (signal a coming complication so the reader arrives prepared), progressive detail attachment (each new idea must attach to a specific place on the scaffold already built), punctuation as cognitive pacing (periods close thought-units, commas group, colons promise, semicolons claim parallels), summaries (one sentence naming the takeaway after a complex passage).
+
+Do not add new ideas. Build the scaffold from the author's material.
+
 ---
 
 ## Execution
@@ -158,7 +172,9 @@ Locate the statement of intent. If absent, abort. Otherwise:
 
 14. **Pass 13 — Overcompression (§13).** Expand the minimum needed for a reader to follow.
 
-**Output:** The full revised text. Fixed passages are fixed. Unresolvable passages are annotated. The result must be shorter than the input (except where §13 expansions are unavoidable).
+15. **Pass 14 — Comprehension scaffold (§14).** For each section: name what it must make the reader understand, construct the argument for how, restructure to implement it.
+
+**Output:** The full revised text. Fixed passages are fixed. Unresolvable passages are annotated. The result must be shorter than the input (except where §13 or §14 fixes are unavoidable).
 
 **Tags in annotations:**
 

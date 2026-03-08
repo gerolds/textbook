@@ -76,11 +76,17 @@ Passages that refute a specific person, position, or school of thought without e
 
 Aphorisms, fragments, and compressed formulations that assume the reader can unpack what took the writer years to arrive at. The passage is true but the reader has no way to understand why or what it means. Notes-to-self that made it into a draft.
 
+### §14 — Missing comprehension scaffold → REWRITE
+
+The section presents information without building understanding. It documents what the writer thought rather than constructing the conditions for the reader to think it. The test: for each section, can you identify the sequence of moves that gets the reader from not-understanding to understanding? If you can't, the section is a log, not an argument — regardless of how clean the sentences are.
+
+Signs include: no visible structure the reader can hold onto while detail accumulates; new ideas that don't attach to anything previously established; missing callbacks to earlier terms or concepts that a later passage depends on; no foreshadowing before a reversal or complication; punctuation that follows the writer's stream of thought rather than pacing comprehension; summaries or restatements absent after complex passages where the reader needs a foothold.
+
 ---
 
 ## Execution
 
-Locate the statement of intent. If absent, abort. Otherwise, read the full draft once, then make thirteen passes.
+Locate the statement of intent. If absent, abort. Otherwise, read the full draft once, then make fourteen passes.
 
 **Annotation syntax:**
 
@@ -114,7 +120,7 @@ The implications of this shift cannot be overstated.
 
 - Do not alter, rewrite, or rearrange any original text.
 - One line per comment. Be specific and direct.
-- Include §N (§1–§13) so the author can refer back to the catalogue.
+- Include §N (§1–§14) so the author can refer back to the catalogue.
 - If multiple problems, pick the worst one.
 - End with a summary:
 

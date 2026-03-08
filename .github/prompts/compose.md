@@ -16,6 +16,7 @@ The article is an archival artifact. It serves two audiences:
 - **Match the author's register.** Read the notes for tone — blunt, formal, conversational, technical. Write in that voice, not a better one. If the notes are too fragmentary to establish a voice, default to direct and informal.
 - **Do not pad.** Every paragraph must contain at least one thing the reader didn't know from the previous paragraph. If a section exists only to transition, delete it and let the heading do the work.
 - **Do not smooth over uncertainty.** If the notes contain a tension, a contradiction, or an unresolved question, present it as such. Do not resolve what the author left open.
+- **Build a comprehension scaffold.** The source material records what the author discovered. The article must construct the conditions for the reader to discover it. Every section needs a theory of how it produces understanding: what must the reader grasp by the end of this section, and what is the sequence of moves that gets them there? Build the structural frame first (a stated question, a named tension, a promised shape), then attach detail to specific places on that frame. Use callbacks and term reuse so the reader sees connections between sections. Foreshadow complications so the reader arrives at turns prepared. After complex passages, name the takeaway in one sentence so the reader has a foothold before the next move. If a section merely *presents* information in the order it appears in the notes without building toward comprehension, restructure it.
 
 ---
 
@@ -129,10 +130,10 @@ If the notes don't suggest any further reading and you can't identify any from t
 After writing the article, apply two editorial passes using the standards from the companion prompts. Do not run them as separate operations — internalise their standards and apply them as you write, then verify on re-read.
 
 **Pass 1 — Copy-edit (from `copy-edit.md`).**
-Check for: dead vocabulary, throat clearing, flattery, mechanical structure, fake reasoning, emotional manipulation, padding, flat voice, insider jargon, fear-hedging, run-on thinking, tangents, score-settling, overcompression. Fix in place.
+Check for: dead vocabulary, throat clearing, flattery, mechanical structure, fake reasoning, emotional manipulation, padding, flat voice, insider jargon, fear-hedging, run-on thinking, tangents, score-settling, overcompression, missing comprehension scaffold. Fix in place.
 
 **Pass 2 — Rewrite integrity (from `rewrite.md`).**
-Check for: unsupported specifics (search the web), unearned confidence, fabricated structure, scope inflation, empty passages, voice breaks, intent misalignment, insider jargon, fear-hedging, run-on thinking, tangents, score-settling, overcompression. Fix or annotate as appropriate.
+Check for: unsupported specifics (search the web), unearned confidence, fabricated structure, scope inflation, empty passages, voice breaks, intent misalignment, insider jargon, fear-hedging, run-on thinking, tangents, score-settling, overcompression, missing comprehension scaffold. Fix or annotate as appropriate.
 
 ---
 

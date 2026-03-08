@@ -101,7 +101,9 @@ The Age of Exploration example produces several: scarcity of provisions and crew
 
 **What makes pressure *playable*:**
 
-The pressure must produce *decisions*: moments where the player chooses between meaningfully different actions. Pressure that produces only one rational response is scripting. Pressure that produces no legible options is noise.
+The pressure must produce *decisions*: moments where the player chooses between meaningfully different actions. Pressure that produces only one rational response is scripting: the player performs the correct action and waits for the next prompt. Pressure that produces no legible options is noise — the player acts at random and attributes the outcome to luck.
+
+Both break the feedback loop. Scripting teaches nothing because the outcome was predetermined. Noise teaches nothing because the outcome can't be traced to the choice. A game whose loop doesn't teach can't retain a player past the first session. For an indie studio, retention *is* viability.
 
 Ask: *What does the pressure force someone to decide?* If the answer is a genuine tradeoff (speed vs. safety, risk vs. certainty, investment vs. conservation) you have playable pressure.
 
@@ -111,11 +113,15 @@ Ask: *What does the pressure force someone to decide?* If the answer is a genuin
 
 ## Gate 3: Loop class — match the pressure to a known structure
 
-Pressure does not become play until it resolves into a repeatable cycle of action, feedback, and adaptation. That cycle is a loop. Loops are not infinite in variety; they cluster into recognizable families.
+Pressure does not become play until it resolves into a repeatable cycle of action, feedback, and adaptation. That cycle is a loop.
+
+Loops cluster into recognizable families. Not by logical necessity, but by practical constraint. A loop must cycle fast enough for the player to learn from repetition, produce legible feedback, and sustain variation without changing identity. These three requirements — speed, legibility, stability — filter the space of possible cycles hard. What survives resembles what else survives.
 
 Classifying pressure into a loop class does two things. It stops you from pretending any subject can become any game. And it forces the subject to resolve into a recognizable structure rather than a thematic costume draped over nothing.
 
 ### The loop catalogue
+
+The ten types below are not exhaustive. They are the families this essay recognizes based on what ships and what an indie team can build around. A loop that doesn't fit any of them is not necessarily wrong, but it is unproven, and unproven loops are expensive bets. If your pressure resolves into something genuinely novel, treat that as a risk factor, not a badge of honor, and test it harder.
 
 **Optimization loop**
 The player improves efficiency under constraint.
@@ -154,7 +160,7 @@ The player succeeds by rhythm, precision, and sequencing.
 
 **Engine-building loop**
 The player assembles interacting systems that produce compounding returns.
-*Cycle:* invest → unlock synergy → accelerate output → reinvest under new constraints.
+*Cycle:* invest → unlock interaction → accelerate output → reinvest under new constraints.
 *Works for:* industry, colony growth, deckbuilding, research systems, automation.
 
 **Endurance / attrition loop**
@@ -171,7 +177,9 @@ The player acts through incomplete loyalty and manipulated perception.
 
 Most subjects map to one primary loop and one or two secondary loops. The Age of Exploration resolves primarily as a **risk management loop** (the voyage as a sequence of bets against deterioration) with secondary **detection/inference** (navigation, landfall identification) and **endurance/attrition** (crew survival under scarcity).
 
-The primary loop is the one you build around. Secondary loops add depth but don't drive the minute-to-minute experience. If you can't identify a primary loop, the subject may be too diffuse, or you haven't found the strongest pressure yet.
+The primary loop is the one you build around. Secondary loops add depth but don't drive the minute-to-minute experience. This is not a taste preference. It is a scope constraint. Every loop needs its own primitive, feedback system, escalation path, and proof. An indie team that builds around two co-equal loops is building two games and shipping neither. Pick the loop with the strongest pressure. Let the others flavor it.
+
+If you can't identify a primary loop, the subject may be too diffuse, or you haven't found the strongest pressure yet.
 
 **Gate check:** Does the pressure map to a recognizable loop class? Can you write the cycle in four to six steps? If the interesting thing is static, observational, or resolvable in a single action, it is probably not a game.
 
@@ -185,13 +193,23 @@ The primitive is not a genre label ("combat," "building," "trading"). It is a co
 
 **Obvious.** A new player sees what to do within seconds. Not every nuance, but the basic action. If it requires explanation before the player can attempt it, it isn't obvious enough.
 
+*Why this is necessary:* A primitive that requires explanation before the player can *attempt* it inserts a barrier between the player and the loop. The loop is where learning happens. Everything before it is cost the player pays before receiving any value. An obvious primitive lets the player enter the loop immediately and learn by doing. The nuance can be infinite; the entry point cannot be. Indie games lack the brand trust that buys patience for onboarding. A stranger on a store page gives you seconds, not minutes.
+
 **Readable.** The outcome of each attempt is legible. The player can tell whether they did well or poorly. Feedback is immediate or nearly so.
+
+*Why this is necessary:* Readability turns repetition into learning. If the player can connect their action to its outcome — "I chose this heading and ended up here" — the loop teaches. If the connection is opaque, the player attributes results to luck or system whim. An unreadable primitive cannot be progressive, because the player has no basis for improving. It cannot retain either, because a game that feels random punishes investment.
 
 **Interesting.** More than one reasonable way to perform it. The primitive admits variation, style, and choice. One correct answer makes it a reflex, not a decision.
 
-**Observable.** Someone watching can see the primitive and understand what's happening. This matters for teaching, spectating, streaming, recommendation. A primitive that only makes sense to the person holding the controller is hard to transmit.
+*Why this is necessary:* A primitive with one correct answer has a skill ceiling of "learn the answer." Once found, the loop generates no new information. Multiple viable approaches with different risk/reward profiles are what make each cycle produce a different situation. They are also what make players *disagree* about the best approach, which is the structural basis of discussion and community. An indie game lives or dies by whether players talk about it. They talk about decisions, not reflexes.
+
+**Observable.** Someone watching can see the primitive and understand what's happening. A primitive that only makes sense to the person holding the controller is hard to transmit.
+
+*Why this is necessary:* This is about how games spread. An indie studio without a marketing budget depends on the game *showing itself* — streams, screenshots, word of mouth. All require the primitive to be legible to someone who isn't playing. If the interesting part of your game is an internal mental model with no visible output, the game may be excellent and no one will ever know. Large studios can buy awareness. Indie studios need the game to generate its own.
 
 **Repeatable.** It can be performed hundreds of times without becoming rote. Each instance differs enough that the player is making a fresh decision, not replaying a memory.
+
+*Why this is necessary:* The primitive *is* the game. If it exhausts itself after twenty repetitions, the game is twenty repetitions long, and no amount of content or narrative wrapper changes that. Repeatability requires that the primitive's inputs vary — through randomness, player history, system state, or opponent behavior — so each cycle is a fresh decision. This is also a production argument: a repeatable primitive generates play from its own structure. An exhaustible one requires constant content investment, and content is the most expensive thing an indie team produces per hour of play it creates.
 
 **Progressive.** There is a difference between performing it adequately and performing it well. Skill, knowledge, or judgment produce better outcomes. Low floor, high ceiling.
 
@@ -199,11 +217,11 @@ The primitive is not a genre label ("combat," "building," "trading"). It is a co
 
 Look inside your loop cycle. Find the step where the player makes the most consequential choice in the shortest time. That is your candidate.
 
-In a **risk management loop** for Age of Exploration: the candidate is *the navigation commitment* — choose a heading on incomplete information and live with the consequences until the next observation. Obvious (pick a direction), readable (you find out whether you're on course), interesting (multiple headings are plausible), observable (the ship moves), repeatable (every day at sea is a new reading), progressive (experienced navigators read weather and current better).
+In a **risk management loop** for Age of Exploration: the candidate is *the navigation commitment* — choose a heading on incomplete information and live with the consequences until the next observation. Obvious (pick a direction), readable (you find out whether you're on course), interesting (multiple headings are plausible), observable (the ship moves), repeatable (every day at sea is a new reading), progressive (each leg of the voyage produces weather patterns, current behavior, and landmark sightings that are useless in isolation but compound into a mental model of the region; an experienced navigator doesn't guess less, but guesses better because prior commitments generated signals that inform the next one; the game's tension shifts from "which way?" to "how much of what I think I know should I trust?").
 
-In a **detection/inference loop** for archaeology: the candidate is *the dig decision* — choose where to excavate based on surface clues, survey data, and theory. Obvious (pick a site), readable (what you uncover tells you whether you chose well), interesting (clues support multiple hypotheses), observable (the ground opens), repeatable (every excavation is a fresh test), progressive (better archaeologists read stratigraphy faster).
+In a **detection/inference loop** for archaeology: the candidate is *the dig decision* — choose where to excavate based on surface clues, survey data, and theory. Obvious (pick a site), readable (what you uncover tells you whether you chose well), interesting (clues support multiple hypotheses), observable (the ground opens), repeatable (every excavation is a fresh test), progressive (every dig produces fragments — pottery shards, soil layers, structural remnants — that mean nothing alone but accumulate into a web of signals about what the site contains and where; the player forms hypotheses, commits scarce excavation resources to test them, and each outcome refines or breaks the model; skill is not "read stratigraphy faster" but "hold three competing theories in mind while deciding which one to risk disproving next").
 
-In an **endurance/attrition loop** for a besieged city: the candidate is *the rationing choice* — decide who gets what from a shrinking pool. Obvious (distribute supplies), readable (people survive or don't), interesting (every allocation trades one survival against another), observable (the city changes), repeatable (every day is a new distribution), progressive (better managers anticipate crises).
+In an **endurance/attrition loop** for a besieged city: the candidate is *the rationing choice* — decide who gets what from a shrinking pool. Obvious (distribute supplies), readable (people survive or don't), interesting (every allocation trades one survival against another), observable (the city changes), repeatable (every day is a new distribution), progressive (each rationing round reveals how different groups respond to shortage — who hoards, who shares, who breaks, who becomes dangerous; an experienced player reads these social signals and allocates not just for today's survival but to prevent tomorrow's crisis; the game's depth is not "manage numbers better" but "learn to predict second-order consequences of scarcity on a population you increasingly understand").
 
 ### The primitive test
 
@@ -253,15 +271,17 @@ Three tests:
 
 Can the same primitive produce meaningfully different situations?
 
-In Tetris, the primitive is "rotate and place a piece under time pressure." Variation comes from the random piece sequence and the accumulated board state. No two moments are identical, yet the primitive never changes.
+The primitive's *inputs* must change even though the *action* stays the same. If the inputs are static, the player solves it once and the loop dies. Variation must come from something outside the player's control (randomness, opponent behavior, system state) that feeds *through* the primitive, forcing a different decision each cycle.
 
-Ask: *What generates variation?* Randomness, player history, environmental change, opponent behavior, compounding consequences. But the variation must feed *through* the primitive. If new situations require actions that bypass the primitive, the primitive is not carrying the game.
+Test: list the sources of variation in your loop. For each one, ask: does this change what the player *decides* when performing the primitive, or does it only change what happens after? Variation that alters the decision is structural. Variation that only alters the outcome is decoration, and decoration is a slot machine. If new situations require actions that bypass the primitive, the primitive is not carrying the game.
 
 ### Depth test
 
 Does skill matter more over time, not less?
 
 A primitive with depth rewards investment. The hundredth hour should feel different from the first — not because the game added systems, but because the player got better. They read situations faster, commit more efficiently, see consequences further ahead.
+
+Depth that comes from system expansion — new unlocks, new mechanics, new modes — requires content to sustain. Each expansion must be designed, built, and balanced. For a large studio with a content pipeline, this is expensive but feasible. For an indie team, it is a treadmill with a hard ceiling. Depth that comes from the *player* improving at a stable primitive costs nothing to sustain. Chess has not shipped a content update in fifteen hundred years. The depth is in the player, not the game, and that is the only kind of depth an indie team can afford.
 
 Ask: *What does an expert do differently from a beginner, using the same primitive?* If the answer is "nothing, they're just faster," the primitive lacks depth. If the answer involves judgment, prediction, risk calibration, or creative adaptation, it has room to grow.
 
@@ -306,7 +326,15 @@ This is where the concept either speaks for itself or doesn't. The *[proof slice
 
 ### Why two weeks
 
-Two weeks is tight enough to prevent scope creep and loose enough to test a real interaction. If the primitive cannot be proven in this window, either it is too complex (simplify it) or it is not actually a primitive (it depends on surrounding systems to function, which means it has no independent identity).
+Why not one week? Why not four?
+
+One week is too short to test *repetition*. You can build a primitive in a week, but you cannot build enough variation around it to know whether the tenth play feels different from the first. A one-week proof tests whether the primitive *exists*. It does not test whether the primitive *sustains*.
+
+Four weeks is too long because it hides dependency. A primitive that needs four weeks of surrounding context to land is borrowing meaning from systems that won't exist at launch. It also costs twice as much to fail, and failure is the expected outcome. Most concepts don't survive proof. The process depends on that being cheap.
+
+Two weeks sits at the boundary: long enough to build a loop that cycles multiple times with variation, short enough that the primitive must carry the experience without crutches. If the primitive cannot stand alone in this window, it either depends on other systems (not a primitive) or is too complex to teach itself (not legible in the market).
+
+The two-week window also sets the rhythm of exploration. A month can test two concepts. A month of four-week proofs tests one. Committing before comparing is how studios lock into concepts that feel inevitable only because nothing else was tried.
 
 The two-week constraint also tests *[legible promise]({{< ref "posts/wide-appeal" >}})*. If the proof slice requires explanation, it fails. If it requires context the player doesn't have, it fails. The primitive must teach its own contract.
 
@@ -372,7 +400,7 @@ The moment of highest decision density: **the cargo commitment at port.** Limite
 
 > *The player commits cargo under uncertainty and hold constraint, and the return voyage reveals whether the bet was right.*
 
-Obvious: choose what to load. Readable: profit or loss on arrival. Interesting: spices are high margin but perishable; textiles are stable but low yield; rare goods are speculative. Observable: the hold fills visually. Repeatable: every port, every season. Progressive: experienced traders read market signals, hedge across goods, time departures to weather.
+Obvious: choose what to load. Readable: profit or loss on arrival. Interesting: spices are high margin but perishable; textiles are stable but low yield; rare goods are speculative. Observable: the hold fills visually. Repeatable: every port, every season. Progressive (each expedition produces market intelligence that compounds across voyages into a mental model of trade patterns; an experienced trader reads signals a novice doesn't yet recognize; the skill ceiling is not "pick the expensive goods" but "hedge against three plausible futures using information you gathered by being wrong last season").
 
 Intent: *This game is about loading cargo before monsoon season when you don't know what the market wants — the fun is gambling on your read of the situation, expressed through cargo commitments under uncertainty.*
 
@@ -402,7 +430,9 @@ Can a stranger play it? The rules fit on one card. Does the primitive land? The 
 
 The six gates are not a creativity method. They are survival equipment for a hostile environment.
 
-The environment is hostile because the space of possible game subjects is enormous and almost all of it is empty. Interesting subjects outnumber viable games by orders of magnitude. Theme, setting, and atmosphere seduce. They feel like progress. They are not progress. They are the jungle canopy that hides whether there is solid ground underneath.
+The environment is hostile because the space of possible game subjects is enormous and almost all of it is empty. This is not pessimism; it is structure. A viable game requires a subject that produces recurring pressure, resolves into a cyclical loop, yields a testable primitive, survives escalation, and proves out in two weeks. Each requirement is independent and filters out a large portion of candidates. The survival rate is multiplicative, not additive — if each gate passes 30% of subjects, six gates pass under half a percent. "Interesting" clears one bar. "Viable" clears six.
+
+For an indie team this is not academic. You have funding for one concept, maybe two. The market releases thousands of games a year. A concept that lacks *[legible promise]({{< ref "posts/wide-appeal" >}})* will never be seen. One that lacks structural depth will be seen and forgotten. The cost of building the wrong concept is not a bad quarter; it is the studio. Theme, setting, and atmosphere seduce because they feel like progress. They are not progress. They are the canopy that hides whether there is solid ground underneath.
 
 The gates test the ground. Each one costs less than the next. Context is free. Pressure costs a conversation. Loop classification costs a whiteboard session. The primitive costs a few days of thought. Escalation costs a week of argument. Proof costs two weeks of building. If the subject fails at any point, you've lost the minimum possible time.
 

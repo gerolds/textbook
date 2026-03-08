@@ -35,12 +35,86 @@ jobs:
           hugo-version: latest
           extended: true
 
+      - name: Install Asciidoctor
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ruby-full
+          sudo gem install asciidoctor
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install PDF export dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Start Hugo server for PDF export
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo server --baseURL "http://127.0.0.1:1313/" --appendPort=false --bind 127.0.0.1 > /tmp/hugo-pdf.log 2>&1 &
+          node <<'EOF'
+          const baseUrl = 'http://127.0.0.1:1313/';
+          const candidatePaths = [
+            'pdf-manifest/index.json',
+            'posts/pdf-manifest/index.json',
+            'posts/index.pdf-manifest.json',
+            'posts/pdf-manifest.json',
+          ];
+
+          const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+          let found = false;
+
+          for (let attempt = 0; attempt < 30 && !found; attempt += 1) {
+            for (const candidate of candidatePaths) {
+              const url = new URL(candidate, baseUrl);
+              try {
+                const response = await fetch(url);
+                if (response.ok) {
+                  found = true;
+                  break;
+                }
+              } catch {
+                // Server may not be ready yet.
+              }
+            }
+
+            if (!found) {
+              await sleep(1000);
+            }
+          }
+
+          if (!found) {
+            process.exit(1);
+          }
+          EOF
+          cat /tmp/hugo-pdf.log
+
+      - name: Generate PDFs
+        env:
+          PDF_BASE_URL: http://127.0.0.1:1313/
+          PDF_PUBLIC_BASE_URL: ${{ steps.pages.outputs.base_url }}/
+          PDF_OUT_DIR: .tmp/pdf
+        run: |
+          npm run pdf:export:all -- --clean
+
       - name: Build
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
           hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Copy PDFs into Pages artifact
+        run: |
+          mkdir -p public/pdf
+          cp -R .tmp/pdf/. public/pdf/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

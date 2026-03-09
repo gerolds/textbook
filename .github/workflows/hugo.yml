@@ -52,14 +52,16 @@ jobs:
           npm ci
           npx playwright install --with-deps chromium
 
-      - name: Start Hugo server for PDF export
+      - name: Generate PDFs (with Hugo server)
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
+          PDF_BASE_URL: http://127.0.0.1:1313/
+          PDF_PUBLIC_BASE_URL: ${{ steps.pages.outputs.base_url }}/
+          PDF_OUT_DIR: .tmp/pdf
         run: |
           hugo server --baseURL "http://127.0.0.1:1313/" --appendPort=false --bind 127.0.0.1 > /tmp/hugo-pdf.log 2>&1 &
           HUGO_PID=$!
-          trap 'kill "$HUGO_PID" 2>/dev/null || true' EXIT
           node <<'EOF'
           const baseUrl = 'http://127.0.0.1:1313/';
           const candidatePaths = [
@@ -98,15 +100,9 @@ jobs:
             process.exit(1);
           }
           EOF
-          cat /tmp/hugo-pdf.log
-
-      - name: Generate PDFs
-        env:
-          PDF_BASE_URL: http://127.0.0.1:1313/
-          PDF_PUBLIC_BASE_URL: ${{ steps.pages.outputs.base_url }}/
-          PDF_OUT_DIR: .tmp/pdf
-        run: |
           npm run pdf:export:all -- --clean
+          kill "$HUGO_PID" 2>/dev/null || true
+          cat /tmp/hugo-pdf.log
 
       - name: Build
         env:

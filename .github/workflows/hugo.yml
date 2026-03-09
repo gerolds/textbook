@@ -57,7 +57,9 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo server --baseURL "${{ steps.pages.outputs.base_url }}/" --appendPort=false --bind 127.0.0.1 > /tmp/hugo-pdf.log 2>&1 &
+          hugo server --baseURL "http://127.0.0.1:1313/" --appendPort=false --bind 127.0.0.1 > /tmp/hugo-pdf.log 2>&1 &
+          HUGO_PID=$!
+          trap 'kill "$HUGO_PID" 2>/dev/null || true' EXIT
           node <<'EOF'
           const baseUrl = 'http://127.0.0.1:1313/';
           const candidatePaths = [
@@ -71,6 +73,7 @@ jobs:
 
           let found = false;
 
+          // Retry for up to 30 seconds while the Hugo server and manifest initialize.
           for (let attempt = 0; attempt < 30 && !found; attempt += 1) {
             for (const candidate of candidatePaths) {
               const url = new URL(candidate, baseUrl);
@@ -91,6 +94,7 @@ jobs:
           }
 
           if (!found) {
+            console.error(`Hugo server readiness check failed for: ${candidatePaths.join(', ')}`);
             process.exit(1);
           }
           EOF

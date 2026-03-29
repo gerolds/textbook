@@ -60,9 +60,9 @@ The power of the model is in the interaction, not in any single force alone.
 | Bounded cognition + Local change | Readers can't predict consequences of small edits. Every local patch becomes a gamble. Bugs multiply. Teams slow down, then freeze. |
 | Bounded cognition + Identity clarity | Readers see code but can't recover purpose. They work around what they don't understand instead of extending it. Workarounds accumulate. The system drifts from its own design. |
 | Local change + Identity clarity | Changes land in the wrong place because the system doesn't declare where a given kind of change belongs. Concepts scatter. One feature leaks across a dozen files. |
-| All three together | The system becomes a place where bounded readers making local changes cannot locate the identity of what they're changing. This is the terminal condition. Architecture becomes archaeology. |
+| All three together | The system becomes a place where bounded readers making local changes cannot locate the identity of what they're changing. Architecture becomes archaeology. |
 
-When all three forces are respected simultaneously, a different kind of design emerges: one that **reveals identity clearly, keeps modification surfaces local, and cooperates with limited cognition.** That is the Reality Principle in practice.
+When all three forces are respected simultaneously, a different kind of design emerges: one that **reveals identity clearly, keeps modification surfaces local, and cooperates with limited cognition.**
 
 ---
 
@@ -78,7 +78,7 @@ Not all abstraction is the same. There are two fundamentally different acts coll
 
 The common advice to "avoid premature abstraction" is too blunt. It collapses these two acts into one, and the result is that teams afraid of abstraction avoid identity discovery too. A project without identity-level abstraction does not stay concrete and healthy. It becomes a pile of locally clean fragments with no governing logic — conceptual spaghetti, even if every function is short and every file is tidy.
 
-The correct doctrine is precise:
+The distinction leads to a sharper rule than "prefer concrete code":
 
 > **Abstract the nature of the thing early. Abstract the management of the thing late, and only under demonstrated pressure.**
 
@@ -99,7 +99,7 @@ The failure of idealistic design is not random. It follows a pattern: **visible 
 
 These designs are praised because they look disciplined from above. But maintenance happens from within. The person changing the system is not admiring the architecture. They are trying to predict consequences. If a design increases the invisible context needed to make a safe edit, it is not practically clean — no matter how formally clean it appears.
 
-The pattern has a name: **distributed complexity.** Instead of seeing what the system does, the reader sees a system of permissions, indirections, seams, and policy layers through which the real behavior must be inferred. The code becomes lecture-friendly and review-friendly while becoming maintenance-hostile.
+This is **distributed complexity.** Instead of seeing what the system does, the reader sees a system of permissions, indirections, seams, and policy layers through which the real behavior must be inferred. The code becomes lecture-friendly and review-friendly while becoming maintenance-hostile.
 
 ---
 
@@ -133,7 +133,7 @@ Software architecture rarely comes close to this level of rigor, yet it makes th
 - **The organizational structure doesn't ensure competence.** Splitting a system across teams splits knowledge. Each team understands its slice. Nobody understands the interaction.
 - **The delegation is rarely tested under stress.** The architecture works fine in normal conditions. Under deadline pressure, bounded changes, misaligned incentives, and personnel turnover, the delegation fails the same way a simplified safety protocol fails: at the seams.
 
-The evidence is not theoretical. Large organizations using enterprise patterns — the ones most committed to managing complexity through architectural delegation — produce systems with the highest maintenance overhead, the poorest ratio of utility to cost, the most spectacular data leaks, and the most baroque security failures. This is not a coincidence. **The delegation itself is the failure mode.** The architecture promised to make the system manageable by distributing responsibility. But distribution without verification, without shared understanding, and without continuous accountability is not management. It is diffusion.
+The evidence is not theoretical. Large organizations using enterprise patterns — the ones most committed to managing complexity through architectural delegation — produce systems with the highest maintenance overhead, the poorest ratio of utility to cost, and the most frequent security failures. This is not a coincidence. **The delegation itself is the failure mode.** The architecture promised to make the system manageable by distributing responsibility. But distribution without verification, without shared understanding, and without continuous accountability is not management. It is diffusion.
 
 The Reality Principle predicts this: any structure that increases the total amount of context needed to understand consequences will eventually be defeated by bounded cognition, no matter how many layers of encapsulation separate the components.
 
@@ -143,7 +143,7 @@ The Reality Principle predicts this: any structure that increases the total amou
 
 ## The environmental constraints
 
-The Reality Principle is not a preference. It is the rational response to a specific set of environmental constraints. If your system lives under these conditions — and almost all systems do — then this model is not optional. It is the only one that survives.
+The Reality Principle is not a preference. It is the rational response to a specific set of environmental constraints that almost all systems live under.
 
 1. **Maintainers are bounded reasoners.** They cannot re-derive the architecture from first principles for every edit.
 2. **Change is local most of the time.** Grand rewrites are rare. The typical edit is a tweak, addition, or repair at a concrete point.
@@ -159,7 +159,7 @@ Under these constraints, two opposite failure modes become visible:
 - **Abstraction excess:** too many layers, too much indirection, too much formal structure managing hypothetical variation.
 - **Identity failure:** no governing concepts, no named principles, only locally tidy code and ad hoc accretion.
 
-The Reality Principle lives between them. It says: **discover and state essence aggressively, but mechanize cautiously.**
+The Reality Principle lives between them. Discover and state essence aggressively. Mechanize cautiously.
 
 ---
 
@@ -189,37 +189,19 @@ This denies bounded cognition for experts. But expertise is context-dependent. A
 
 "Be pragmatic" acknowledges the problem without naming the forces. It provides no way to distinguish identity abstraction from administrative abstraction, no criteria for evaluating indirection, no account of why ideal forms fail. The Reality Principle is not pragmatism. It is a specific theory with specific predictions: designs that violate bounded cognition, local change, or identity clarity will degrade in specific, predictable ways.
 
-**Verdict:** The Reality Principle is what pragmatism becomes when you force it to explain itself.
-
-### Mutation 5: "Documentation solves the legibility problem"
-
-Documentation is a second system that must also be maintained by bounded reasoners under the same pressures. If the code requires documentation to be understood, the code has already failed the test. Documentation can supplement legibility. It cannot substitute for it.
-
-**Verdict:** Helpful but not load-bearing. The code itself must cooperate with bounded cognition.
+**Verdict:** The Reality Principle is what pragmatism becomes when forced to explain itself.
 
 ---
 
-## Adjacent concepts that reinforce the model
-
-### Conway's Law as a Reality Principle consequence
-
-Conway's Law observes that systems mirror the communication structure of the organizations that build them. The Reality Principle explains *why* this is harmful: organizational boundaries create delegation without shared understanding, which is exactly the delegation fallacy. The architecture inherits the organization's blindspots.
+## Adjacent concepts
 
 ### Technical debt as deferred reality checks
 
 Most technical debt is not "mess we'll clean up later." It is the accumulated cost of designs that were never tested against bounded cognition, local change, or identity clarity. The debt accrues because the design passed formal review but failed the reality check. Reframing technical debt as *reality debt* makes the repayment strategy clearer: the fix is not to make the code "cleaner" but to make it more legible, more local, and more identity-clear.
 
-### Cognitive load theory
-
-Cognitive load research distinguishes intrinsic load (the complexity of the problem itself), extraneous load (complexity added by the presentation), and germane load (effort that builds understanding). The Reality Principle asks design to minimize extraneous cognitive load — the load added by architectural choices that do not correspond to problem structure. Every layer of indirection that exists for organizational or doctrinal reasons rather than problem reasons is extraneous load.
-
 ### Chesterton's Fence — in both directions
 
-Chesterton's Fence warns against removing a structure whose purpose you don't understand. The Reality Principle adds the converse: *do not preserve a structure whose cost you haven't measured.* Many architectural layers survive not because they are understood to be valuable but because no one is confident enough to question them. A bounded reasoner who cannot determine whether a layer helps or hinders will leave it in place, and the system accumulates dead structure indefinitely.
-
-### The Lindy Effect and earned abstraction
-
-Abstractions that survive real usage under real pressure tend to be good. Abstractions introduced speculatively tend to rot. This aligns with the model's distinction: identity abstraction is discovered from the domain and tends to be Lindy. Administrative abstraction is invented for the codebase and must continuously earn its place.
+Chesterton's Fence warns against removing a structure whose purpose one doesn't understand. The Reality Principle adds the converse: *do not preserve a structure whose cost hasn't been measured.* Many architectural layers survive not because they are understood to be valuable but because no one is confident enough to question them. A bounded reasoner who cannot determine whether a layer helps or hinders will leave it in place, and the system accumulates dead structure indefinitely.
 
 ---
 
@@ -277,19 +259,19 @@ The Reality Principle is not another paradigm beside OOP, FP, data-oriented, or 
 - Relational thinking is useful when invariants and normalized truth matter. It fails when normalization destroys practical comprehensibility.
 - Clean code principles are useful when they reduce incidental complexity. They fail when cleanliness becomes a rhetorical property rather than an operational one.
 
-The correct order is not: choose a paradigm, then shape the system. It is: **understand the real computational and maintenance problem, then adopt only those forms that survive the reality check.**
+The order matters: not "choose a paradigm then shape the system", but **"understand the real computational and maintenance problem, then adopt only those forms that survive the reality check."**
 
 ---
 
 ## Conclusion
 
-Software design has always had ideals. What it has lacked is a way to hold them accountable.
+Software design has lots of ideals. What it has lacks is a way to hold them accountable.
 
-The Reality Principle provides that accountability. It rests on three irreducible forces — bounded cognition, local change, and identity clarity — and it asks every design decision to survive their combined pressure. It distinguishes the abstraction that reveals what something truly is from the abstraction that merely manages code shape. It predicts, specifically, where and why ideal forms will fail: wherever they increase the invisible context needed by bounded reasoners making local changes to components whose identity is unclear.
+The Reality Principle aims to provide that accountability. It rests on three irreducible forces: bounded cognition, local change, and identity clarity. It asks every design decision to survive their combined pressure. It distinguishes the abstraction that reveals what something truly is from the abstraction that merely manages code shape. It predicts, specifically, where and why ideal forms will fail: wherever they increase the invisible context needed by bounded reasoners making local changes to components whose identity is unclear.
 
 The principle does not make engineering easier. It makes it honest.
 
-A design that cannot be understood by the people who must change it is not principled. It is negligent. A contract that cannot be used correctly under ordinary conditions is not sophisticated. It is hostile. An architecture that delegates responsibility to structures incapable of bearing it is not robust. It is theatre.
+A design that cannot be understood by the people who must change it is not principled. It is negligent. A contract that cannot be used correctly under ordinary conditions is not sophisticated. It is hostile. An architecture that delegates responsibility to structures incapable of bearing it is not robust. It is failing in the way it promised not to.
 
 The right conclusion is not that ideals are useless. It is that ideals require legitimacy. They earn it the only way anything earns it: by surviving contact with reality.
 
